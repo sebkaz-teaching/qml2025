@@ -13,24 +13,30 @@ Jeśli nie odnaleziono komendy uruchom polecenie:
 python3
 ```
 
-Zwróć uwagę, aby Twoja wersja nie była niższa niż 3.11
+Zwróć uwagę, aby Twoja wersja nie była niższa niż 3.13
 Aby wyjść z powłoki pythona użyj funkcji `exit()`
 ```bash
-Python 3.10.9 (main, Dec 15 2022, 17:11:09) [Clang 14.0.0 (clang-1400.0.29.202)] on darwin
+Python 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 ```
 ### Nowe środowisko pythona
 
 ```bash
-python3 -m venv <name of env>
-
-source <name of env>/bin/activate
-# . env/bin/activate
-
-(venv)$ 
+python3 -m venv venv
 ```
-Jak uruchomić środowisko pythona w systemie Windows. 
+Uruchomienie w systemach linux i mac os:
+```bash
+source venv/bin/activate
+# . venv/bin/activate
+
+(venv)$ ~
+```
+W systemie windows środowisko pythona uruchomisz poprzez: 
+
+```bash
+venv/Scripts/activate
+```
 
 Szybka instalacja podstawowych bibliotek i jupyterlab.
 ```bash
