@@ -60,7 +60,7 @@
     "href": "lectures/wyklad1.html",
     "title": "Komputery klasyczne i kwantowe",
     "section": "",
-    "text": "Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy. Richard Feynman\nQuntum Machine Learning\nCo oznacza termin kwantowe uczenie maszynowe?\nUczenie maszynowe (ale również i uczenie głębokie) to nauka i ,,sztuka’’ opisująca jak sprawić by komputery mogły ,,uczyć się’’ na podstawie danych, tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane). Więcej na ten temat znajdziesz w książce\nObliczenia kwantowe opisują przetwarzenie informacji na urządzeniach pracujących zgodnie z zasadami mechaniki kwantowej.\nOba kierunki są istotne w procesie przetwarzania danych obecnie i w niedalekiej przyszłości. Dlatego naturalnym pytaniem jest jak je ze sobą połączyć?\nQML to realizowanie metod uczenia maszynowego, które mogą być wykonywane na komputerach kwantowych.\nKwantowe uczenie maszynowe możemy określić jako uczenie maszynowe realizowane na komputerach kwantowych. Zasadniczym jest pytanie na ile i czy wogóle komputery kwantowe mogą poprawić jakość modeli uczenia maszynowego i czy pozwalają zrealizować coś więcej niż wykorzystanie klasycznych komputerów.\nOdpowiedź To zależy:",
+    "text": "Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy. Richard Feynman\nIntroduction to quantum computing, and quantum machine learning ● What is quantum computing? (Explanation) ● What is Quantum Machine Learning (QML)? (Explanation) ● Quantum Advantage in QML (Blog) — The associated article “Is quantum advantage the right goal for quantum machine learning?” could be a good source for discussion.\nQuntum Machine Learning\nCo oznacza termin kwantowe uczenie maszynowe?\nUczenie maszynowe (ale również i uczenie głębokie) to nauka i ,,sztuka’’ opisująca jak sprawić by komputery mogły ,,uczyć się’’ na podstawie danych, tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane). Więcej na ten temat znajdziesz w książce\nObliczenia kwantowe opisują przetwarzenie informacji na urządzeniach pracujących zgodnie z zasadami mechaniki kwantowej.\nOba kierunki są istotne w procesie przetwarzania danych obecnie i w niedalekiej przyszłości. Dlatego naturalnym pytaniem jest jak je ze sobą połączyć?\nQML to realizowanie metod uczenia maszynowego, które mogą być wykonywane na komputerach kwantowych.\nKwantowe uczenie maszynowe możemy określić jako uczenie maszynowe realizowane na komputerach kwantowych. Zasadniczym jest pytanie na ile i czy wogóle komputery kwantowe mogą poprawić jakość modeli uczenia maszynowego i czy pozwalają zrealizować coś więcej niż wykorzystanie klasycznych komputerów.\nOdpowiedź To zależy:",
     "crumbs": [
       "Sylabus",
       "Wykłady",
@@ -354,5 +354,29 @@
     "title": "Kwantowe bramki logiczne w prostych algorytmach i obwodach kwantowych",
     "section": "Bramki dwukubitowe",
     "text": "Bramki dwukubitowe\nAnalogicznie do bramek jednokubitowych reprezentowanych przez macierze unitarne \\(2\\times 2\\) możemy skonstruowac dowolną wielo-kubitową bramkę. Dla n kubitów mamy \\(2^n \\times 2^n\\) unitarną macierz reprezentującą taką bramkę. Ponieważ bramki wielo kubiotwe działają na raz na kilka kubitów mogą służyc one do otrzymywania stanów splątanych. Mamy również możliwośc stworzyc bramkę warunkową (kontrolowaną), która zmienia bit docelowy jeśli kontrolny bit jest w stanie \\(\\ket{1}\\).\nW ogólności taka bramka może zostac zapisana jako: \\[\n\\textbf{CU}= \\ket{0}\\bra{0} \\otimes \\textbf{I} + \\ket{1}\\bra{1} \\otimes \\textbf{\\textbf{U}}\n\\]\nDowolna bramka działajaca na 1 kubit może byc przedstawiona jako mecierz \\[\n\\textbf{U} = \\begin{bmatrix} u_{00} \\, u_{01} \\\\ u_{10}\\, u_{11} \\end{bmatrix}\n\\]\ndlatego:\n\\[\n\\textbf{CU}=  \\begin{bmatrix} 1 \\,\\, \\,\\,\\, 0 \\,\\,\\,\\,\\, 0 \\,\\,\\,\\,\\, 0 \\\\\n0\\,\\, \\,\\,\\, 1 \\,\\,\\,\\,\\, 0 \\,\\,\\,\\,\\, 0 \\\\\n0\\,\\,\\,\\, 0\\,\\,\\,  u_{00} \\,\\, u_{01} \\\\ 0\\,\\,\\,\\, 0\\,\\,\\, u_{10}\\, \\, u_{11} \\end{bmatrix}\n\\]\nSzczegółowe działanie bramki można zapisac jako:\n\\[\\begin{align*}\n\\textbf{CU} \\ket{0} \\otimes \\ket{0} &=&  \\ket{0} \\otimes \\ket{0} \\\\\n\\textbf{CU} \\ket{0} \\otimes \\ket{1} &=& \\ket{0}\\otimes \\ket{1} \\\\\n\\textbf{CU} \\ket{1}\\otimes \\ket{0} &=& \\ket{1}\\otimes \\textbf{U} \\ket{0} \\\\\n\\textbf{CU} \\ket{1}\\otimes \\ket{1} &=& \\ket{1}\\otimes \\textbf{U} \\ket{1} \\\\\n\\end{align*}\\]\nDla kwantowej bramki NOT \\(\\textbf{U}= X\\) \\[\n\\text{CNOT} = \\begin{bmatrix} 1 \\,\\, \\,\\,\\, 0 \\,\\,\\,\\,\\, 0 \\,\\,\\,\\,\\, 0 \\\\\n0\\,\\, \\,\\,\\, 1 \\,\\,\\,\\,\\, 0 \\,\\,\\,\\,\\, 0 \\\\\n0\\,\\,\\,\\,\\, 0\\,\\,\\,\\,\\,  0 \\,\\,\\,\\,\\, 1 \\\\ 0\\,\\,\\,\\,\\, 0\\,\\,\\,\\,\\, 1\\,\\,\\,\\,\\, 0 \\end{bmatrix}\n\\] Bramka ta do drugiego kubitu (targetu) stosuje bramkę X jeśli pierwszy kubit jest w pozycji \\(\\ket{1}\\). W przeciwnym wypadku nie zmienia się nic.\n\\[\\begin{align*}\n\\textbf{CNOT} \\ket{0} \\otimes \\ket{0} &=&  \\ket{0} \\otimes \\ket{0} \\\\\n\\textbf{CNOT} \\ket{0} \\otimes \\ket{1} &=& \\ket{0}\\otimes \\ket{1} \\\\\n\\textbf{CNOT} \\ket{1}\\otimes \\ket{0} &=& \\ket{1}\\otimes \\ket{1} \\\\\n\\textbf{CNOT} \\ket{1}\\otimes \\ket{1} &=& \\ket{1}\\otimes \\ket{0} \\\\\n\\end{align*}\\]\n\nRozpoczynajac od stanu \\(\\ket{0} \\otimes \\ket{0}\\) zadziałaj na pierwszy kubit bramka Hadamarda a na tak otrzymany stan zadziałaj CNOT. Jaki stan uzyskujemy?"
+  },
+  {
+    "objectID": "lectures/w1.html",
+    "href": "lectures/w1.html",
+    "title": "Komputery klasyczne i kwantowe",
+    "section": "",
+    "text": "Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.\nRichard Feynman",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Komputery klasyczne i kwantowe"
+    ]
+  },
+  {
+    "objectID": "lectures/w1.html#plan-wykładu",
+    "href": "lectures/w1.html#plan-wykładu",
+    "title": "Komputery klasyczne i kwantowe",
+    "section": "Plan wykładu",
+    "text": "Plan wykładu\n\nCo to są obliczenia kwantowe?\nCzym jest QML?\nJakie są potencjalne przewagi QC/QML w analizie danych?\nPrzykłady zastosowań i dostępne narzędzia.",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Komputery klasyczne i kwantowe"
+    ]
   }
 ]

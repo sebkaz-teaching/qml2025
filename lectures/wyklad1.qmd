@@ -5,6 +5,15 @@ title: "Komputery klasyczne i kwantowe"
 > Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.
 > **Richard Feynman**
 
+
+Introduction to quantum computing, and quantum machine learning
+● What is quantum computing? (Explanation)
+● What is Quantum Machine Learning (QML)? (Explanation)
+● Quantum Advantage in QML (Blog) — The associated article “Is quantum advantage the
+right goal for quantum machine learning?” could be a good source for discussion.
+
+
+
 **Quntum Machine Learning**
 
 Co oznacza termin _kwantowe uczenie maszynowe_?
@@ -333,3 +342,6 @@ algorytmy [inspirowane obliczeniami kwantowymi](https://dl.acm.org/doi/10.1145/3
 - [D-Wave](https://www.dwavesys.com/build/getting-started/) - Python
 - [Xanadu](https://www.xanadu.ai) - Pennylane Python library
 - [Amazon braket](https://aws.amazon.com/braket/) - AWS Python, Julia
+
+
+
