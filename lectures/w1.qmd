@@ -17,7 +17,7 @@ Celem tego wykładu jest zrozumienie, czym są **obliczenia kwantowe** oraz **kw
 
 ---
 
-# Obliczenia klasyczne a kwantowe
+## Obliczenia klasyczne a kwantowe
 
 **Komputer klasyczny** operuje na bitach (`0` lub `1`), a jego moc obliczeniowa zależy od liczby tranzystorów.  
 Rozwój technologii napotyka ograniczenia fizyczne (prawo Moore’a, miniaturyzacja, pobór energii).
@@ -28,7 +28,7 @@ Rozwój technologii napotyka ograniczenia fizyczne (prawo Moore’a, miniaturyza
 
 ---
 
-# Co to jest Quantum Machine Learning (QML)?
+## Co to jest Quantum Machine Learning (QML)?
 
 **Uczenie maszynowe** = algorytmy, które uczą się na danych.  
 **QML** = algorytmy ML działające na komputerach kwantowych (lub hybrydowo: klasyczny + kwantowy).
@@ -42,7 +42,7 @@ Pytania, które nas interesują:
 
 ---
 
-# Dlaczego to ważne dla analityków danych?
+## Dlaczego to ważne dla analityków danych?
 
 Dzisiejsze problemy analizy danych często:
 - działają na **ogromnych zbiorach danych**,
@@ -56,7 +56,7 @@ Komputery kwantowe mogą:
 
 ---
 
-# Przykłady zastosowań QML
+## Przykłady zastosowań QML
 
 - **Finanse** – optymalizacja portfela, zarządzanie ryzykiem.  
 - **Logistyka** – trasy dostaw, planowanie transportu.  
@@ -81,7 +81,7 @@ Dzięki chmurze dostępne są już **narzędzia w Pythonie**, które każdy anal
 
 ---
 
-# Podsumowanie
+## Podsumowanie
 
 - **Komputery kwantowe** nie zastąpią klasycznych, ale mogą je uzupełnić.  
 - **QML** to nowa gałąź łącząca analizę danych z mechaniką kwantową.  
@@ -99,3 +99,6 @@ Dzięki chmurze dostępne są już **narzędzia w Pythonie**, które każdy anal
 5. Krytyczne spojrzenie: ograniczenia, koszty, hype vs rzeczywistość  
 
 <!-- GRAFIKA: prosta infografika roadmapy – 5 kroków z ikonami -->
+
+
+# Introduction to PyTorch
