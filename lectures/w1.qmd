@@ -1,104 +1,47 @@
 ---
-title: "Komputery klasyczne i kwantowe"
+title: "Wprowadzenie do obliczeń kwantowych"
 ---
 
 > Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.  
 > **Richard Feynman**
 
-# Wprowadzenie
 
-Celem tego wykładu jest zrozumienie, czym są **obliczenia kwantowe** oraz **kwantowe uczenie maszynowe (QML)** i dlaczego są one interesujące dla **analityków danych**.
+Celem tego wykładu jest zrozumienie, czym są:
 
-## Plan wykładu
-1. Co to są obliczenia kwantowe?
-2. Czym jest QML?
-3. Jakie są potencjalne przewagi QC/QML w analizie danych?
-4. Przykłady zastosowań i dostępne narzędzia.
-
----
-
-## Obliczenia klasyczne a kwantowe
-
-**Komputer klasyczny** operuje na bitach (`0` lub `1`), a jego moc obliczeniowa zależy od liczby tranzystorów.  
-Rozwój technologii napotyka ograniczenia fizyczne (prawo Moore’a, miniaturyzacja, pobór energii).
-
-**Komputer kwantowy** korzysta z kubitów – jednostek informacji, które mogą być w superpozycji (`0` i `1` jednocześnie) i mogą się splątywać. To daje potencjalny **równoległy dostęp do wielu stanów** i przewagę w pewnych obliczeniach.
-
-<!-- GRAFIKA: prosta ilustracja porównująca bit i kubit (klasyczny vs kwantowy) -->
-
----
-
-## Co to jest Quantum Machine Learning (QML)?
-
-**Uczenie maszynowe** = algorytmy, które uczą się na danych.  
-**QML** = algorytmy ML działające na komputerach kwantowych (lub hybrydowo: klasyczny + kwantowy).
-
-Pytania, które nas interesują:
-- Czy QML może poprawić jakość modeli ML?  
-- Jakie problemy i dane najlepiej pasują do komputerów kwantowych?  
-- Czy przewaga oznacza lepszą **dokładność**, krótszy **czas**, niższy **koszt** czy większą **skalowalność**?
-
-<!-- GRAFIKA: schemat "klasyczne ML vs QML" – np. klasyczne dane na klasycznych komputerach vs klasyczne dane na komputerach kwantowych -->
-
----
-
-## Dlaczego to ważne dla analityków danych?
-
-Dzisiejsze problemy analizy danych często:
-- działają na **ogromnych zbiorach danych**,
-- wymagają kosztownej **optymalizacji** (np. sieci neuronowe),
-- mają wysokie wymagania **energetyczne**.
-
-Komputery kwantowe mogą:
-- przyspieszyć niektóre operacje (np. przeszukiwanie, optymalizacja),
-- efektywnie reprezentować bardzo duże przestrzenie stanów,
-- otworzyć nowe obszary, np. symulacje procesów fizycznych/chemicznych.
-
----
-
-## Przykłady zastosowań QML
-
-- **Finanse** – optymalizacja portfela, zarządzanie ryzykiem.  
-- **Logistyka** – trasy dostaw, planowanie transportu.  
-- **Chemia / materiały** – symulacje molekuł i nowych leków.  
-- **Przetwarzanie języka naturalnego** – nowe podejścia do NLP.  
-- **Prognozowanie pogody** – złożone modele numeryczne.  
-
-<!-- GRAFIKA: kolaż branż (finanse, chemia, logistyka, NLP, prognozy) -->
-
----
-
-# Jak korzystać z QC i QML?
-
-Dzięki chmurze dostępne są już **narzędzia w Pythonie**, które każdy analityk danych może wypróbować:
-- [IBM Quantum / Qiskit](https://www.ibm.com/quantum)  
-- [Pennylane](https://pennylane.ai/)  
-- [Cirq Google](https://quantumai.google/cirq)  
-- [D-Wave](https://www.dwavesys.com/build/getting-started/)  
-- [Amazon Braket](https://aws.amazon.com/braket/)
-
-<!-- GRAFIKA: screenshot interfejsu Pennylane albo Qiskit (prostego kodu w Pythonie) -->
-
----
-
-## Podsumowanie
-
-- **Komputery kwantowe** nie zastąpią klasycznych, ale mogą je uzupełnić.  
-- **QML** to nowa gałąź łącząca analizę danych z mechaniką kwantową.  
-- Kluczowe pytanie: **czy i kiedy przewaga kwantowa będzie praktyczna?**  
-- Już teraz warto poznać narzędzia (Pennylane, Qiskit), aby być gotowym na przyszłość.  
-
----
-
-# Roadmapa kursu
-
-1. Podstawy obliczeń kwantowych  
-2. Algorytmy kwantowe i ich intuicja  
-3. Biblioteki i pierwsze przykłady QML  
-4. Case studies (finanse, NLP, chemia)  
-5. Krytyczne spojrzenie: ograniczenia, koszty, hype vs rzeczywistość  
-
-<!-- GRAFIKA: prosta infografika roadmapy – 5 kroków z ikonami -->
+1. [obliczenia kwantowe](https://pennylane.ai/qml/what-is-quantum-computing) oraz 
+2. [kwantowe uczenie maszynowe](https://pennylane.ai/qml/whatisqml) i 
+3. dlaczego są one interesujące dla [analityków danych](https://pennylane.ai/blog/2022/03/why-measuring-performance-is-our-biggest-blind-spot-in-quantum-machine-learning/).
 
 
-# Introduction to PyTorch
+## Co to jest Machine Learning?
+
+**Uczenie maszynowe** (ale również AI i uczenie głębokie) to nauka i ,,sztuka'' opisująca jak sprawić by komputery mogły _,,uczyć się''_ na podstawie danych,
+tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane).
+
+> In 1959, Arthur Samuel:
+> 
+> **a field of study that gives computers the ability to learn without being explicitly programmed**. 
+
+
+### Dane
+
+<img src="../img/dataml.jpg" width="35%" alt="Opis obrazu">
+
+
+#### Modele 
+
+<img src="../img/mlmodels.jpg" width="35%" alt="Opis obrazu">
+
+1. **Uczenie nadzorowane** (ang. _supervised learning_) - posiadając oznaczone dane $(x_i, y_i)$
+szukamy funkcji $f(x_i) = y_i$ tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp. 
+
+2. **Uczenie nienadzorowane** (ang. _unsupervised learning_) - posiadając dane $(x_i)$ szukamy ukrytych struktur w danych.
+
+3. **Uczenie przez wzmacnianie** (ang. _reinforcement learning_) - agent uczy się realizować zadania w środowisku na podstawie nagród i kar.
+
+Jednym z podstawowych celów uczenia maszynowego (a takze i głębokiego), jest przypisanie klasy (target, labels) dla nowych, nieoznakowanych danych.
+
+Istnieją dwa główne typy dla tego zadania:
+
+- Regresja  – przewidywanie wartości ciągłej,
+- klasyfikacja - przewidywanie wartości dyskretnej.

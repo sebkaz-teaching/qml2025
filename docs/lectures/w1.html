@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Komputery klasyczne i kwantowe – Wstęp do kwantowego uczenia maszynowego</title>
+<title>Wprowadzenie do obliczeń kwantowych – Wprowadzenie do Kwantowego Uczenia Maszynowego</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -80,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Wstęp do kwantowego uczenia maszynowego</span>
+    <span class="navbar-title">Wprowadzenie do Kwantowego Uczenia Maszynowego</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -108,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Komputery klasyczne i kwantowe</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/w1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/w1.html">Wprowadzenie do obliczeń kwantowych</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -137,8 +166,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lectures/wyklad1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Komputery klasyczne i kwantowe</span></a>
+  <a href="../lectures/w1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Wprowadzenie do obliczeń kwantowych</span></a>
   </div>
 </li>
       </ul>
@@ -170,29 +199,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title"><strong>Sections</strong></h2>
    
   <ul class="collapse">
-  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link active" data-scroll-target="#wprowadzenie">Wprowadzenie</a>
-  <ul class="collapse">
-  <li><a href="#plan-wykładu" id="toc-plan-wykładu" class="nav-link" data-scroll-target="#plan-wykładu">Plan wykładu</a></li>
-  <li><a href="#obliczenia-klasyczne-a-kwantowe" id="toc-obliczenia-klasyczne-a-kwantowe" class="nav-link" data-scroll-target="#obliczenia-klasyczne-a-kwantowe">Obliczenia klasyczne a kwantowe</a></li>
-  <li><a href="#co-to-jest-quantum-machine-learning-qml" id="toc-co-to-jest-quantum-machine-learning-qml" class="nav-link" data-scroll-target="#co-to-jest-quantum-machine-learning-qml">Co to jest Quantum Machine Learning (QML)?</a></li>
-  <li><a href="#dlaczego-to-ważne-dla-analityków-danych" id="toc-dlaczego-to-ważne-dla-analityków-danych" class="nav-link" data-scroll-target="#dlaczego-to-ważne-dla-analityków-danych">Dlaczego to ważne dla analityków danych?</a></li>
-  <li><a href="#przykłady-zastosowań-qml" id="toc-przykłady-zastosowań-qml" class="nav-link" data-scroll-target="#przykłady-zastosowań-qml">Przykłady zastosowań QML</a></li>
-  </ul></li>
-  <li><a href="#jak-korzystać-z-qc-i-qml" id="toc-jak-korzystać-z-qc-i-qml" class="nav-link" data-scroll-target="#jak-korzystać-z-qc-i-qml">Jak korzystać z QC i QML?</a>
-  <ul class="collapse">
-  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie">Podsumowanie</a></li>
-  </ul></li>
-  <li><a href="#roadmapa-kursu" id="toc-roadmapa-kursu" class="nav-link" data-scroll-target="#roadmapa-kursu">Roadmapa kursu</a></li>
-  <li><a href="#introduction-to-pytorch" id="toc-introduction-to-pytorch" class="nav-link" data-scroll-target="#introduction-to-pytorch">Introduction to PyTorch</a></li>
+  <li><a href="#co-to-jest-machine-learning" id="toc-co-to-jest-machine-learning" class="nav-link active" data-scroll-target="#co-to-jest-machine-learning">Co to jest Machine Learning?</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/w1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/w1.html">Wprowadzenie do obliczeń kwantowych</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Komputery klasyczne i kwantowe</h1>
+<h1 class="title">Wprowadzenie do obliczeń kwantowych</h1>
 </div>
 
 
@@ -213,102 +229,40 @@ ul.task-list li input[type="checkbox"] {
 <p>Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.<br>
 <strong>Richard Feynman</strong></p>
 </blockquote>
-<section id="wprowadzenie" class="level1">
-<h1>Wprowadzenie</h1>
-<p>Celem tego wykładu jest zrozumienie, czym są <strong>obliczenia kwantowe</strong> oraz <strong>kwantowe uczenie maszynowe (QML)</strong> i dlaczego są one interesujące dla <strong>analityków danych</strong>.</p>
-<section id="plan-wykładu" class="level2">
-<h2 class="anchored" data-anchor-id="plan-wykładu">Plan wykładu</h2>
+<p>Celem tego wykładu jest zrozumienie, czym są:</p>
 <ol type="1">
-<li>Co to są obliczenia kwantowe?</li>
-<li>Czym jest QML?</li>
-<li>Jakie są potencjalne przewagi QC/QML w analizie danych?</li>
-<li>Przykłady zastosowań i dostępne narzędzia.</li>
+<li><a href="https://pennylane.ai/qml/what-is-quantum-computing">obliczenia kwantowe</a> oraz</li>
+<li><a href="https://pennylane.ai/qml/whatisqml">kwantowe uczenie maszynowe</a> i</li>
+<li>dlaczego są one interesujące dla <a href="https://pennylane.ai/blog/2022/03/why-measuring-performance-is-our-biggest-blind-spot-in-quantum-machine-learning/">analityków danych</a>.</li>
 </ol>
-<hr>
-</section>
-<section id="obliczenia-klasyczne-a-kwantowe" class="level2">
-<h2 class="anchored" data-anchor-id="obliczenia-klasyczne-a-kwantowe">Obliczenia klasyczne a kwantowe</h2>
-<p><strong>Komputer klasyczny</strong> operuje na bitach (<code>0</code> lub <code>1</code>), a jego moc obliczeniowa zależy od liczby tranzystorów.<br>
-Rozwój technologii napotyka ograniczenia fizyczne (prawo Moore’a, miniaturyzacja, pobór energii).</p>
-<p><strong>Komputer kwantowy</strong> korzysta z kubitów – jednostek informacji, które mogą być w superpozycji (<code>0</code> i <code>1</code> jednocześnie) i mogą się splątywać. To daje potencjalny <strong>równoległy dostęp do wielu stanów</strong> i przewagę w pewnych obliczeniach.</p>
-<!-- GRAFIKA: prosta ilustracja porównująca bit i kubit (klasyczny vs kwantowy) -->
-<hr>
-</section>
-<section id="co-to-jest-quantum-machine-learning-qml" class="level2">
-<h2 class="anchored" data-anchor-id="co-to-jest-quantum-machine-learning-qml">Co to jest Quantum Machine Learning (QML)?</h2>
-<p><strong>Uczenie maszynowe</strong> = algorytmy, które uczą się na danych.<br>
-<strong>QML</strong> = algorytmy ML działające na komputerach kwantowych (lub hybrydowo: klasyczny + kwantowy).</p>
-<p>Pytania, które nas interesują: - Czy QML może poprawić jakość modeli ML?<br>
-- Jakie problemy i dane najlepiej pasują do komputerów kwantowych?<br>
-- Czy przewaga oznacza lepszą <strong>dokładność</strong>, krótszy <strong>czas</strong>, niższy <strong>koszt</strong> czy większą <strong>skalowalność</strong>?</p>
-<!-- GRAFIKA: schemat "klasyczne ML vs QML" – np. klasyczne dane na klasycznych komputerach vs klasyczne dane na komputerach kwantowych -->
-<hr>
-</section>
-<section id="dlaczego-to-ważne-dla-analityków-danych" class="level2">
-<h2 class="anchored" data-anchor-id="dlaczego-to-ważne-dla-analityków-danych">Dlaczego to ważne dla analityków danych?</h2>
-<p>Dzisiejsze problemy analizy danych często: - działają na <strong>ogromnych zbiorach danych</strong>, - wymagają kosztownej <strong>optymalizacji</strong> (np. sieci neuronowe), - mają wysokie wymagania <strong>energetyczne</strong>.</p>
-<p>Komputery kwantowe mogą: - przyspieszyć niektóre operacje (np. przeszukiwanie, optymalizacja), - efektywnie reprezentować bardzo duże przestrzenie stanów, - otworzyć nowe obszary, np. symulacje procesów fizycznych/chemicznych.</p>
-<hr>
-</section>
-<section id="przykłady-zastosowań-qml" class="level2">
-<h2 class="anchored" data-anchor-id="przykłady-zastosowań-qml">Przykłady zastosowań QML</h2>
-<ul>
-<li><strong>Finanse</strong> – optymalizacja portfela, zarządzanie ryzykiem.<br>
-</li>
-<li><strong>Logistyka</strong> – trasy dostaw, planowanie transportu.<br>
-</li>
-<li><strong>Chemia / materiały</strong> – symulacje molekuł i nowych leków.<br>
-</li>
-<li><strong>Przetwarzanie języka naturalnego</strong> – nowe podejścia do NLP.<br>
-</li>
-<li><strong>Prognozowanie pogody</strong> – złożone modele numeryczne.</li>
-</ul>
-<!-- GRAFIKA: kolaż branż (finanse, chemia, logistyka, NLP, prognozy) -->
-<hr>
-</section>
-</section>
-<section id="jak-korzystać-z-qc-i-qml" class="level1">
-<h1>Jak korzystać z QC i QML?</h1>
-<p>Dzięki chmurze dostępne są już <strong>narzędzia w Pythonie</strong>, które każdy analityk danych może wypróbować: - <a href="https://www.ibm.com/quantum">IBM Quantum / Qiskit</a><br>
-- <a href="https://pennylane.ai/">Pennylane</a><br>
-- <a href="https://quantumai.google/cirq">Cirq Google</a><br>
-- <a href="https://www.dwavesys.com/build/getting-started/">D-Wave</a><br>
-- <a href="https://aws.amazon.com/braket/">Amazon Braket</a></p>
-<!-- GRAFIKA: screenshot interfejsu Pennylane albo Qiskit (prostego kodu w Pythonie) -->
-<hr>
-<section id="podsumowanie" class="level2">
-<h2 class="anchored" data-anchor-id="podsumowanie">Podsumowanie</h2>
-<ul>
-<li><strong>Komputery kwantowe</strong> nie zastąpią klasycznych, ale mogą je uzupełnić.<br>
-</li>
-<li><strong>QML</strong> to nowa gałąź łącząca analizę danych z mechaniką kwantową.<br>
-</li>
-<li>Kluczowe pytanie: <strong>czy i kiedy przewaga kwantowa będzie praktyczna?</strong><br>
-</li>
-<li>Już teraz warto poznać narzędzia (Pennylane, Qiskit), aby być gotowym na przyszłość.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="roadmapa-kursu" class="level1">
-<h1>Roadmapa kursu</h1>
+<section id="co-to-jest-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="co-to-jest-machine-learning">Co to jest Machine Learning?</h2>
+<p><strong>Uczenie maszynowe</strong> (ale również AI i uczenie głębokie) to nauka i ,,sztuka’’ opisująca jak sprawić by komputery mogły <em>,,uczyć się’’</em> na podstawie danych, tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane).</p>
+<blockquote class="blockquote">
+<p>In 1959, Arthur Samuel:</p>
+<p><strong>a field of study that gives computers the ability to learn without being explicitly programmed</strong>.</p>
+</blockquote>
+<section id="dane" class="level3">
+<h3 class="anchored" data-anchor-id="dane">Dane</h3>
+<p><img src="../img/dataml.jpg" width="35%" alt="Opis obrazu"></p>
+<section id="modele" class="level4">
+<h4 class="anchored" data-anchor-id="modele">Modele</h4>
+<p><img src="../img/mlmodels.jpg" width="35%" alt="Opis obrazu"></p>
 <ol type="1">
-<li>Podstawy obliczeń kwantowych<br>
-</li>
-<li>Algorytmy kwantowe i ich intuicja<br>
-</li>
-<li>Biblioteki i pierwsze przykłady QML<br>
-</li>
-<li>Case studies (finanse, NLP, chemia)<br>
-</li>
-<li>Krytyczne spojrzenie: ograniczenia, koszty, hype vs rzeczywistość</li>
+<li><p><strong>Uczenie nadzorowane</strong> (ang. <em>supervised learning</em>) - posiadając oznaczone dane <span class="math inline">\((x_i, y_i)\)</span> szukamy funkcji <span class="math inline">\(f(x_i) = y_i\)</span> tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp.</p></li>
+<li><p><strong>Uczenie nienadzorowane</strong> (ang. <em>unsupervised learning</em>) - posiadając dane <span class="math inline">\((x_i)\)</span> szukamy ukrytych struktur w danych.</p></li>
+<li><p><strong>Uczenie przez wzmacnianie</strong> (ang. <em>reinforcement learning</em>) - agent uczy się realizować zadania w środowisku na podstawie nagród i kar.</p></li>
 </ol>
-<!-- GRAFIKA: prosta infografika roadmapy – 5 kroków z ikonami -->
-</section>
-<section id="introduction-to-pytorch" class="level1">
-<h1>Introduction to PyTorch</h1>
+<p>Jednym z podstawowych celów uczenia maszynowego (a takze i głębokiego), jest przypisanie klasy (target, labels) dla nowych, nieoznakowanych danych.</p>
+<p>Istnieją dwa główne typy dla tego zadania:</p>
+<ul>
+<li>Regresja – przewidywanie wartości ciągłej,</li>
+<li>klasyfikacja - przewidywanie wartości dyskretnej.</li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
