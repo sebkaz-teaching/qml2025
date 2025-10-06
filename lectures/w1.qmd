@@ -29,12 +29,12 @@ tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (l
 
 ### Dane
 
-<img src="../img/dataml.jpg" width="75%" alt="Opis obrazu">
+<img src="../img/dataml.jpg" width="70%" height="auto" alt="Opis obrazu">
 
 
 ### Modele 
 
-<img src="../img/mlmodels.jpg"  alt="Opis obrazu">
+<img src="../img/mlmodels.jpg" width="70%" height="auto"  alt="Opis obrazu">
 
 1. **Uczenie nadzorowane** (ang. _supervised learning_) - posiadając oznaczone dane $(x_i, y_i)$
 szukamy funkcji $f(x_i) = y_i$ tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp. 
@@ -60,10 +60,10 @@ Funkcja straty mierzy jak przewidywania modelu są oddalone od rzeczywistych war
 
 
 
-<img src="../img/lossfunction.jpg"  alt="Opis obrazu">
+<img src="../img/lossfunction.jpg" width="70%" height="auto"  alt="Opis obrazu">
 
 
-<img src="../img/loss2.jpg"  alt="Opis obrazu">
+<img src="../img/loss2.jpg" width="70%" height="auto"  alt="Opis obrazu">
 
 ### Sieci neuronowe
 
