@@ -105,11 +105,11 @@ for i in range(5):
 ```
 
 
-<img src="../img/ML.png"  alt="Opis obrazu">
+<img src="../img/ML.png" width="70%" height="auto"  alt="Opis obrazu">
 
-<img src="../img/nn.png"  alt="Opis obrazu">
+<img src="../img/nn.png" width="70%" height="auto" alt="Opis obrazu">
 
-<img src="../img/computers.jpg"  alt="Opis obrazu">
+<img src="../img/computers.jpg" width="70%" height="auto"  alt="Opis obrazu">
 
 **Obliczenia kwantowe** opisują przetwarzenie informacji na urządzeniach pracujących zgodnie z zasadami mechaniki kwantowej.
 
