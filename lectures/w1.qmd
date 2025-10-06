@@ -29,7 +29,7 @@ tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (l
 
 ### Dane
 
-<img src="../img/dataml.jpg"  alt="Opis obrazu">
+<img src="../img/dataml.jpg" width="75%" alt="Opis obrazu">
 
 
 ### Modele 
