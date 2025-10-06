@@ -4,7 +4,7 @@
     "href": "lectures/w1.html",
     "title": "Wprowadzenie do obliczeń kwantowych",
     "section": "",
-    "text": "Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.\nRichard Feynman\nCelem tego wykładu jest zrozumienie, czym są:",
+    "text": "Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.\nRichard Feynman\nCelem tego wykładu jest zrozumienie, czym są:\nQuntum Machine Learning\nCo oznacza termin kwantowe uczenie maszynowe?\nUczenie maszynowe (ale również AI i uczenie głębokie) to nauka i ,,sztuka’’ opisująca jak sprawić by komputery mogły ,,uczyć się’’ na podstawie danych, tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane).",
     "crumbs": [
       "Sylabus",
       "Wykłady",
@@ -12,11 +12,11 @@
     ]
   },
   {
-    "objectID": "lectures/w1.html#co-to-jest-machine-learning",
-    "href": "lectures/w1.html#co-to-jest-machine-learning",
+    "objectID": "lectures/w1.html#quantum-machine-learning",
+    "href": "lectures/w1.html#quantum-machine-learning",
     "title": "Wprowadzenie do obliczeń kwantowych",
-    "section": "Co to jest Machine Learning?",
-    "text": "Co to jest Machine Learning?\nUczenie maszynowe (ale również AI i uczenie głębokie) to nauka i ,,sztuka’’ opisująca jak sprawić by komputery mogły ,,uczyć się’’ na podstawie danych, tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane).\n\nIn 1959, Arthur Samuel:\na field of study that gives computers the ability to learn without being explicitly programmed.\n\n\nDane\n\n\n\nModele\n\n\nUczenie nadzorowane (ang. supervised learning) - posiadając oznaczone dane \\((x_i, y_i)\\) szukamy funkcji \\(f(x_i) = y_i\\) tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp.\nUczenie nienadzorowane (ang. unsupervised learning) - posiadając dane \\((x_i)\\) szukamy ukrytych struktur w danych.\nUczenie przez wzmacnianie (ang. reinforcement learning) - agent uczy się realizować zadania w środowisku na podstawie nagród i kar.\n\nJednym z podstawowych celów uczenia maszynowego (a takze i głębokiego), jest przypisanie klasy (target, labels) dla nowych, nieoznakowanych danych.\nIstnieją dwa główne typy dla tego zadania:\n\nRegresja – przewidywanie wartości ciągłej,\nklasyfikacja - przewidywanie wartości dyskretnej.\n\n\n\nFunkcja straty\nFunkcja straty mierzy jak przewidywania modelu są oddalone od rzeczywistych wartości.\n\nPomaga optymalizować parametry modelu przez mechanizm propagacji wstecz\nPozwala na dopasowanie modelu do danych\nMniejsza wartość funkcji straty = lepsza jakość modelu.\n\n\n\n\n\nSieci neuronowe\n\nModel z parametrami do trenowania \\(f(x;\\theta)= \\sigma(Wx+b)\\) gdzie \\(\\theta= \\{W, b\\}\\)\nFunkcja kosztu \\(C = \\sum_{i} ( f(x_i, \\theta)-y_i )^2\\)\nSpadek po gradiencie\n\noblicz gradient funkcji kosztu\nzaktualizuj parametry \\(\\theta^{t+1} = \\theta^{t} - \\eta \\nabla C\\)\n\n\n\nimport torch\nfrom torch.autograd import Variable\n\ndata = torch.tensor([(0. , 1.), (0.1 , 1.1), (0.2 , 1.2)])\n\ndef model(phi, x=None):\n    return x*phi\n\ndef loss(a, b):\n    return torch.abs(a-b) ** 2\n\ndef avg_loss(phi):\n    c = 0 \n    for x, y in data:\n        c += loss(model(phi, x=x), y)\n    return c\n\nphi_ = Variable(torch.tensor(0.1), requires_grad=True)\nopt = torch.optim.Adam([phi_],lr=0.2)\n\nfor i in range(5):\n    l = avg_loss(phi_)\n    print(f\"cost: {l}, for phi: {phi_}\")\n    l.backward()\n    opt.step()\n\ncost: 3.5805001258850098, for phi: 0.10000000149011612\ncost: 3.44450044631958, for phi: 0.29999998211860657\ncost: 3.3168272972106934, for phi: 0.49334585666656494\ncost: 3.1936793327331543, for phi: 0.6854467988014221\ncost: 3.073840856552124, for phi: 0.878169059753418",
+    "section": "Quantum Machine Learning",
+    "text": "Quantum Machine Learning\n\nDane w QML\n\n\nCC - Classical data using classical computers, algorytmy inspirowane obliczeniami kwantowymi\nQC - Quantum data using classical (ML) computers. link1, link2, link3\nCQ - Classical data on qunatum computers. Na tym chcemy się skupić.\nQQ - Quantum data on quantum computers. Who knows?\n\n\n\nDostęp do obliczeń kwantowych w chmurze\n\nIBM Quantum z wykorzystaniem biblioteki qiskit.\nPennylane z wykorzystaniem biblioteki pennylane.\nCirq Google z wykorzystaniem biblioteki cirq.\nD-Wave - Python\nXanadu - Pennylane Python library\nAmazon braket - AWS Python, Julia",
     "crumbs": [
       "Sylabus",
       "Wykłady",
