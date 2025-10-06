@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -244,10 +279,11 @@ window.Quarto = {
 </blockquote>
 <section id="dane" class="level3">
 <h3 class="anchored" data-anchor-id="dane">Dane</h3>
-<p><img src="../img/dataml.jpg" width="35%" alt="Opis obrazu"></p>
-<section id="modele" class="level4">
-<h4 class="anchored" data-anchor-id="modele">Modele</h4>
-<p><img src="../img/mlmodels.jpg" width="35%" alt="Opis obrazu"></p>
+<p><img src="../img/dataml.jpg" width="50%" alt="Opis obrazu"></p>
+</section>
+<section id="modele" class="level3">
+<h3 class="anchored" data-anchor-id="modele">Modele</h3>
+<p><img src="../img/mlmodels.jpg" width="50%" alt="Opis obrazu"></p>
 <ol type="1">
 <li><p><strong>Uczenie nadzorowane</strong> (ang. <em>supervised learning</em>) - posiadając oznaczone dane <span class="math inline">\((x_i, y_i)\)</span> szukamy funkcji <span class="math inline">\(f(x_i) = y_i\)</span> tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp.</p></li>
 <li><p><strong>Uczenie nienadzorowane</strong> (ang. <em>unsupervised learning</em>) - posiadając dane <span class="math inline">\((x_i)\)</span> szukamy ukrytych struktur w danych.</p></li>
@@ -259,9 +295,68 @@ window.Quarto = {
 <li>Regresja – przewidywanie wartości ciągłej,</li>
 <li>klasyfikacja - przewidywanie wartości dyskretnej.</li>
 </ul>
-
-
 </section>
+<section id="funkcja-straty" class="level3">
+<h3 class="anchored" data-anchor-id="funkcja-straty">Funkcja straty</h3>
+<p>Funkcja straty mierzy jak przewidywania modelu są oddalone od rzeczywistych wartości.</p>
+<ol type="1">
+<li>Pomaga optymalizować parametry modelu przez mechanizm propagacji wstecz</li>
+<li>Pozwala na dopasowanie modelu do danych</li>
+<li>Mniejsza wartość funkcji straty = lepsza jakość modelu.</li>
+</ol>
+<p><img src="../img/lossfunction.jpg" width="50%" alt="Opis obrazu"></p>
+<p><img src="../img/loss2.jpg" width="50%" alt="Opis obrazu"></p>
+</section>
+<section id="sieci-neuronowe" class="level3">
+<h3 class="anchored" data-anchor-id="sieci-neuronowe">Sieci neuronowe</h3>
+<ol type="1">
+<li>Model z parametrami do trenowania <span class="math inline">\(f(x;\theta)= \sigma(Wx+b)\)</span> gdzie <span class="math inline">\(\theta= \{W, b\}\)</span></li>
+<li>Funkcja kosztu <span class="math inline">\(C = \sum_{i} ( f(x_i, \theta)-y_i )^2\)</span></li>
+<li>Spadek po gradiencie
+<ul>
+<li>oblicz gradient funkcji kosztu</li>
+<li>zaktualizuj parametry <span class="math inline">\(\theta^{t+1} = \theta^{t} - \eta \nabla C\)</span></li>
+</ul></li>
+</ol>
+<div id="e684848e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.autograd <span class="im">import</span> Variable</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> torch.tensor([(<span class="fl">0.</span> , <span class="fl">1.</span>), (<span class="fl">0.1</span> , <span class="fl">1.1</span>), (<span class="fl">0.2</span> , <span class="fl">1.2</span>)])</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> model(phi, x<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span>phi</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loss(a, b):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> torch.<span class="bu">abs</span>(a<span class="op">-</span>b) <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> avg_loss(phi):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x, y <span class="kw">in</span> data:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        c <span class="op">+=</span> loss(model(phi, x<span class="op">=</span>x), y)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>phi_ <span class="op">=</span> Variable(torch.tensor(<span class="fl">0.1</span>), requires_grad<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> torch.optim.Adam([phi_],lr<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> avg_loss(phi_)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"cost: </span><span class="sc">{</span>l<span class="sc">}</span><span class="ss">, for phi: </span><span class="sc">{</span>phi_<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    l.backward()</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    opt.step()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cost: 3.5805001258850098, for phi: 0.10000000149011612
+cost: 3.44450044631958, for phi: 0.29999998211860657
+cost: 3.3168272972106934, for phi: 0.49334585666656494
+cost: 3.1936793327331543, for phi: 0.6854467988014221
+cost: 3.073840856552124, for phi: 0.878169059753418</code></pre>
+</div>
+</div>
+<p><img src="../img/ML.png" width="50%" alt="Opis obrazu"></p>
+<p><img src="../img/nn.png" width="50%" alt="Opis obrazu"></p>
+<p><img src="../img/computers.jpg" width="50%" alt="Opis obrazu"></p>
+
+
 </section>
 </section>
 

@@ -1,0 +1,162 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "34809d98",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: \"Wprowadzenie do obliczeń kwantowych\"\n",
+    "---\n",
+    "\n",
+    "> Nature isn’t classical, dammit, and if you want to make a simulation of Nature, you’d better make it quantum mechanical, and by golly it’s a wonderful problem because it doesn’t look so easy.  \n",
+    "> **Richard Feynman**\n",
+    "\n",
+    "\n",
+    "Celem tego wykładu jest zrozumienie, czym są:\n",
+    "\n",
+    "1. [obliczenia kwantowe](https://pennylane.ai/qml/what-is-quantum-computing) oraz \n",
+    "2. [kwantowe uczenie maszynowe](https://pennylane.ai/qml/whatisqml) i \n",
+    "3. dlaczego są one interesujące dla [analityków danych](https://pennylane.ai/blog/2022/03/why-measuring-performance-is-our-biggest-blind-spot-in-quantum-machine-learning/).\n",
+    "\n",
+    "\n",
+    "## Co to jest Machine Learning?\n",
+    "\n",
+    "**Uczenie maszynowe** (ale również AI i uczenie głębokie) to nauka i ,,sztuka'' opisująca jak sprawić by komputery mogły _,,uczyć się''_ na podstawie danych,\n",
+    "tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (lub byłoby zbyt skomplikowane).\n",
+    "\n",
+    "> In 1959, Arthur Samuel:\n",
+    "> \n",
+    "> **a field of study that gives computers the ability to learn without being explicitly programmed**. \n",
+    "\n",
+    "\n",
+    "### Dane\n",
+    "\n",
+    "<img src=\"../img/dataml.jpg\" width=\"50%\" alt=\"Opis obrazu\">\n",
+    "\n",
+    "\n",
+    "### Modele \n",
+    "\n",
+    "<img src=\"../img/mlmodels.jpg\" width=\"50%\" alt=\"Opis obrazu\">\n",
+    "\n",
+    "1. **Uczenie nadzorowane** (ang. _supervised learning_) - posiadając oznaczone dane $(x_i, y_i)$\n",
+    "szukamy funkcji $f(x_i) = y_i$ tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp. \n",
+    "\n",
+    "2. **Uczenie nienadzorowane** (ang. _unsupervised learning_) - posiadając dane $(x_i)$ szukamy ukrytych struktur w danych.\n",
+    "\n",
+    "3. **Uczenie przez wzmacnianie** (ang. _reinforcement learning_) - agent uczy się realizować zadania w środowisku na podstawie nagród i kar.\n",
+    "\n",
+    "Jednym z podstawowych celów uczenia maszynowego (a takze i głębokiego), jest przypisanie klasy (target, labels) dla nowych, nieoznakowanych danych.\n",
+    "\n",
+    "Istnieją dwa główne typy dla tego zadania:\n",
+    "\n",
+    "- Regresja  – przewidywanie wartości ciągłej,\n",
+    "- klasyfikacja - przewidywanie wartości dyskretnej.\n",
+    "\n",
+    "### Funkcja straty \n",
+    "\n",
+    "Funkcja straty mierzy jak przewidywania modelu są oddalone od rzeczywistych wartości. \n",
+    "\n",
+    "1. Pomaga optymalizować parametry modelu przez mechanizm propagacji wstecz \n",
+    "2. Pozwala na dopasowanie modelu do danych\n",
+    "3. Mniejsza wartość funkcji straty = lepsza jakość modelu. \n",
+    "\n",
+    "\n",
+    "\n",
+    "<img src=\"../img/lossfunction.jpg\" width=\"50%\" alt=\"Opis obrazu\">\n",
+    "\n",
+    "\n",
+    "<img src=\"../img/loss2.jpg\" width=\"50%\" alt=\"Opis obrazu\">\n",
+    "\n",
+    "### Sieci neuronowe\n",
+    "\n",
+    "\n",
+    "1. Model z parametrami do trenowania $f(x;\\theta)= \\sigma(Wx+b)$ gdzie $\\theta= \\{W, b\\}$\n",
+    "2. Funkcja kosztu $C = \\sum_{i} ( f(x_i, \\theta)-y_i )^2$\n",
+    "3. Spadek po gradiencie\n",
+    "   - oblicz gradient funkcji kosztu \n",
+    "   - zaktualizuj parametry $\\theta^{t+1} = \\theta^{t} - \\eta \\nabla C$\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "e684848e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "cost: 3.5805001258850098, for phi: 0.10000000149011612\n",
+      "cost: 3.44450044631958, for phi: 0.29999998211860657\n",
+      "cost: 3.3168272972106934, for phi: 0.49334585666656494\n",
+      "cost: 3.1936793327331543, for phi: 0.6854467988014221\n",
+      "cost: 3.073840856552124, for phi: 0.878169059753418\n"
+     ]
+    }
+   ],
+   "source": [
+    "import torch\n",
+    "from torch.autograd import Variable\n",
+    "\n",
+    "data = torch.tensor([(0. , 1.), (0.1 , 1.1), (0.2 , 1.2)])\n",
+    "\n",
+    "def model(phi, x=None):\n",
+    "    return x*phi\n",
+    "\n",
+    "def loss(a, b):\n",
+    "    return torch.abs(a-b) ** 2\n",
+    "\n",
+    "def avg_loss(phi):\n",
+    "    c = 0 \n",
+    "    for x, y in data:\n",
+    "        c += loss(model(phi, x=x), y)\n",
+    "    return c\n",
+    "\n",
+    "phi_ = Variable(torch.tensor(0.1), requires_grad=True)\n",
+    "opt = torch.optim.Adam([phi_],lr=0.2)\n",
+    "\n",
+    "for i in range(5):\n",
+    "    l = avg_loss(phi_)\n",
+    "    print(f\"cost: {l}, for phi: {phi_}\")\n",
+    "    l.backward()\n",
+    "    opt.step()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa2be30f",
+   "metadata": {},
+   "source": [
+    "<img src=\"../img/ML.png\" width=\"50%\" alt=\"Opis obrazu\">\n",
+    "\n",
+    "<img src=\"../img/nn.png\" width=\"50%\" alt=\"Opis obrazu\">\n",
+    "\n",
+    "<img src=\"../img/computers.jpg\" width=\"50%\" alt=\"Opis obrazu\">\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3",
+   "path": "/Users/seba/Documents/GitHub/qml2025/.venv/share/jupyter/kernels/python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -25,12 +25,12 @@ tak by rozwiązać problemy, których typowe programowanie nie miałoby sensu (l
 
 ### Dane
 
-<img src="../img/dataml.jpg" width="35%" alt="Opis obrazu">
+<img src="../img/dataml.jpg" width="50%" alt="Opis obrazu">
 
 
-#### Modele 
+### Modele 
 
-<img src="../img/mlmodels.jpg" width="35%" alt="Opis obrazu">
+<img src="../img/mlmodels.jpg" width="50%" alt="Opis obrazu">
 
 1. **Uczenie nadzorowane** (ang. _supervised learning_) - posiadając oznaczone dane $(x_i, y_i)$
 szukamy funkcji $f(x_i) = y_i$ tak by uogólnić ją na nowe dane. Np. dać kredyt, czy na obrazie jest kot albo pies itp. 
@@ -45,3 +45,63 @@ Istnieją dwa główne typy dla tego zadania:
 
 - Regresja  – przewidywanie wartości ciągłej,
 - klasyfikacja - przewidywanie wartości dyskretnej.
+
+### Funkcja straty 
+
+Funkcja straty mierzy jak przewidywania modelu są oddalone od rzeczywistych wartości. 
+
+1. Pomaga optymalizować parametry modelu przez mechanizm propagacji wstecz 
+2. Pozwala na dopasowanie modelu do danych
+3. Mniejsza wartość funkcji straty = lepsza jakość modelu. 
+
+
+
+<img src="../img/lossfunction.jpg" width="50%" alt="Opis obrazu">
+
+
+<img src="../img/loss2.jpg" width="50%" alt="Opis obrazu">
+
+### Sieci neuronowe
+
+
+1. Model z parametrami do trenowania $f(x;\theta)= \sigma(Wx+b)$ gdzie $\theta= \{W, b\}$
+2. Funkcja kosztu $C = \sum_{i} ( f(x_i, \theta)-y_i )^2$
+3. Spadek po gradiencie
+   - oblicz gradient funkcji kosztu 
+   - zaktualizuj parametry $\theta^{t+1} = \theta^{t} - \eta \nabla C$
+
+
+```{python}
+import torch
+from torch.autograd import Variable
+
+data = torch.tensor([(0. , 1.), (0.1 , 1.1), (0.2 , 1.2)])
+
+def model(phi, x=None):
+    return x*phi
+
+def loss(a, b):
+    return torch.abs(a-b) ** 2
+
+def avg_loss(phi):
+    c = 0 
+    for x, y in data:
+        c += loss(model(phi, x=x), y)
+    return c
+
+phi_ = Variable(torch.tensor(0.1), requires_grad=True)
+opt = torch.optim.Adam([phi_],lr=0.2)
+
+for i in range(5):
+    l = avg_loss(phi_)
+    print(f"cost: {l}, for phi: {phi_}")
+    l.backward()
+    opt.step()
+
+```
+<img src="../img/ML.png" width="50%" alt="Opis obrazu">
+
+<img src="../img/nn.png" width="50%" alt="Opis obrazu">
+
+<img src="../img/computers.jpg" width="50%" alt="Opis obrazu">
+
