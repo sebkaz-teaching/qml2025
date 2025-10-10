@@ -32,9 +32,7 @@ i szybką konstrukcje dowolnego algorytmu kwantowego.
 Algorytmy te, jak np. algorytm Grovera wykorzystać można do wielu problemów obliczeniowych uczenia
 maszynowego bądź do konstrukcji kwantowych sieci neuronowych.
 
-## Program przedmiotu
 
-1. 
 ## Efekty kształcenia
 
 1. Wiedza:

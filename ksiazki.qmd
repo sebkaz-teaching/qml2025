@@ -41,19 +41,12 @@ title: Książki i strony WWW
 
 ### Pakiety Python
 
-1. [Qiskit](http://www.numpy.org)
-2. [PennyLane](http://www.scipy.org)
+1. [PennyLane](http://www.pennylane.ai)
 
-### Pakiety Julia 
-
-1. [Yao]()
-2. [QAOA]()
 
 ### Edytory tekstu
 
-1. [Notepad++](https://notepad-plus-plus.org/download)
-2. [Sublime Text](https://www.sublimetext.com)
-3. [Visual Studio Code](https://code.visualstudio.com)
+1. [Visual Studio Code](https://code.visualstudio.com)
 
 ### Markdown
 

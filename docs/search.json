@@ -157,7 +157,7 @@
     "href": "ksiazki.html#strony-www",
     "title": "Książki i strony WWW",
     "section": "Strony WWW",
-    "text": "Strony WWW\n\nPeter Shor Wykład\n\n\nPakiety Python\n\nQiskit\nPennyLane\n\n\n\nPakiety Julia\n\nYao\nQAOA\n\n\n\nEdytory tekstu\n\nNotepad++\nSublime Text\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nFilmy\n\nWprowadzenie do obliczeń kwantowych\nQPoland, Bronze, Warsztaty z programowania komputerów kwantowych 2023"
+    "text": "Strony WWW\n\nPeter Shor Wykład\n\n\nPakiety Python\n\nPennyLane\n\n\n\nEdytory tekstu\n\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nFilmy\n\nWprowadzenie do obliczeń kwantowych\nQPoland, Bronze, Warsztaty z programowania komputerów kwantowych 2023"
   },
   {
     "objectID": "sylabus.html",
@@ -174,11 +174,11 @@
     "text": "Cel Przedmiotu\nJeszcze do niedawna rozwój technologiczny oparty był na zmniejszaniu rozmiaru tranzystorów i zwiększaniu mocy obliczeniowej procesorów. Ze względu na fizyczne aspekty natury proces ten, od pewnego momentu, musi uwzględniać ograniczenia fizyki kwantowej. Przyszłość może jednak wykorzystać inne narzędzia, których możliwości wykraczają poza klasyczne moce obliczeniowe. Mimo, iż konstrukcja komputerów kwantowych to wciąż etap inżynierski, to okazuje się, że można już wskazać i wykorzystać je do tworzenia algorytmów, które można wykorzystać w dziedzinie uczenia maszynowego. Wykorzystanie algorytmów kwantowych pozwala zmniejszyć czas przetwarzania dużej ilości danych, a tym samym rozszerza możliwości przetwarzania i modelowania danych. Przedstawione na zajęciach biblioteki - IBM qiskit czy Pennylane (python) pozwalają na prostą i szybką konstrukcje dowolnego algorytmu kwantowego. Algorytmy te, jak np. algorytm Grovera wykorzystać można do wielu problemów obliczeniowych uczenia maszynowego bądź do konstrukcji kwantowych sieci neuronowych."
   },
   {
-    "objectID": "sylabus.html#program-przedmiotu",
-    "href": "sylabus.html#program-przedmiotu",
+    "objectID": "sylabus.html#efekty-kształcenia",
+    "href": "sylabus.html#efekty-kształcenia",
     "title": "Sylabus",
-    "section": "Program przedmiotu",
-    "text": "Program przedmiotu\n\nEfekty kształcenia\nWiedza:\n\n\nZna i rozumie koncepcje działania komputera klasycznego i kwantowego\nZna metody kwantowego uczenia maszynowego możliwe do wykorzystania w biznesie\nRozumie potrzebę i możliwości zastosowania komputerów kwantowych\n\n\nUmiejętności:\n\n\nPotrafi stworzyć proste algorytmy z wykorzystaniem kwantowych bramek logicznych\nUmie wykorzystać biblioteki pythonowe do generowania kodów obliczeń kwantowych\nPotrafi wykorzystać metody nadzorowane wykorzystywane w kwantowym uczeniu maszynowym\nPotrafi wykorzystać metody nienadzorowane wykorzystywane w kwantowym uczeniu maszynowym\nUmie stworzyć prostą kwantową sieć neuronową\n\n\nKompetencje społeczne:\n\n\nformułuje problem biznesowy wraz z jego informatycznym rozwiązaniem\nuzupełniania wiedzę teoretyczną jak i praktyczną, w zakresie teorii, programowania, modelowania, nowych technologii informatycznych z wykorzystaniem kwantowego uczenia maszynowego"
+    "section": "Efekty kształcenia",
+    "text": "Efekty kształcenia\n\nWiedza:\n\n\nZna i rozumie koncepcje działania komputera klasycznego i kwantowego\nZna metody kwantowego uczenia maszynowego możliwe do wykorzystania w biznesie\nRozumie potrzebę i możliwości zastosowania komputerów kwantowych\n\n\nUmiejętności:\n\n\nPotrafi stworzyć proste algorytmy z wykorzystaniem kwantowych bramek logicznych\nUmie wykorzystać biblioteki pythonowe do generowania kodów obliczeń kwantowych\nPotrafi wykorzystać metody nadzorowane wykorzystywane w kwantowym uczeniu maszynowym\nPotrafi wykorzystać metody nienadzorowane wykorzystywane w kwantowym uczeniu maszynowym\nUmie stworzyć prostą kwantową sieć neuronową\n\n\nKompetencje społeczne:\n\n\nformułuje problem biznesowy wraz z jego informatycznym rozwiązaniem\nuzupełniania wiedzę teoretyczną jak i praktyczną, w zakresie teorii, programowania, modelowania, nowych technologii informatycznych z wykorzystaniem kwantowego uczenia maszynowego"
   },
   {
     "objectID": "sylabus.html#realizacja-przedmiotu",
