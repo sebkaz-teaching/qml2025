@@ -460,9 +460,7 @@ W przypadku iloczynu skalarnego wybieramy wektor oraz drugi wektor dualny.
 Po złozeniu jednego i drugiego otrzymujemy liczbę (skalar).
 $$ \braket{a}{b} $$
 
-
-
- Do jego wprowadenia wymagane było wprowadzenie 
+Do jego wprowadenia wymagane było wprowadzenie 
 przestrzeni dualnej. 
 
 Korzystając z wektorów bra i ket możemy zdefiniować jeszcze jedną operacje. 

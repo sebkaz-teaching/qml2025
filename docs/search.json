@@ -118,55 +118,46 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Informacje ogólne",
+    "objectID": "info.html",
+    "href": "info.html",
+    "title": "Narzędzia",
     "section": "",
-    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
+    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
   },
   {
-    "objectID": "index.html#section",
-    "href": "index.html#section",
-    "title": "Informacje ogólne",
+    "objectID": "info.html#python",
+    "href": "info.html#python",
+    "title": "Narzędzia",
     "section": "",
-    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
+    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
   },
   {
-    "objectID": "index.html#kalendarz",
-    "href": "index.html#kalendarz",
-    "title": "Informacje ogólne",
-    "section": "Kalendarz",
-    "text": "Kalendarz\n\nWykład\nWykład jest realizowany w trybie stacjonarnym.\nJest on NIEOBOWIĄZKOWY i odbywa się w sali C 3B.\n\n\nLaboratoria\nWszystkie laboratoria odbywają się w sali C.",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
-  },
-  {
-    "objectID": "index.html#technologie",
-    "href": "index.html#technologie",
-    "title": "Informacje ogólne",
-    "section": "Technologie",
-    "text": "Technologie\nUczestnicząc w zajęciach musisz opanować i przynajmniej w podstawowym zakresie posługiwać się następującymi technologiami informatycznymi:\n\nAlgebra liniowa - wektory, macierze, baza, iloczyn skalarny, iloczyn tensorowy\nPython, Jupyter notebook, Jupyter lab, Colab\nAlgorytmy sieci neuronowych i uczenia maszynowego w procesie klasyfikacji binarnej",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
-  },
-  {
-    "objectID": "other/pennylane.html",
-    "href": "other/pennylane.html",
-    "title": "Pennylane",
+    "objectID": "other/qiskitML.html",
+    "href": "other/qiskitML.html",
+    "title": "Qiskit Machine Learning",
     "section": "",
-    "text": "Codebook\nPennyLane Challenges"
+    "text": "dokumentacja\n\nQuantum Kernels (Quantum Support Vector Classifier, Quantum Support Vector Regressor)\nQuantum Neural Networks (Variational Quantum Classifier, Variational Quantum Regressor), fature map (ZZFeatureMap, ZFeatureMap, PauliFeatureMap) i ansatz (RealAmplitudes, EfficientSU2, ZZFeatureMap, ZFeatureMap, PauliFeatureMap). Posiada również konektor do PyTorcha.\n\nużywane do klasyfikacji (QSVC) i regresjii (QSVR). Pozwalają na używanie kwantowego uczenia maszynowego bez wiedzy o obliczeniach kwantowych.\n\n# instalacja \n!pip install --upgrade pip\n!pip install qiskit-machine-learning\n!pip install 'qiskit-machine-learning[torch]'\n!pip install 'qiskit-machine-learning[sparse]' \n# !pip install ipywidgets ipykernel\n\n\nimport qiskit.tools.jupyter\n\n%qiskit_version_table\n\nVersion Information\n\n\n\nSoftware\nVersion\n\n\nqiskit\nNone\n\n\nqiskit-terra\n0.25.2\n\n\nSystem information\n\n\nPython version\n3.10.12\n\n\nPython compiler\nClang 14.0.3 (clang-1403.0.22.14.1)\n\n\nPython build\nmain, Jul 28 2023 18:34:01\n\n\nOS\nDarwin\n\n\nCPUs\n8\n\n\nMemory (Gb)\n16.0\n\n\nSun Oct 15 20:37:42 2023 CEST"
+  },
+  {
+    "objectID": "ksiazki.html",
+    "href": "ksiazki.html",
+    "title": "Książki i strony WWW",
+    "section": "",
+    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
+  },
+  {
+    "objectID": "ksiazki.html#książki",
+    "href": "ksiazki.html#książki",
+    "title": "Książki i strony WWW",
+    "section": "",
+    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
+  },
+  {
+    "objectID": "ksiazki.html#strony-www",
+    "href": "ksiazki.html#strony-www",
+    "title": "Książki i strony WWW",
+    "section": "Strony WWW",
+    "text": "Strony WWW\n\nPeter Shor Wykład\n\n\nPakiety Python\n\nQiskit\nPennyLane\n\n\n\nPakiety Julia\n\nYao\nQAOA\n\n\n\nEdytory tekstu\n\nNotepad++\nSublime Text\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nFilmy\n\nWprowadzenie do obliczeń kwantowych\nQPoland, Bronze, Warsztaty z programowania komputerów kwantowych 2023"
   },
   {
     "objectID": "sylabus.html",
@@ -211,88 +202,115 @@
     "text": "Literatura uzupełniająca\n\nMichael A. Nielsen & Isaac L. Chuang - Quantum Computation and Quantum Information, Cambridge University Press, 2010\nK. Przanowski, S. Zając - Modelowanie dla Biznesu. Metody Machine learning, Modele portfela consumer finance, modelek rekurencyjne analizy przeżycia, modele scoringowe. Oficyna Wydawnicza SGH. 2020\nE. Frątczak - Modelowanie dla Biznesu. Regresja Logistyczna, Regresja Poissona, Survival Data Mining, CRM, Credit Scoring. Oficyna Wydawnicza SGH. 2019"
   },
   {
-    "objectID": "ksiazki.html",
-    "href": "ksiazki.html",
-    "title": "Książki i strony WWW",
+    "objectID": "other/pennylane.html",
+    "href": "other/pennylane.html",
+    "title": "Pennylane",
     "section": "",
-    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
+    "text": "Codebook\nPennyLane Challenges"
   },
   {
-    "objectID": "ksiazki.html#książki",
-    "href": "ksiazki.html#książki",
-    "title": "Książki i strony WWW",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Informacje ogólne",
     "section": "",
-    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
+    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "ksiazki.html#strony-www",
-    "href": "ksiazki.html#strony-www",
-    "title": "Książki i strony WWW",
-    "section": "Strony WWW",
-    "text": "Strony WWW\n\nPeter Shor Wykład\n\n\nPakiety Python\n\nQiskit\nPennyLane\n\n\n\nPakiety Julia\n\nYao\nQAOA\n\n\n\nEdytory tekstu\n\nNotepad++\nSublime Text\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nFilmy\n\nWprowadzenie do obliczeń kwantowych\nQPoland, Bronze, Warsztaty z programowania komputerów kwantowych 2023"
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Informacje ogólne",
+    "section": "",
+    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "other/qiskitML.html",
-    "href": "other/qiskitML.html",
-    "title": "Qiskit Machine Learning",
-    "section": "",
-    "text": "dokumentacja\n\nQuantum Kernels (Quantum Support Vector Classifier, Quantum Support Vector Regressor)\nQuantum Neural Networks (Variational Quantum Classifier, Variational Quantum Regressor), fature map (ZZFeatureMap, ZFeatureMap, PauliFeatureMap) i ansatz (RealAmplitudes, EfficientSU2, ZZFeatureMap, ZFeatureMap, PauliFeatureMap). Posiada również konektor do PyTorcha.\n\nużywane do klasyfikacji (QSVC) i regresjii (QSVR). Pozwalają na używanie kwantowego uczenia maszynowego bez wiedzy o obliczeniach kwantowych.\n\n# instalacja \n!pip install --upgrade pip\n!pip install qiskit-machine-learning\n!pip install 'qiskit-machine-learning[torch]'\n!pip install 'qiskit-machine-learning[sparse]' \n# !pip install ipywidgets ipykernel\n\n\nimport qiskit.tools.jupyter\n\n%qiskit_version_table\n\nVersion Information\n\n\n\nSoftware\nVersion\n\n\nqiskit\nNone\n\n\nqiskit-terra\n0.25.2\n\n\nSystem information\n\n\nPython version\n3.10.12\n\n\nPython compiler\nClang 14.0.3 (clang-1403.0.22.14.1)\n\n\nPython build\nmain, Jul 28 2023 18:34:01\n\n\nOS\nDarwin\n\n\nCPUs\n8\n\n\nMemory (Gb)\n16.0\n\n\nSun Oct 15 20:37:42 2023 CEST"
+    "objectID": "index.html#kalendarz",
+    "href": "index.html#kalendarz",
+    "title": "Informacje ogólne",
+    "section": "Kalendarz",
+    "text": "Kalendarz\n\nWykład\nWykład jest realizowany w trybie stacjonarnym.\nJest on NIEOBOWIĄZKOWY i odbywa się w sali C 3B.\n\n\nLaboratoria\nWszystkie laboratoria odbywają się w sali C.",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "info.html",
-    "href": "info.html",
-    "title": "Narzędzia",
-    "section": "",
-    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
-  },
-  {
-    "objectID": "info.html#python",
-    "href": "info.html#python",
-    "title": "Narzędzia",
-    "section": "",
-    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
-  },
-  {
-    "objectID": "cwiczenia/w1_codes.html",
-    "href": "cwiczenia/w1_codes.html",
-    "title": "Wprowadzenie do Kwantowego Uczenia Maszynowego",
-    "section": "",
-    "text": "import torch\nfrom torch.autograd import Variable\n\ndata = torch.tensor([(0. , 1.), (0.1 , 1.1), (0.2 , 1.2)])\n\n\n\ndef model(phi, x=None):\n    return x*phi\n\n\n\ndef loss(a, b):\n    return torch.abs(a-b) ** 2\n\ndef avg_loss(phi):\n    c = 0 \n    for x, y in data:\n        c += loss(model(phi, x=x), y)\n    return c\n\n\n\nphi_ = Variable(torch.tensor(0.1), requires_grad=True)\nopt = torch.optim.Adam([phi_],lr=0.2)\n\nfor i in range(5):\n    l = avg_loss(phi_)\n    print(f\"cost: {l}, for phi: {phi_}\")\n    l.backward()\n    opt.step()"
+    "objectID": "index.html#technologie",
+    "href": "index.html#technologie",
+    "title": "Informacje ogólne",
+    "section": "Technologie",
+    "text": "Technologie\nUczestnicząc w zajęciach musisz opanować i przynajmniej w podstawowym zakresie posługiwać się następującymi technologiami informatycznymi:\n\nAlgebra liniowa - wektory, macierze, baza, iloczyn skalarny, iloczyn tensorowy\nPython, Jupyter notebook, Jupyter lab, Colab\nAlgorytmy sieci neuronowych i uczenia maszynowego w procesie klasyfikacji binarnej",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
     "objectID": "lectures/wyklad2.html",
     "href": "lectures/wyklad2.html",
     "title": "Klasyczne bramki logiczne - Algebra Boola",
     "section": "",
-    "text": "\\[\n\\newcommand{\\bra}[1]{\\left \\langle #1 \\right \\rvert}\n\\newcommand{\\ket}[1]{\\left \\rvert #1 \\right \\rangle}\n\\newcommand{\\braket}[2]{\\left \\langle #1 \\middle \\rvert #2 \\right \\rangle}\n\\]\nObliczenia (przetwarzanie) wykonywane przez komputer możemy zdefiniować jako transformacje jednego stanu pamięci na inny. Z matematycznego punktu widzenia oznacza to, że obliczenia to funkcje, które przekształcają informacje.\nW przypadku klasycznych komputerów podstawową jednostką pamięci jest bit (ang. binary digit). Funkcje, które operują na bitach nazywamy bramkami logicznymi (ang. logic gates)."
+    "text": "\\[\n\\newcommand{\\bra}[1]{\\left \\langle #1 \\right \\rvert}\n\\newcommand{\\ket}[1]{\\left \\rvert #1 \\right \\rangle}\n\\newcommand{\\braket}[2]{\\left \\langle #1 \\middle \\rvert #2 \\right \\rangle}\n\\]\nObliczenia (przetwarzanie) wykonywane przez komputer możemy zdefiniować jako transformacje jednego stanu pamięci na inny. Z matematycznego punktu widzenia oznacza to, że obliczenia to funkcje, które przekształcają informacje.\nW przypadku klasycznych komputerów podstawową jednostką pamięci jest bit (ang. binary digit). Funkcje, które operują na bitach nazywamy bramkami logicznymi (ang. logic gates).",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Klasyczne bramki logiczne - Algebra Boola"
+    ]
   },
   {
     "objectID": "lectures/wyklad2.html#bramki-logiczne",
     "href": "lectures/wyklad2.html#bramki-logiczne",
     "title": "Klasyczne bramki logiczne - Algebra Boola",
     "section": "Bramki logiczne",
-    "text": "Bramki logiczne\nBramki logiczne to funkcje Boolowskie, które możemy składać w bardziej złożone układy (ang. circuits). Stworzone przez George’a Boole’a w 1854 roku, algebra boola jest matematyczną strukturą, która opisuje zachowanie się obiektów, które mogą przyjmować tylko jedną z dwóch wartości: prawda lub fałsz. Zdolne są one do wykonywania np. dodawania, mnożenia czy też innych bardziej skomplikowanych operacji.\nW latach trzydziestych XX wieku Claude Shannon zastosował algebrę boola do analizy i projektowania układów elektrycznych. Co oznacza, że zareprezentował on funkcje boolowskie za pomocą przełączników elektrycznych. Dlatego też komponenty elektroniczne odpowiadające funkcjom boolowskim nazywamy bramkami logicznymi.\n\nCiekawostka. Richard Feynman wykładał teorię obliczeń na Kalifornijskim Instytucie Technologii. Wykład ten prezentowany jest obecnie jako Feynmana wykłady o obliczeniach (ang. Feynman Lectures on Computation).\n\n\nZ pozoru obliczenia przedstawione w ten sposób wyglądają jako abstrakcjny matematyczny koncept. Jednak jego realizacja zawsze wymaga jakiegoś układu fizycznego realizującego wykonywanie funkcji. Nie ma znaczenia jak ten układ zostanie zrealizowany: kule bilardowe, przełączniki elektroniczne, tranzystory, czy cokolwiek innego.\n\nLogika obliczeń jest niezależna od realizacji bramek logicznych.\n\nZ punktu widzenia realizacji zawsze chodzi nam o kontrolowany sposób zmiany stanu układu.\nNa wykładzie postaramy się wskazać jak i kiedy logika klasycznych obliczeń może być uogólniona przez logikę obliczeń kwantowych. Jasne jest, że przypadek klasyczny powinien być szczególnym przypadkiem kwantowego.\nobwody klasyczne\nZobaczmy jakie bramki możemy określić dla jednego bitu.\n\nBramki logiczne dla jednego bitu\nIle bramek mamy gdy input = 1 bit, output = 1 bit? Ile funkcji możemy zdefiniować dla odwzorowania jednego bitu w jeden bit?\nWszystkie cztery operatory działające na jednym bicie możemy określić jako:\n\nIdentyczność (ang. identity) - \\(I(0)=0\\), \\(I(1)=1\\)\nNegacja (ang. negation, NOT, filps) - \\(NOT(0)=1\\), \\(NOT(1)=0\\)\nStałe zero \\(ZERO(0)=0\\), \\(ZERO(1)=0\\)\nStałe jeden \\(ONE(0)=1\\), \\(ONE(1)=1\\)\n\nPo zastosowaniu operatora \\(I\\) oraz \\(NOT\\), z otrzymanego wyniku możemy wyznaczyc wartości początkowe. Jednak po zastosowaniu dwóch pozostałych operacji \\(ZERO\\) i \\(ONE\\) nie jesteśmy w stanie określic jaki był stan początkowy, który wygenerował określony wynik.\nTe dwie własności pozwalają nam sklasyfikowac operatory jako:\n\nOdwracalne - możemy odtworzyc wartośc początkową z wartości końcowej\nNieodwracalne - NIE możemy odtworzyc wartości początkowej z wartości końcowej.\n\nJak pokażemy później, wszystkie operatory reprezentujące kwantowe bramki będą odwracalne.\n\n\nInne bramki i operacje logiczne\n\nZróbmy krótkie przedstawienie niektórych, klasycznych bramek logicznych.\nBramka logiczna jest implementacją funkcji boolowskiej. Operacją logiczną przeprowadzaną na jednym lub kilku binarnych wejściach produkującą jedną binarną wartość wyjściową. \\[f: \\{0,1\\}^{n} \\to \\{0,1\\} \\]\nKażdy element algebry boola (Boolean Statements) musi być określony jako prawda albo fałsz.\nBramki logiczne możemy wyrazić za pomocą tablicy prawdy (ang. truth table). Tablica ta posiada jedną kolumnę dla każdej zmiennej wejściowej oraz jedną kolumnę dla zmiennej wyjściowej. Kolumna wyjściowa przedstawia wszystkie możliwe wyniki przedstawianej logicznej operacji reprezentowanej przez tablicę. Każdy wiersz tablicy prawdy reprezentuje jedną możliwą kombinację (konfiguracje) danych wejściowych oraz wyniku.\nPodstawowe bramki, które znasz to:\n\nAND - koniunkcja\nOR - alternatywa\nNOT - negacja\nNAND - not and\nXOR - alternatywa wykluczająca (Exclusive OR) - dodawanie modulo 2\n\n\nZadanie: zapisz tablicę prawdy dla każdej bramki.\n\n\nNOT gate\n\n\n\nA\nnot A\n\n\n\n\n0\n\n\n\n1\n\n\n\n\n\n\nAND gate\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\n\n\nOR gate\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\n\n\nNAND\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\n\n\nXOR\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\nPowyższe bramki pozwalają łączyć poszczególne elementy algebry boola ze sobą.\n\nZadanie: Porównaj AND oraz OR z potocznym znaczeniem tych słów.\n\n\nZadanie: Dlaczego Algebra boola nazywana jest algebrą zbiorów?\n\n\nZadanie: Czy składanie podzbiorów zbioru również generuje algebrę boola ?\n\n\nZadanie: ile bramek logicznych możemy stworzyć dla jednego bitu, dwóch bitów, trzech bitów?\n\n\n\n\nUniweralne bramki logiczne - NAND\nTak jak widzieliśmy dla 1-bitu informacji mieliśmy 4 bramki logiczne. Dla 2-bitów mieliśmy 16 bramek logicznych. Dla 3-bitów mamy już 256 możliwości.\nW przypadku 2-bitów nie wypisaliśmy wszystkich bramek, dlaczego?\nCzy musimy realizować wszystkie?\n\nNa szczęście odpowiedź jest negatywna.\n\nIstnieją tzw. zbiory bramek uniwersalnych dzięki którym możemy zrealizować dowolną funkcję boolowską.\n\nNOT, AND, OR\nNAND, AND\nNAND\nNOT, OR\nNOR"
+    "text": "Bramki logiczne\nBramki logiczne to funkcje Boolowskie, które możemy składać w bardziej złożone układy (ang. circuits). Stworzone przez George’a Boole’a w 1854 roku, algebra boola jest matematyczną strukturą, która opisuje zachowanie się obiektów, które mogą przyjmować tylko jedną z dwóch wartości: prawda lub fałsz. Zdolne są one do wykonywania np. dodawania, mnożenia czy też innych bardziej skomplikowanych operacji.\nW latach trzydziestych XX wieku Claude Shannon zastosował algebrę boola do analizy i projektowania układów elektrycznych. Co oznacza, że zareprezentował on funkcje boolowskie za pomocą przełączników elektrycznych. Dlatego też komponenty elektroniczne odpowiadające funkcjom boolowskim nazywamy bramkami logicznymi.\n\nCiekawostka. Richard Feynman wykładał teorię obliczeń na Kalifornijskim Instytucie Technologii. Wykład ten prezentowany jest obecnie jako Feynmana wykłady o obliczeniach (ang. Feynman Lectures on Computation).\n\n\nZ pozoru obliczenia przedstawione w ten sposób wyglądają jako abstrakcjny matematyczny koncept. Jednak jego realizacja zawsze wymaga jakiegoś układu fizycznego realizującego wykonywanie funkcji. Nie ma znaczenia jak ten układ zostanie zrealizowany: kule bilardowe, przełączniki elektroniczne, tranzystory, czy cokolwiek innego.\n\nLogika obliczeń jest niezależna od realizacji bramek logicznych.\n\nZ punktu widzenia realizacji zawsze chodzi nam o kontrolowany sposób zmiany stanu układu.\nNa wykładzie postaramy się wskazać jak i kiedy logika klasycznych obliczeń może być uogólniona przez logikę obliczeń kwantowych. Jasne jest, że przypadek klasyczny powinien być szczególnym przypadkiem kwantowego.\nobwody klasyczne\nZobaczmy jakie bramki możemy określić dla jednego bitu.\n\nBramki logiczne dla jednego bitu\nIle bramek mamy gdy input = 1 bit, output = 1 bit? Ile funkcji możemy zdefiniować dla odwzorowania jednego bitu w jeden bit?\nWszystkie cztery operatory działające na jednym bicie możemy określić jako:\n\nIdentyczność (ang. identity) - \\(I(0)=0\\), \\(I(1)=1\\)\nNegacja (ang. negation, NOT, filps) - \\(NOT(0)=1\\), \\(NOT(1)=0\\)\nStałe zero \\(ZERO(0)=0\\), \\(ZERO(1)=0\\)\nStałe jeden \\(ONE(0)=1\\), \\(ONE(1)=1\\)\n\nPo zastosowaniu operatora \\(I\\) oraz \\(NOT\\), z otrzymanego wyniku możemy wyznaczyc wartości początkowe. Jednak po zastosowaniu dwóch pozostałych operacji \\(ZERO\\) i \\(ONE\\) nie jesteśmy w stanie określic jaki był stan początkowy, który wygenerował określony wynik.\nTe dwie własności pozwalają nam sklasyfikowac operatory jako:\n\nOdwracalne - możemy odtworzyc wartośc początkową z wartości końcowej\nNieodwracalne - NIE możemy odtworzyc wartości początkowej z wartości końcowej.\n\nJak pokażemy później, wszystkie operatory reprezentujące kwantowe bramki będą odwracalne.\n\n\nInne bramki i operacje logiczne\n\nZróbmy krótkie przedstawienie niektórych, klasycznych bramek logicznych.\nBramka logiczna jest implementacją funkcji boolowskiej. Operacją logiczną przeprowadzaną na jednym lub kilku binarnych wejściach produkującą jedną binarną wartość wyjściową. \\[f: \\{0,1\\}^{n} \\to \\{0,1\\} \\]\nKażdy element algebry boola (Boolean Statements) musi być określony jako prawda albo fałsz.\nBramki logiczne możemy wyrazić za pomocą tablicy prawdy (ang. truth table). Tablica ta posiada jedną kolumnę dla każdej zmiennej wejściowej oraz jedną kolumnę dla zmiennej wyjściowej. Kolumna wyjściowa przedstawia wszystkie możliwe wyniki przedstawianej logicznej operacji reprezentowanej przez tablicę. Każdy wiersz tablicy prawdy reprezentuje jedną możliwą kombinację (konfiguracje) danych wejściowych oraz wyniku.\nPodstawowe bramki, które znasz to:\n\nAND - koniunkcja\nOR - alternatywa\nNOT - negacja\nNAND - not and\nXOR - alternatywa wykluczająca (Exclusive OR) - dodawanie modulo 2\n\n\nZadanie: zapisz tablicę prawdy dla każdej bramki.\n\n\nNOT gate\n\n\n\nA\nnot A\n\n\n\n\n0\n\n\n\n1\n\n\n\n\n\n\nAND gate\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\n\n\nOR gate\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\n\n\nNAND\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\n\n\nXOR\n\n\n\nA\nB\nC\n\n\n\n\n0\n0\n\n\n\n1\n0\n\n\n\n0\n1\n\n\n\n1\n1\n\n\n\n\nPowyższe bramki pozwalają łączyć poszczególne elementy algebry boola ze sobą.\n\nZadanie: Porównaj AND oraz OR z potocznym znaczeniem tych słów.\n\n\nZadanie: Dlaczego Algebra boola nazywana jest algebrą zbiorów?\n\n\nZadanie: Czy składanie podzbiorów zbioru również generuje algebrę boola ?\n\n\nZadanie: ile bramek logicznych możemy stworzyć dla jednego bitu, dwóch bitów, trzech bitów?\n\n\n\n\nUniweralne bramki logiczne - NAND\nTak jak widzieliśmy dla 1-bitu informacji mieliśmy 4 bramki logiczne. Dla 2-bitów mieliśmy 16 bramek logicznych. Dla 3-bitów mamy już 256 możliwości.\nW przypadku 2-bitów nie wypisaliśmy wszystkich bramek, dlaczego?\nCzy musimy realizować wszystkie?\n\nNa szczęście odpowiedź jest negatywna.\n\nIstnieją tzw. zbiory bramek uniwersalnych dzięki którym możemy zrealizować dowolną funkcję boolowską.\n\nNOT, AND, OR\nNAND, AND\nNAND\nNOT, OR\nNOR",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Klasyczne bramki logiczne - Algebra Boola"
+    ]
   },
   {
     "objectID": "lectures/wyklad2.html#kody-python",
     "href": "lectures/wyklad2.html#kody-python",
     "title": "Klasyczne bramki logiczne - Algebra Boola",
     "section": "Kody python",
-    "text": "Kody python\n\nZadanie 1: Napisz kod symuljący wyrzucenie symetrycznej monety \\(100\\), \\(1000\\), \\(10000\\) i \\(100000\\) razy\n\nfrom random import randrange\n# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)\n# Twoje rozwiązanie \n\nZadanie 2: Napisz kod symulujący wyrzucenie niesymetrycznej monety gdzie prawdopodobieństwo wyrzucenia orła będzie wynosiło \\(60\\%\\).\n\nfrom random import randrange\n# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)\n# Twoje rozwiązanie"
+    "text": "Kody python\n\nZadanie 1: Napisz kod symuljący wyrzucenie symetrycznej monety \\(100\\), \\(1000\\), \\(10000\\) i \\(100000\\) razy\n\nfrom random import randrange\n# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)\n# Twoje rozwiązanie \n\nZadanie 2: Napisz kod symulujący wyrzucenie niesymetrycznej monety gdzie prawdopodobieństwo wyrzucenia orła będzie wynosiło \\(60\\%\\).\n\nfrom random import randrange\n# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)\n# Twoje rozwiązanie",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Klasyczne bramki logiczne - Algebra Boola"
+    ]
   },
   {
     "objectID": "lectures/wyklad2.html#szyfrowanie-z-wykorzystaniem-bramki-xor",
     "href": "lectures/wyklad2.html#szyfrowanie-z-wykorzystaniem-bramki-xor",
     "title": "Klasyczne bramki logiczne - Algebra Boola",
     "section": "Szyfrowanie z wykorzystaniem bramki XOR",
-    "text": "Szyfrowanie z wykorzystaniem bramki XOR\nWeźmy dwie sekwencje bitów:\nsekwencja A - przedstawiająca naszą zakodowaną wiadomośc: \\[1 0 1 1 0 1 1 1 0 0 0\\]\nlosowa sekwencja B: \\[0 1 1 0 1 1 0 1 1 0 1\\]\ni obliczmy XOR między dwoma sekwencjami (dla poszczególnych kolumn) \\(A\\) XOR \\(B\\).\nZgodnie z tablicą prawdy dla XOR otrzymujemy: \\[1 1 0 1 1 0 1 0 1 0 1\\]\nNa otrzymanym wyniku jeszcze raz zastosuj bramkę XOR.\nCo możesz zauważyć?\n\nOblicz A XOR B XOR B.\n\nZamień wiadomość, którą chcesz zaszyfrować na binarną postać (czyli jako sekwencję zer i jedynek).\nWeź losową sekwencję bitów (klucz szyfrujący), którą zna tylko nadawca i odbiorca.\n\\(1001011010...\\) - wiadomość\n\\(0110101010...\\) - klucz szyfrujący, czyli losowa sekwencja bitów\nZaszyfruj wiadomość wykonując operację XOR na każdym bicie wiadomości i klucza szyfrującego. Tak otrzymaną wiadomość (zaszyfrowaną) wyślij do odbiorcy.\n\ndecyrpting message\nOdbiorca otrzymuje zaszyfrowaną wiadomość (posiada klucz szyfrujący).\nMessage XOR SecretSequence = EncryptedMessage\nMessage XOR SecretSequence XOR SecretSequence = Message\nNie powinniśmy używać SecretSequence więcej niż raz. Jeśli użyjemy jej więcej niż raz, to łatwo jest złamać szyfrowanie.\n\nDlaczego nie powinno się używać szyfru więcej niż jeden raz? Podpowiedź: Zakodowana wiadomość przestaje być losowa."
+    "text": "Szyfrowanie z wykorzystaniem bramki XOR\nWeźmy dwie sekwencje bitów:\nsekwencja A - przedstawiająca naszą zakodowaną wiadomośc: \\[1 0 1 1 0 1 1 1 0 0 0\\]\nlosowa sekwencja B: \\[0 1 1 0 1 1 0 1 1 0 1\\]\ni obliczmy XOR między dwoma sekwencjami (dla poszczególnych kolumn) \\(A\\) XOR \\(B\\).\nZgodnie z tablicą prawdy dla XOR otrzymujemy: \\[1 1 0 1 1 0 1 0 1 0 1\\]\nNa otrzymanym wyniku jeszcze raz zastosuj bramkę XOR.\nCo możesz zauważyć?\n\nOblicz A XOR B XOR B.\n\nZamień wiadomość, którą chcesz zaszyfrować na binarną postać (czyli jako sekwencję zer i jedynek).\nWeź losową sekwencję bitów (klucz szyfrujący), którą zna tylko nadawca i odbiorca.\n\\(1001011010...\\) - wiadomość\n\\(0110101010...\\) - klucz szyfrujący, czyli losowa sekwencja bitów\nZaszyfruj wiadomość wykonując operację XOR na każdym bicie wiadomości i klucza szyfrującego. Tak otrzymaną wiadomość (zaszyfrowaną) wyślij do odbiorcy.\n\ndecyrpting message\nOdbiorca otrzymuje zaszyfrowaną wiadomość (posiada klucz szyfrujący).\nMessage XOR SecretSequence = EncryptedMessage\nMessage XOR SecretSequence XOR SecretSequence = Message\nNie powinniśmy używać SecretSequence więcej niż raz. Jeśli użyjemy jej więcej niż raz, to łatwo jest złamać szyfrowanie.\n\nDlaczego nie powinno się używać szyfru więcej niż jeden raz? Podpowiedź: Zakodowana wiadomość przestaje być losowa.",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Klasyczne bramki logiczne - Algebra Boola"
+    ]
   },
   {
     "objectID": "lectures/wyklad2.html#kody---rozwiązania-zadań",
     "href": "lectures/wyklad2.html#kody---rozwiązania-zadań",
     "title": "Klasyczne bramki logiczne - Algebra Boola",
     "section": "kody - rozwiązania zadań",
-    "text": "kody - rozwiązania zadań\n\nfrom random import randrange\n# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)\nfor experiment in [100,1000,10000,100000]:\n    heads = tails = 0\n    for i in range(experiment):\n        if randrange(2) == 0: heads = heads + 1\n        else: tails = tails + 1\n    print(\"experiment:\",experiment)\n    print(\"heads =\",heads,\"  tails = \",tails)\n    print(\"the ratio of #heads/#tails is\",(round(heads/tails,4)))\n    print() # empty line\nfrom random import randrange\n\n# let's pick a random number between {0,1,...,99}\n# it is expected to be less than 60 with probability 0.6\n#     and greater than or equal to 60 with probability 0.4\n# ten sam przypadek możesz zrealizować dla losowania wartosci rzeczywistej\n# pomiędzy 0 i 1.\n\nfor experiment in [100,1000,10000,100000]:\n    heads = tails = 0\n    for i in range(experiment):\n        if randrange(100) &lt;60: heads = heads + 1 # with probability 0.6\n        else: tails = tails + 1 # with probability 0.4\n    print(\"experiment:\",experiment)\n    print(\"heads =\",heads,\"  tails = \",tails)\n    print(\"the ratio of #heads/#tails is\",(round(heads/tails,4)))\n    print() # empty line"
+    "text": "kody - rozwiązania zadań\n\nfrom random import randrange\n# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)\nfor experiment in [100,1000,10000,100000]:\n    heads = tails = 0\n    for i in range(experiment):\n        if randrange(2) == 0: heads = heads + 1\n        else: tails = tails + 1\n    print(\"experiment:\",experiment)\n    print(\"heads =\",heads,\"  tails = \",tails)\n    print(\"the ratio of #heads/#tails is\",(round(heads/tails,4)))\n    print() # empty line\nfrom random import randrange\n\n# let's pick a random number between {0,1,...,99}\n# it is expected to be less than 60 with probability 0.6\n#     and greater than or equal to 60 with probability 0.4\n# ten sam przypadek możesz zrealizować dla losowania wartosci rzeczywistej\n# pomiędzy 0 i 1.\n\nfor experiment in [100,1000,10000,100000]:\n    heads = tails = 0\n    for i in range(experiment):\n        if randrange(100) &lt;60: heads = heads + 1 # with probability 0.6\n        else: tails = tails + 1 # with probability 0.4\n    print(\"experiment:\",experiment)\n    print(\"heads =\",heads,\"  tails = \",tails)\n    print(\"the ratio of #heads/#tails is\",(round(heads/tails,4)))\n    print() # empty line",
+    "crumbs": [
+      "Sylabus",
+      "Wykłady",
+      "Klasyczne bramki logiczne - Algebra Boola"
+    ]
   },
   {
     "objectID": "lectures/wyklad1.html",
