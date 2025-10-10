@@ -118,46 +118,55 @@
     ]
   },
   {
-    "objectID": "info.html",
-    "href": "info.html",
-    "title": "Narzędzia",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Informacje ogólne",
     "section": "",
-    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
+    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "info.html#python",
-    "href": "info.html#python",
-    "title": "Narzędzia",
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Informacje ogólne",
     "section": "",
-    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
+    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "other/qiskitML.html",
-    "href": "other/qiskitML.html",
-    "title": "Qiskit Machine Learning",
-    "section": "",
-    "text": "dokumentacja\n\nQuantum Kernels (Quantum Support Vector Classifier, Quantum Support Vector Regressor)\nQuantum Neural Networks (Variational Quantum Classifier, Variational Quantum Regressor), fature map (ZZFeatureMap, ZFeatureMap, PauliFeatureMap) i ansatz (RealAmplitudes, EfficientSU2, ZZFeatureMap, ZFeatureMap, PauliFeatureMap). Posiada również konektor do PyTorcha.\n\nużywane do klasyfikacji (QSVC) i regresjii (QSVR). Pozwalają na używanie kwantowego uczenia maszynowego bez wiedzy o obliczeniach kwantowych.\n\n# instalacja \n!pip install --upgrade pip\n!pip install qiskit-machine-learning\n!pip install 'qiskit-machine-learning[torch]'\n!pip install 'qiskit-machine-learning[sparse]' \n# !pip install ipywidgets ipykernel\n\n\nimport qiskit.tools.jupyter\n\n%qiskit_version_table\n\nVersion Information\n\n\n\nSoftware\nVersion\n\n\nqiskit\nNone\n\n\nqiskit-terra\n0.25.2\n\n\nSystem information\n\n\nPython version\n3.10.12\n\n\nPython compiler\nClang 14.0.3 (clang-1403.0.22.14.1)\n\n\nPython build\nmain, Jul 28 2023 18:34:01\n\n\nOS\nDarwin\n\n\nCPUs\n8\n\n\nMemory (Gb)\n16.0\n\n\nSun Oct 15 20:37:42 2023 CEST"
+    "objectID": "index.html#kalendarz",
+    "href": "index.html#kalendarz",
+    "title": "Informacje ogólne",
+    "section": "Kalendarz",
+    "text": "Kalendarz\n\nWykład\nWykład jest realizowany w trybie stacjonarnym.\nJest on NIEOBOWIĄZKOWY i odbywa się w sali C 3B.\n\n\nLaboratoria\nWszystkie laboratoria odbywają się w sali C.",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "ksiazki.html",
-    "href": "ksiazki.html",
-    "title": "Książki i strony WWW",
-    "section": "",
-    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
+    "objectID": "index.html#technologie",
+    "href": "index.html#technologie",
+    "title": "Informacje ogólne",
+    "section": "Technologie",
+    "text": "Technologie\nUczestnicząc w zajęciach musisz opanować i przynajmniej w podstawowym zakresie posługiwać się następującymi technologiami informatycznymi:\n\nAlgebra liniowa - wektory, macierze, baza, iloczyn skalarny, iloczyn tensorowy\nPython, Jupyter notebook, Jupyter lab, Colab\nAlgorytmy sieci neuronowych i uczenia maszynowego w procesie klasyfikacji binarnej",
+    "crumbs": [
+      "Sylabus",
+      "Informacje ogólne"
+    ]
   },
   {
-    "objectID": "ksiazki.html#książki",
-    "href": "ksiazki.html#książki",
-    "title": "Książki i strony WWW",
+    "objectID": "other/pennylane.html",
+    "href": "other/pennylane.html",
+    "title": "Pennylane",
     "section": "",
-    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
-  },
-  {
-    "objectID": "ksiazki.html#strony-www",
-    "href": "ksiazki.html#strony-www",
-    "title": "Książki i strony WWW",
-    "section": "Strony WWW",
-    "text": "Strony WWW\n\nPeter Shor Wykład\n\n\nPakiety Python\n\nQiskit\nPennyLane\n\n\n\nPakiety Julia\n\nYao\nQAOA\n\n\n\nEdytory tekstu\n\nNotepad++\nSublime Text\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nFilmy\n\nWprowadzenie do obliczeń kwantowych\nQPoland, Bronze, Warsztaty z programowania komputerów kwantowych 2023"
+    "text": "Codebook\nPennyLane Challenges"
   },
   {
     "objectID": "sylabus.html",
@@ -202,55 +211,53 @@
     "text": "Literatura uzupełniająca\n\nMichael A. Nielsen & Isaac L. Chuang - Quantum Computation and Quantum Information, Cambridge University Press, 2010\nK. Przanowski, S. Zając - Modelowanie dla Biznesu. Metody Machine learning, Modele portfela consumer finance, modelek rekurencyjne analizy przeżycia, modele scoringowe. Oficyna Wydawnicza SGH. 2020\nE. Frątczak - Modelowanie dla Biznesu. Regresja Logistyczna, Regresja Poissona, Survival Data Mining, CRM, Credit Scoring. Oficyna Wydawnicza SGH. 2019"
   },
   {
-    "objectID": "other/pennylane.html",
-    "href": "other/pennylane.html",
-    "title": "Pennylane",
+    "objectID": "ksiazki.html",
+    "href": "ksiazki.html",
+    "title": "Książki i strony WWW",
     "section": "",
-    "text": "Codebook\nPennyLane Challenges"
+    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Informacje ogólne",
+    "objectID": "ksiazki.html#książki",
+    "href": "ksiazki.html#książki",
+    "title": "Książki i strony WWW",
     "section": "",
-    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
+    "text": "Chris Bernhardt, Obliczenia kwantowe dla każdego. PWN 2020\n\n\nWyjaśnienie jak to działa w obliczeniach kwantowych.\n\n\nMichel Le Bellac, Wstęp do informatyki kwantowej. PWN 2011\n\n\nTrudniejsza, dużo matematyki i fizyki.\n\n\nThomas G. Wong, Introduction to Classical and Quantum Computing. Rooted Grove 2022.\n\n\nBardzo dobra!, dużo przykładów, dużo ciekawych informacji wyjaśnianych bardzo szczegółowo.\n\n\nA. Jacquier, O. Kondratyev, Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage.\nP. Gawron, M. Cholewa, … Rewolucja stanu. Fantastyczne wprowadzenie do informatyki kwantowej. Quantumz.io 2021\nA. Saxena, J. Mancilla, I. Montalban, C. Pere, Financial Modeling Using Quantum Computing. Packt 2023\nM. Schuld, F. Petruccione, Machine Learning with Quantum Computers, Springer 2021.\n\n\n\n\n\n\n\nL. Moroney, Sztuczna inteligencja i uczenie maszynowe dla programistów. Praktyczny przewodnik po sztucznej inteligencji. Helion 2021. Zobacz opis lub Kup e-book\nBruce, Bruce, Gedeck, Statystyka praktyczna w data science. Wydanie II. Helion. 2021."
   },
   {
-    "objectID": "index.html#section",
-    "href": "index.html#section",
-    "title": "Informacje ogólne",
+    "objectID": "ksiazki.html#strony-www",
+    "href": "ksiazki.html#strony-www",
+    "title": "Książki i strony WWW",
+    "section": "Strony WWW",
+    "text": "Strony WWW\n\nPeter Shor Wykład\n\n\nPakiety Python\n\nQiskit\nPennyLane\n\n\n\nPakiety Julia\n\nYao\nQAOA\n\n\n\nEdytory tekstu\n\nNotepad++\nSublime Text\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nFilmy\n\nWprowadzenie do obliczeń kwantowych\nQPoland, Bronze, Warsztaty z programowania komputerów kwantowych 2023"
+  },
+  {
+    "objectID": "other/qiskitML.html",
+    "href": "other/qiskitML.html",
+    "title": "Qiskit Machine Learning",
     "section": "",
-    "text": "Kod: 232530-D\nSemestr zimowy 2025/2026,\nSGH Szkoła Główna Handlowa w Warszawie\nPodstawowe informacje znajdziesz w sylabusie.\nCiekawe książki i strony internetowe zamieszczone zostały w zakładce książki. Jeśli chciał(a)byś coś dodać prześlij informacje przez MS teams.",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
+    "text": "dokumentacja\n\nQuantum Kernels (Quantum Support Vector Classifier, Quantum Support Vector Regressor)\nQuantum Neural Networks (Variational Quantum Classifier, Variational Quantum Regressor), fature map (ZZFeatureMap, ZFeatureMap, PauliFeatureMap) i ansatz (RealAmplitudes, EfficientSU2, ZZFeatureMap, ZFeatureMap, PauliFeatureMap). Posiada również konektor do PyTorcha.\n\nużywane do klasyfikacji (QSVC) i regresjii (QSVR). Pozwalają na używanie kwantowego uczenia maszynowego bez wiedzy o obliczeniach kwantowych.\n\n# instalacja \n!pip install --upgrade pip\n!pip install qiskit-machine-learning\n!pip install 'qiskit-machine-learning[torch]'\n!pip install 'qiskit-machine-learning[sparse]' \n# !pip install ipywidgets ipykernel\n\n\nimport qiskit.tools.jupyter\n\n%qiskit_version_table\n\nVersion Information\n\n\n\nSoftware\nVersion\n\n\nqiskit\nNone\n\n\nqiskit-terra\n0.25.2\n\n\nSystem information\n\n\nPython version\n3.10.12\n\n\nPython compiler\nClang 14.0.3 (clang-1403.0.22.14.1)\n\n\nPython build\nmain, Jul 28 2023 18:34:01\n\n\nOS\nDarwin\n\n\nCPUs\n8\n\n\nMemory (Gb)\n16.0\n\n\nSun Oct 15 20:37:42 2023 CEST"
   },
   {
-    "objectID": "index.html#kalendarz",
-    "href": "index.html#kalendarz",
-    "title": "Informacje ogólne",
-    "section": "Kalendarz",
-    "text": "Kalendarz\n\nWykład\nWykład jest realizowany w trybie stacjonarnym.\nJest on NIEOBOWIĄZKOWY i odbywa się w sali C 3B.\n\n\nLaboratoria\nWszystkie laboratoria odbywają się w sali C.",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
+    "objectID": "info.html",
+    "href": "info.html",
+    "title": "Narzędzia",
+    "section": "",
+    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
   },
   {
-    "objectID": "index.html#technologie",
-    "href": "index.html#technologie",
-    "title": "Informacje ogólne",
-    "section": "Technologie",
-    "text": "Technologie\nUczestnicząc w zajęciach musisz opanować i przynajmniej w podstawowym zakresie posługiwać się następującymi technologiami informatycznymi:\n\nAlgebra liniowa - wektory, macierze, baza, iloczyn skalarny, iloczyn tensorowy\nPython, Jupyter notebook, Jupyter lab, Colab\nAlgorytmy sieci neuronowych i uczenia maszynowego w procesie klasyfikacji binarnej",
-    "crumbs": [
-      "Sylabus",
-      "Informacje ogólne"
-    ]
+    "objectID": "info.html#python",
+    "href": "info.html#python",
+    "title": "Narzędzia",
+    "section": "",
+    "text": "W terminalu (Windows CMD) wpisz\npython\nJeśli nie odnaleziono komendy uruchom polecenie:\npython3\nZwróć uwagę, aby Twoja wersja nie była niższa niż 3.13 Aby wyjść z powłoki pythona użyj funkcji exit()\nPython 3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt; exit()\n\n\npython3 -m venv venv\nUruchomienie w systemach linux i mac os:\nsource venv/bin/activate\n# . venv/bin/activate\n\n(venv)$ ~\nW systemie windows środowisko pythona uruchomisz poprzez:\nvenv/Scripts/activate\nSzybka instalacja podstawowych bibliotek i jupyterlab.\npip install --no-cache --upgrade pip setuptools\n\npip install jupyterlab numpy pandas matplotlib scipy\n# jeśli masz plik requirements.txt z potrzebnymi bibliotekami\npip install -r requirements.txt\n# uruchom \njupyterlab\nW przeglądarce internetowej wpisz: localhost:8888\nPo ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, następnie uruchom środowisko i jupyterlab.\nsource &lt;name of env&gt;/bin/activate\njupyterlab\n\n\n\nKurs podstaw pythona Tomas Beuzen polecam.\nUtwórz konto na Kaggle, przejdź do zakładki Courses i przerób cały moduł Pythona. Zawiera on:\n\nwyrażenia i zmienne\nfunkcje\nwarunki i flow programu\nlisty\npętle\nstringi i słowniki\ndodawanie i używanie zewnętrznych bibliotek"
+  },
+  {
+    "objectID": "cwiczenia/w1_codes.html",
+    "href": "cwiczenia/w1_codes.html",
+    "title": "Wprowadzenie do Kwantowego Uczenia Maszynowego",
+    "section": "",
+    "text": "import torch\nfrom torch.autograd import Variable\n\ndata = torch.tensor([(0. , 1.), (0.1 , 1.1), (0.2 , 1.2)])\n\n\n\ndef model(phi, x=None):\n    return x*phi\n\n\n\ndef loss(a, b):\n    return torch.abs(a-b) ** 2\n\ndef avg_loss(phi):\n    c = 0 \n    for x, y in data:\n        c += loss(model(phi, x=x), y)\n    return c\n\n\n\nphi_ = Variable(torch.tensor(0.1), requires_grad=True)\nopt = torch.optim.Adam([phi_],lr=0.2)\n\nfor i in range(5):\n    l = avg_loss(phi_)\n    print(f\"cost: {l}, for phi: {phi_}\")\n    l.backward()\n    opt.step()"
   },
   {
     "objectID": "lectures/wyklad2.html",
@@ -377,12 +384,5 @@
     "title": "Algorytmy kwantowego uczenia maszynowego",
     "section": "Quantum Approximation Optimization Algorithm",
     "text": "Quantum Approximation Optimization Algorithm"
-  },
-  {
-    "objectID": "cwiczenia/w1_codes.html",
-    "href": "cwiczenia/w1_codes.html",
-    "title": "Wprowadzenie do Kwantowego Uczenia Maszynowego",
-    "section": "",
-    "text": "import torch\nfrom torch.autograd import Variable\n\ndata = torch.tensor([(0. , 1.), (0.1 , 1.1), (0.2 , 1.2)])\n\n\n\ndef model(phi, x=None):\n    return x*phi\n\n\n\ndef loss(a, b):\n    return torch.abs(a-b) ** 2\n\ndef avg_loss(phi):\n    c = 0 \n    for x, y in data:\n        c += loss(model(phi, x=x), y)\n    return c\n\n\n\nphi_ = Variable(torch.tensor(0.1), requires_grad=True)\nopt = torch.optim.Adam([phi_],lr=0.2)\n\nfor i in range(5):\n    l = avg_loss(phi_)\n    print(f\"cost: {l}, for phi: {phi_}\")\n    l.backward()\n    opt.step()"
   }
 ]

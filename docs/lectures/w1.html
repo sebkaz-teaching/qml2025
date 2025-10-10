@@ -325,7 +325,7 @@ window.Quarto = {
 <li>zaktualizuj parametry <span class="math inline">\(\theta^{t+1} = \theta^{t} - \eta \nabla C\)</span></li>
 </ul></li>
 </ol>
-<div id="7c55a7fa" class="cell" data-execution_count="1">
+<div id="f24e038f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.autograd <span class="im">import</span> Variable</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -351,10 +351,6 @@ window.Quarto = {
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"cost: </span><span class="sc">{</span>l<span class="sc">}</span><span class="ss">, for phi: </span><span class="sc">{</span>phi_<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    l.backward()</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    opt.step()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/seba/Documents/GitHub/qml4ds/venv/lib/python3.11/site-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:81.)
-  cpu = _conversion_method_template(device=torch.device("cpu"))</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>cost: 3.5805001258850098, for phi: 0.10000000149011612
 cost: 3.44450044631958, for phi: 0.29999998211860657
