@@ -218,6 +218,12 @@ window.Quarto = {
  <span class="menu-text">Klasyczne bramki logiczne - Algebra Boola</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/wyklad3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Przestrzenie wektorowe, stany kwantowe, reprezentacja klasycznych i kwantowych bitów</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -247,10 +253,13 @@ window.Quarto = {
     <h2 id="toc-title"><strong>Sections</strong></h2>
    
   <ul class="collapse">
-  <li><a href="#bramki-logiczne" id="toc-bramki-logiczne" class="nav-link active" data-scroll-target="#bramki-logiczne">Bramki logiczne</a></li>
-  <li><a href="#kody-python" id="toc-kody-python" class="nav-link" data-scroll-target="#kody-python">Kody python</a></li>
+  <li><a href="#monety" id="toc-monety" class="nav-link active" data-scroll-target="#monety">Monety</a></li>
+  <li><a href="#kości-do-gry" id="toc-kości-do-gry" class="nav-link" data-scroll-target="#kości-do-gry">Kości do gry</a></li>
+  <li><a href="#kodowanie-informacji" id="toc-kodowanie-informacji" class="nav-link" data-scroll-target="#kodowanie-informacji">Kodowanie informacji</a></li>
+  <li><a href="#fizyczna-realizacja-klasycznych-bitów" id="toc-fizyczna-realizacja-klasycznych-bitów" class="nav-link" data-scroll-target="#fizyczna-realizacja-klasycznych-bitów">Fizyczna realizacja klasycznych bitów</a></li>
+  <li><a href="#reprezentacja-binarna" id="toc-reprezentacja-binarna" class="nav-link" data-scroll-target="#reprezentacja-binarna">Reprezentacja binarna</a></li>
+  <li><a href="#bramki-logiczne" id="toc-bramki-logiczne" class="nav-link" data-scroll-target="#bramki-logiczne">Bramki logiczne</a></li>
   <li><a href="#szyfrowanie-z-wykorzystaniem-bramki-xor" id="toc-szyfrowanie-z-wykorzystaniem-bramki-xor" class="nav-link" data-scroll-target="#szyfrowanie-z-wykorzystaniem-bramki-xor">Szyfrowanie z wykorzystaniem bramki XOR</a></li>
-  <li><a href="#kody---rozwiązania-zadań" id="toc-kody---rozwiązania-zadań" class="nav-link" data-scroll-target="#kody---rozwiązania-zadań">kody - rozwiązania zadań</a></li>
   </ul>
 </nav>
     </div>
@@ -283,20 +292,20 @@ window.Quarto = {
 \]</span></p>
 <p>Obliczenia (przetwarzanie) wykonywane przez komputer możemy zdefiniować jako transformacje jednego stanu pamięci na inny. Z matematycznego punktu widzenia oznacza to, że obliczenia to <em>funkcje</em>, które przekształcają informacje.</p>
 <p>W przypadku klasycznych komputerów podstawową jednostką pamięci jest <strong>bit</strong> (ang. <em>binary digit</em>). Funkcje, które operują na bitach nazywamy <strong>bramkami logicznymi</strong> (ang. <em>logic gates</em>).</p>
-<section id="monety" class="level3">
-<h3 class="anchored" data-anchor-id="monety">Monety</h3>
+<section id="monety" class="level2">
+<h2 class="anchored" data-anchor-id="monety">Monety</h2>
 <p>Rozważmy monetę. Posiada ona dwie strony (odróżnialne od siebie). Kładąc monetę na podłożu możemy określić dostępne stany jako: <span class="math inline">\(\ket{O}\)</span>, <span class="math inline">\(\ket{R}\)</span>.</p>
 <p>Posiadając dwie takie monety możemy określić cztery możliwe stany: <span class="math display">\[\ket{OO}, \ket{OR}, \ket{RO}, \ket{RR}\]</span></p>
 <p>Ponieważ pierwsza moneta ma dwa możliwe stany i druga moneta również ma dwie możliwości istnieją <span class="math inline">\(2\times 2= 2^{2} =4\)</span> możliwe stany dla dwóch monet.</p>
 <p>W przypadku trzech monet możemy określić osiem możliwych stanów: <span class="math display">\[\ket{OOO}, \ket{OOR}, \ket{ORO}, \ket{ORR}, \ket{ROO}, \ket{ROR}, \ket{RRO}, \ket{RRR}\]</span> Co daje nam <span class="math inline">\(2 \times 2 \times 2 = 2^{3}=8\)</span> możliwych stanów.</p>
 <p>dla <span class="math inline">\(n\)</span> monet możemy określić <span class="math inline">\(2^{n}\)</span> możliwych stanów.</p>
 </section>
-<section id="kości-do-gry" class="level3">
-<h3 class="anchored" data-anchor-id="kości-do-gry">Kości do gry</h3>
+<section id="kości-do-gry" class="level2">
+<h2 class="anchored" data-anchor-id="kości-do-gry">Kości do gry</h2>
 <p>Kości do gry posiadają sześć stron. Każdej możemy przypisać liczbę od 1 do 6. Dwie kości do gry posiadają <span class="math inline">\(6 \times 6 = 36\)</span> możliwych stanów. Idąc dalej, dla trzech kości do gry mamy <span class="math inline">\(6 \times 6 \times 6 = 6^{3} = 216\)</span> możliwych stanów. Dla n kości do gry mamy <span class="math inline">\(6^{n}\)</span> możliwych stanów.</p>
 </section>
-<section id="kodowanie-informacji" class="level3">
-<h3 class="anchored" data-anchor-id="kodowanie-informacji">Kodowanie informacji</h3>
+<section id="kodowanie-informacji" class="level2">
+<h2 class="anchored" data-anchor-id="kodowanie-informacji">Kodowanie informacji</h2>
 <blockquote class="blockquote">
 <p>Ile informacji możemy zakodować za pomocą monet i kości do gry?</p>
 </blockquote>
@@ -355,8 +364,8 @@ window.Quarto = {
 <p>Zadanie: Angielski alfabet posiada 26 liter. Ile monet i kości potrzeba aby zakodować informacje o jednej literze?</p>
 </blockquote>
 </section>
-<section id="fizyczna-realizacja-klasycznych-bitów" class="level3">
-<h3 class="anchored" data-anchor-id="fizyczna-realizacja-klasycznych-bitów">Fizyczna realizacja klasycznych bitów</h3>
+<section id="fizyczna-realizacja-klasycznych-bitów" class="level2">
+<h2 class="anchored" data-anchor-id="fizyczna-realizacja-klasycznych-bitów">Fizyczna realizacja klasycznych bitów</h2>
 <p>Obiekty fizyczne, które mogą przyjmować dwa stany:</p>
 <ul>
 <li>przełącznik włączony/wyłączony</li>
@@ -370,8 +379,8 @@ window.Quarto = {
 <p>Zazwyczaj oznaczamy te stany jako <span class="math inline">\(0\)</span> i <span class="math inline">\(1\)</span>.</p>
 <p>Zastosujmy nowe oznaczenia dla tych stanów: <span class="math display">\[0 = \ket{0} \]</span> oraz <span class="math display">\[1 = \ket{1}\]</span></p>
 </section>
-<section id="reprezentacja-binarna" class="level3">
-<h3 class="anchored" data-anchor-id="reprezentacja-binarna">Reprezentacja binarna</h3>
+<section id="reprezentacja-binarna" class="level2">
+<h2 class="anchored" data-anchor-id="reprezentacja-binarna">Reprezentacja binarna</h2>
 <p>W przypadku trzech monet mieliśmy następujące stany: <span class="math display">\[OOO, OOR, ORO, ORR, ROO, ROR, RRO, RRR.\]</span></p>
 <p>Możemy je zapisać w postaci binarnej jako: <span class="math display">\[000, 001, 010, 011, 100, 101, 110, 111\]</span> Dla przyzwyczajenia z zapisem możemy napisać również: <span class="math display">\[\ket{000}, \ket{001}, \ket{010}, \ket{011}, \ket{100}, \ket{101}, \ket{110}, \ket{111}\]</span></p>
 <p>Co oznacza, że możemy te stany zapisać matematycznie - łatwo nam nimi operować.</p>
@@ -395,7 +404,6 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Jak zapisać liczby ujemne i zmiennoprzecinkowe binarnie?</p>
 </blockquote>
-</section>
 <section id="ascii-american-standard-code-for-information-interchange" class="level3">
 <h3 class="anchored" data-anchor-id="ascii-american-standard-code-for-information-interchange">ASCII American Standard Code for Information Interchange</h3>
 <p>Komputer przechowuje informacje jako bity, jednak w naszym świecie używamy tekstu złożonego z liter. System ASCII przechowuje informacje o literach w postaci 7 bitowych liczb binarnych. W ten sposób możemy zapisać 128 znaków (liter, cyfr, znaków specjalnych) <span class="math inline">\(0000000\)</span> do <span class="math inline">\(1111111\)</span>.</p>
@@ -403,6 +411,7 @@ window.Quarto = {
 <p>Znajdź w internecie tablicę ASCII i zapisz w kodzie ASCII swoje imię.</p>
 </blockquote>
 <p>Standard UTF-8 (Unicode Transformation Format) przechowuje informacje o literach w postaci liczb binarnych do 32 bitów. co daje nam możliwość zapisania <span class="math inline">\(2^{32}=4294967296\)</span> stanów. 128 pierwszych bitowych napisów w UTF-8 to kod ASCII.</p>
+</section>
 </section>
 <section id="bramki-logiczne" class="level2">
 <h2 class="anchored" data-anchor-id="bramki-logiczne">Bramki logiczne</h2>
@@ -456,163 +465,6 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Zadanie: zapisz tablicę prawdy dla każdej bramki.</p>
 </blockquote>
-<section id="not-gate" class="level4">
-<h4 class="anchored" data-anchor-id="not-gate">NOT gate</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">not A</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="and-gate" class="level4">
-<h4 class="anchored" data-anchor-id="and-gate">AND gate</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="or-gate" class="level4">
-<h4 class="anchored" data-anchor-id="or-gate">OR gate</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="nand" class="level4">
-<h4 class="anchored" data-anchor-id="nand">NAND</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>A</th>
-<th>B</th>
-<th>C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="xor" class="level4">
-<h4 class="anchored" data-anchor-id="xor">XOR</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>A</th>
-<th>B</th>
-<th>C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Powyższe bramki pozwalają łączyć poszczególne elementy algebry boola ze sobą.</p>
 <blockquote class="blockquote">
 <p>Zadanie: Porównaj <code>AND</code> oraz <code>OR</code> z potocznym znaczeniem tych słów.</p>
 </blockquote>
@@ -625,7 +477,6 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Zadanie: ile bramek logicznych możemy stworzyć dla jednego bitu, dwóch bitów, trzech bitów?</p>
 </blockquote>
-</section>
 </section>
 <section id="uniweralne-bramki-logiczne---nand" class="level3">
 <h3 class="anchored" data-anchor-id="uniweralne-bramki-logiczne---nand">Uniweralne bramki logiczne - NAND</h3>
@@ -643,36 +494,7 @@ window.Quarto = {
 <li><strong>NOT, OR</strong></li>
 <li><strong>NOR</strong></li>
 </ul>
-<!-- 
-## Fizyczna realizacja klasycznych  bramek logicznych
-
-Bramka NAND jest bramką uniwersalną, co oznacza, że każdą funkcję boolowską można zrealizować za pomocą układu bramek NAND.
-Dlatego ważne dla komputerów klasycznych jest, aby znaleźć praktyczną realizację i jej implementację w układach. 
-
-Istnieje wiele fizycznych realizacji [bramki NAND](https://en.wikipedia.org/wiki/NAND_gate).
-
-### Implementacja komórki pamięci RAM 
-
-Random Access Memory (RAM) uzywany jest do przechowywania instrukcji i danych aktualnie używanych przez CPU. 
-Stan pamięci RAM jest tracony gdy urządzenie zostanie odłączone od zasilania.
-Pamięć RAM jest zorganizowana w komórki, które mogą przechowywać pojedynczy bit informacji.
-Do implementacji pamięci RAM wykorzystuje się zbiór bramek logicznych (NAND) oraz tranzystorów. -->
 </section>
-</section>
-<section id="kody-python" class="level2">
-<h2 class="anchored" data-anchor-id="kody-python">Kody python</h2>
-<blockquote class="blockquote">
-<p>Zadanie 1: Napisz kod symuljący wyrzucenie symetrycznej monety <span class="math inline">\(100\)</span>, <span class="math inline">\(1000\)</span>, <span class="math inline">\(10000\)</span> i <span class="math inline">\(100000\)</span> razy</p>
-</blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Twoje rozwiązanie </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote class="blockquote">
-<p>Zadanie 2: Napisz kod symulujący wyrzucenie niesymetrycznej monety gdzie prawdopodobieństwo wyrzucenia orła będzie wynosiło <span class="math inline">\(60\%\)</span>.</p>
-</blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Twoje rozwiązanie </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="szyfrowanie-z-wykorzystaniem-bramki-xor" class="level2">
 <h2 class="anchored" data-anchor-id="szyfrowanie-z-wykorzystaniem-bramki-xor">Szyfrowanie z wykorzystaniem bramki XOR</h2>
@@ -700,45 +522,122 @@ Do implementacji pamięci RAM wykorzystuje się zbiór bramek logicznych (NAND) 
 <blockquote class="blockquote">
 <p>Dlaczego nie powinno się używać szyfru więcej niż jeden raz? Podpowiedź: Zakodowana wiadomość przestaje być losowa.</p>
 </blockquote>
+<div id="09634a62" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_to_bits(text):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(<span class="bu">format</span>(<span class="bu">ord</span>(c), <span class="st">'08b'</span>) <span class="cf">for</span> c <span class="kw">in</span> text)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> xor_encrypt_decrypt(text, key):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">''</span>.join(<span class="bu">chr</span>(<span class="bu">ord</span>(c) <span class="op">^</span> key) <span class="cf">for</span> c <span class="kw">in</span> text)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ====== DANE ======</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plaintext <span class="op">=</span> <span class="st">"Quantum ML"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">255</span>)  <span class="co"># losowy 8-bitowy klucz</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ====== SZYFROWANIE ======</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>ciphertext <span class="op">=</span> xor_encrypt_decrypt(plaintext, key)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>decrypted <span class="op">=</span> xor_encrypt_decrypt(ciphertext, key)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ====== WYNIKI ======</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Oryginalny tekst:     </span><span class="sc">{</span>plaintext<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Klucz (8-bit):        </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="bu">format</span>(key, <span class="st">'08b'</span>)<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Tekst binarnie:       </span><span class="sc">{</span>text_to_bits(plaintext)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Zaszyfrowany binarnie:</span><span class="sc">{</span>text_to_bits(ciphertext)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Zaszyfrowany tekst:   </span><span class="sc">{</span>ciphertext<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Odszyfrowany tekst:   </span><span class="sc">{</span>decrypted<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Czy poprawnie odszyfrowano? </span><span class="sc">{</span><span class="st">'TAK'</span> <span class="cf">if</span> decrypted <span class="op">==</span> plaintext <span class="cf">else</span> <span class="st">'NIE'</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oryginalny tekst:     Quantum ML
+Klucz (8-bit):        73 (01001001)
+
+Tekst binarnie:       01010001 01110101 01100001 01101110 01110100 01110101 01101101 00100000 01001101 01001100
+Zaszyfrowany binarnie:00011000 00111100 00101000 00100111 00111101 00111100 00100100 01101001 00000100 00000101
+
+Zaszyfrowany tekst:   &lt;('=&lt;$i
+Odszyfrowany tekst:   Quantum ML
+
+Czy poprawnie odszyfrowano? TAK</code></pre>
+</div>
+</div>
+<div id="45383dff" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ciphertext <span class="op">=</span> xor_encrypt_decrypt(<span class="st">"Quantum ML"</span>, <span class="dv">77</span>)  <span class="co"># zaszyfruj znanym kluczem</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Szyfrogram:"</span>, ciphertext)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Próba złamania:"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">256</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    candidate <span class="op">=</span> xor_encrypt_decrypt(ciphertext, k)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> candidate.isprintable():</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Klucz </span><span class="sc">{</span>k<span class="sc">:3d}</span><span class="ss"> -&gt; </span><span class="sc">{</span>candidate<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Szyfrogram: 8,#98 m
+
+Próba złamania:
+Klucz  64 -&gt; \xlcyx`-@A
+Klucz  65 -&gt; ]ymbxya,A@
+Klucz  66 -&gt; ^zna{zb/BC
+Klucz  67 -&gt; _{o`z{c.CB
+Klucz  68 -&gt; X|hg}|d)DE
+Klucz  69 -&gt; Y}if|}e(ED
+Klucz  72 -&gt; Tpdkqph%HI
+Klucz  73 -&gt; Uqejpqi$IH
+Klucz  74 -&gt; Vrfisrj'JK
+Klucz  75 -&gt; Wsghrsk&amp;KJ
+Klucz  76 -&gt; Pt`outl!LM
+Klucz  77 -&gt; Quantum ML
+Klucz  78 -&gt; Rvbmwvn#NO
+Klucz  79 -&gt; Swclvwo"ON
+Klucz  80 -&gt; Lh|sihp=PQ
+Klucz  81 -&gt; Mi}rhiq&lt;QP
+Klucz  82 -&gt; Nj~qkjr?RS
+Klucz  84 -&gt; Hlxwmlt9TU
+Klucz  85 -&gt; Imyvlmu8UT
+Klucz  86 -&gt; Jnzuonv;VW
+Klucz  87 -&gt; Ko{tnow:WV
+Klucz  88 -&gt; D`t{a`x5XY
+Klucz  89 -&gt; Eauz`ay4YX
+Klucz  90 -&gt; Fbvycbz7Z[
+Klucz  91 -&gt; Gcwxbc{6[Z
+Klucz  93 -&gt; Aeq~de}0]\
+Klucz  94 -&gt; Bfr}gf~3^_
+Klucz 193 -&gt; Ýùíâøùá¬ÁÀ
+Klucz 194 -&gt; Þúîáûúâ¯ÂÃ
+Klucz 195 -&gt; ßûïàúûã®ÃÂ
+Klucz 196 -&gt; Øüèçýüä©ÄÅ
+Klucz 197 -&gt; Ùýéæüýå¨ÅÄ
+Klucz 198 -&gt; Úþêåÿþæ«ÆÇ
+Klucz 199 -&gt; ÛÿëäþÿçªÇÆ
+Klucz 200 -&gt; Ôðäëñðè¥ÈÉ
+Klucz 201 -&gt; Õñåêðñé¤ÉÈ
+Klucz 202 -&gt; Öòæéóòê§ÊË
+Klucz 203 -&gt; ×óçèòóë¦ËÊ
+Klucz 204 -&gt; Ðôàïõôì¡ÌÍ
+Klucz 206 -&gt; Òöâí÷öî£ÎÏ
+Klucz 207 -&gt; Ó÷ãìö÷ï¢ÏÎ
+Klucz 208 -&gt; Ìèüóéèð½ÐÑ
+Klucz 209 -&gt; Íéýòèéñ¼ÑÐ
+Klucz 210 -&gt; Îêþñëêò¿ÒÓ
+Klucz 211 -&gt; Ïëÿðêëó¾ÓÒ
+Klucz 212 -&gt; Èìø÷íìô¹ÔÕ
+Klucz 213 -&gt; Éíùöìíõ¸ÕÔ
+Klucz 214 -&gt; Êîúõïîö»Ö×
+Klucz 215 -&gt; Ëïûôîï÷º×Ö
+Klucz 216 -&gt; ÄàôûáàøµØÙ
+Klucz 217 -&gt; Åáõúàáù´ÙØ
+Klucz 218 -&gt; Æâöùãâú·ÚÛ
+Klucz 219 -&gt; Çã÷øâãû¶ÛÚ
+Klucz 220 -&gt; Àäðÿåäü±ÜÝ
+Klucz 221 -&gt; Áåñþäåý°ÝÜ
+Klucz 222 -&gt; Âæòýçæþ³Þß
+Klucz 223 -&gt; Ãçóüæçÿ²ßÞ</code></pre>
+</div>
+</div>
+
+
 </section>
-</section>
-<section id="kody---rozwiązania-zadań" class="level2">
-<h2 class="anchored" data-anchor-id="kody---rozwiązania-zadań">kody - rozwiązania zadań</h2>
-<!-- // TODO  Napisać kod który bierze string przekłada na bity np 4 litery.
-Następnie losuje ciąg 0 i 1 jako szyfr i pokazuje wynik szyfrowania. 
-Potem jak mam klucz to jak to odszyfrować. -Przyda się do BB84
-
--->
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> experiment <span class="kw">in</span> [<span class="dv">100</span>,<span class="dv">1000</span>,<span class="dv">10000</span>,<span class="dv">100000</span>]:</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    heads <span class="op">=</span> tails <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(experiment):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> randrange(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">0</span>: heads <span class="op">=</span> heads <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: tails <span class="op">=</span> tails <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"experiment:"</span>,experiment)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"heads ="</span>,heads,<span class="st">"  tails = "</span>,tails)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"the ratio of #heads/#tails is"</span>,(<span class="bu">round</span>(heads<span class="op">/</span>tails,<span class="dv">4</span>)))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>() <span class="co"># empty line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># let's pick a random number between {0,1,...,99}</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># it is expected to be less than 60 with probability 0.6</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     and greater than or equal to 60 with probability 0.4</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ten sam przypadek możesz zrealizować dla losowania wartosci rzeczywistej</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># pomiędzy 0 i 1.</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> experiment <span class="kw">in</span> [<span class="dv">100</span>,<span class="dv">1000</span>,<span class="dv">10000</span>,<span class="dv">100000</span>]:</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    heads <span class="op">=</span> tails <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(experiment):</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> randrange(<span class="dv">100</span>) <span class="op">&lt;</span><span class="dv">60</span>: heads <span class="op">=</span> heads <span class="op">+</span> <span class="dv">1</span> <span class="co"># with probability 0.6</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: tails <span class="op">=</span> tails <span class="op">+</span> <span class="dv">1</span> <span class="co"># with probability 0.4</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"experiment:"</span>,experiment)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"heads ="</span>,heads,<span class="st">"  tails = "</span>,tails)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"the ratio of #heads/#tails is"</span>,(<span class="bu">round</span>(heads<span class="op">/</span>tails,<span class="dv">4</span>)))</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>() <span class="co"># empty line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
-
 </section>
 
 </main> <!-- /main -->

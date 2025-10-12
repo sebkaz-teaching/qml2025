@@ -27,6 +27,9 @@ title: Książki i strony WWW
 
 7. M. Schuld, F. Petruccione, _Machine Learning with Quantum Computers_, Springer 2021.
 
+8. Nielsen and Chuang _Quantum Computation and Quantum Information_, Cambridge, 2018.
+9. R. S. Sutor _Dancing with Qubits, Second Edition_, Packt, 2024 
+
 <div id="AI">
 ### AI 
 </div>

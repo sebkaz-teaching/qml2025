@@ -14,7 +14,7 @@ Z matematycznego punktu widzenia oznacza to, że obliczenia to _funkcje_, które
 W przypadku klasycznych komputerów podstawową jednostką pamięci jest **bit** (ang. _binary digit_).
 Funkcje, które operują na bitach nazywamy **bramkami logicznymi** (ang. _logic gates_).
 
-### Monety
+## Monety
 
 Rozważmy monetę. Posiada ona dwie strony  (odróżnialne od siebie). 
 Kładąc monetę na podłożu możemy określić dostępne stany jako: $\ket{O}$, $\ket{R}$. 
@@ -28,14 +28,14 @@ Co daje nam $2 \times 2 \times 2 = 2^{3}=8$ możliwych stanów.
 
 dla $n$ monet możemy określić $2^{n}$ możliwych stanów.
 
-### Kości do gry 
+## Kości do gry 
 
 Kości do gry posiadają sześć stron. Każdej możemy przypisać liczbę od 1 do 6.
 Dwie kości do gry posiadają $6 \times 6 = 36$ możliwych stanów.
 Idąc dalej, dla trzech kości do gry mamy $6 \times 6 \times 6 = 6^{3} = 216$ możliwych stanów.
 Dla n kości do gry mamy $6^{n}$ możliwych stanów.
 
-### Kodowanie informacji 
+## Kodowanie informacji 
 
 > Ile informacji możemy zakodować za pomocą monet i kości do gry?
 
@@ -60,7 +60,7 @@ Pozostałe konfiguracje nie są używane (albo można w nich powtórzyć element
 
 > Zadanie: Angielski alfabet posiada 26 liter. Ile monet i kości potrzeba aby zakodować informacje o jednej literze?
 
-### Fizyczna realizacja klasycznych bitów
+## Fizyczna realizacja klasycznych bitów
 
 Obiekty fizyczne, które mogą przyjmować dwa stany: 
 
@@ -76,7 +76,7 @@ Zazwyczaj oznaczamy te stany jako $0$ i $1$.
 Zastosujmy nowe oznaczenia dla tych stanów: 
 $$0 = \ket{0} $$ oraz $$1 = \ket{1}$$
 
-### Reprezentacja binarna
+## Reprezentacja binarna
 
 W przypadku trzech monet mieliśmy następujące stany:
 $$OOO, OOR, ORO, ORR, ROO, ROR, RRO, RRR.$$
@@ -201,51 +201,7 @@ Podstawowe bramki, które znasz to:
 
 > Zadanie: zapisz tablicę prawdy dla każdej bramki. 
 
-#### NOT gate
 
-|A | not A | 
-|:---:|:---:|
-|0|  | 
-|1|  |
-
-#### AND gate
-
-|A | B | C|
-|:---:|:---:|:---:|
-|0| 0 | |
-|1| 0 | |
-|0| 1 | |
-|1| 1 | |
-
-#### OR gate
-
-|A | B | C|
-|:---:|:---:|:---:|
-|0| 0 | |
-|1| 0 | |
-|0| 1 | |
-|1| 1 | |
-
-#### NAND
-
-|A | B | C|
-|---|---|---|
-|0| 0 | |
-|1| 0 | |
-|0| 1 | |
-|1| 1 | |
-
-#### XOR
-
-|A | B | C|
-|---|---|---|
-|0| 0 | |
-|1| 0 | |
-|0| 1 | |
-|1| 1 | |
-
-
-Powyższe bramki pozwalają łączyć poszczególne elementy algebry boola ze sobą. 
 
 > Zadanie: Porównaj `AND` oraz `OR` z potocznym znaczeniem tych słów.
 
@@ -257,7 +213,7 @@ Powyższe bramki pozwalają łączyć poszczególne elementy algebry boola ze so
 
 ### Uniweralne bramki logiczne - NAND
 
-Tak jak widzieliśmy dla  1-bitu informacji mieliśmy 4 bramki logiczne.
+Tak jak widzieliśmy dla 1-bitu informacji mieliśmy 4 bramki logiczne.
 Dla 2-bitów mieliśmy 16 bramek logicznych. Dla 3-bitów mamy już 256 możliwości.
 
 W przypadku 2-bitów nie wypisaliśmy wszystkich bramek, dlaczego? 
@@ -274,43 +230,10 @@ Istnieją tzw. _zbiory bramek uniwersalnych_ dzięki którym możemy zrealizowa�
 - **NOT, OR**
 - **NOR**
 
-<!-- 
-## Fizyczna realizacja klasycznych  bramek logicznych
 
-Bramka NAND jest bramką uniwersalną, co oznacza, że każdą funkcję boolowską można zrealizować za pomocą układu bramek NAND.
-Dlatego ważne dla komputerów klasycznych jest, aby znaleźć praktyczną realizację i jej implementację w układach. 
+## Szyfrowanie z wykorzystaniem bramki XOR
 
-Istnieje wiele fizycznych realizacji [bramki NAND](https://en.wikipedia.org/wiki/NAND_gate).
-
-### Implementacja komórki pamięci RAM 
-
-Random Access Memory (RAM) uzywany jest do przechowywania instrukcji i danych aktualnie używanych przez CPU. 
-Stan pamięci RAM jest tracony gdy urządzenie zostanie odłączone od zasilania.
-Pamięć RAM jest zorganizowana w komórki, które mogą przechowywać pojedynczy bit informacji.
-Do implementacji pamięci RAM wykorzystuje się zbiór bramek logicznych (NAND) oraz tranzystorów. -->
-
-## Kody python
-
-> Zadanie 1: Napisz kod symuljący wyrzucenie symetrycznej monety $100$, $1000$, $10000$ i $100000$ razy
-
-```python
-from random import randrange
-# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)
-# Twoje rozwiązanie 
-```
-
-> Zadanie 2: Napisz kod symulujący wyrzucenie niesymetrycznej monety gdzie prawdopodobieństwo
-> wyrzucenia orła będzie wynosiło $60\%$.
-```python
-from random import randrange
-# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)
-# Twoje rozwiązanie 
-```
-
-
-## Szyfrowanie z wykorzystaniem bramki XOR 
 Weźmy dwie sekwencje bitów:
-
 
 sekwencja A - przedstawiająca naszą zakodowaną wiadomośc:
 $$1 0 1 1 0 1 1 1 0 0 0$$ 
@@ -355,44 +278,43 @@ Jeśli użyjemy jej więcej niż raz, to łatwo jest złamać szyfrowanie.
 > Dlaczego nie powinno się używać szyfru więcej niż jeden raz? 
 > Podpowiedź: Zakodowana wiadomość przestaje być losowa. 
 
-## kody - rozwiązania zadań 
+```{python}
+import random
 
-<!-- // TODO  Napisać kod który bierze string przekłada na bity np 4 litery.
-Następnie losuje ciąg 0 i 1 jako szyfr i pokazuje wynik szyfrowania. 
-Potem jak mam klucz to jak to odszyfrować. -Przyda się do BB84
+def text_to_bits(text):
+    return ' '.join(format(ord(c), '08b') for c in text)
 
--->
+def xor_encrypt_decrypt(text, key):
+    return ''.join(chr(ord(c) ^ key) for c in text)
 
-```python
-from random import randrange
-# randrange(n) zwraca losową wartośc z przedziału (0,...,n-1)
-for experiment in [100,1000,10000,100000]:
-    heads = tails = 0
-    for i in range(experiment):
-        if randrange(2) == 0: heads = heads + 1
-        else: tails = tails + 1
-    print("experiment:",experiment)
-    print("heads =",heads,"  tails = ",tails)
-    print("the ratio of #heads/#tails is",(round(heads/tails,4)))
-    print() # empty line
+# ====== DANE ======
+plaintext = "Quantum ML"
+key = random.randint(0, 255)  # losowy 8-bitowy klucz
+
+# ====== SZYFROWANIE ======
+ciphertext = xor_encrypt_decrypt(plaintext, key)
+decrypted = xor_encrypt_decrypt(ciphertext, key)
+
+# ====== WYNIKI ======
+print(f"Oryginalny tekst:     {plaintext}")
+print(f"Klucz (8-bit):        {key} ({format(key, '08b')})\n")
+
+print(f"Tekst binarnie:       {text_to_bits(plaintext)}")
+print(f"Zaszyfrowany binarnie:{text_to_bits(ciphertext)}\n")
+
+print(f"Zaszyfrowany tekst:   {ciphertext}")
+print(f"Odszyfrowany tekst:   {decrypted}")
+
+print(f"\nCzy poprawnie odszyfrowano? {'TAK' if decrypted == plaintext else 'NIE'}")
 ```
 
-```python
-from random import randrange
+```{python}
+ciphertext = xor_encrypt_decrypt("Quantum ML", 77)  # zaszyfruj znanym kluczem
+print("Szyfrogram:", ciphertext)
 
-# let's pick a random number between {0,1,...,99}
-# it is expected to be less than 60 with probability 0.6
-#     and greater than or equal to 60 with probability 0.4
-# ten sam przypadek możesz zrealizować dla losowania wartosci rzeczywistej
-# pomiędzy 0 i 1.
-
-for experiment in [100,1000,10000,100000]:
-    heads = tails = 0
-    for i in range(experiment):
-        if randrange(100) <60: heads = heads + 1 # with probability 0.6
-        else: tails = tails + 1 # with probability 0.4
-    print("experiment:",experiment)
-    print("heads =",heads,"  tails = ",tails)
-    print("the ratio of #heads/#tails is",(round(heads/tails,4)))
-    print() # empty line
+print("\nPróba złamania:")
+for k in range(256):
+    candidate = xor_encrypt_decrypt(ciphertext, k)
+    if candidate.isprintable():
+        print(f"Klucz {k:3d} -> {candidate}")
 ```
