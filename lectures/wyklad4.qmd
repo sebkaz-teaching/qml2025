@@ -234,6 +234,48 @@ Bramka ta do drugiego kubitu (targetu) stosuje bramkę X jeśli pierwszy kubit j
 
 > Rozpoczynajac od stanu $\ket{0} \otimes \ket{0}$ zadziałaj na pierwszy kubit bramka Hadamarda a na tak otrzymany stan zadziałaj CNOT. Jaki stan uzyskujemy? 
 
+## Wartość oczekiwana operatora Z w obwodzie kwantowym
+
+
+Bramka (operator) Z w bazie obliczeniowej
+
+Ten operator mierzy różnicę między prawdopodobieństwem, że kubit znajduje się w stanie \ket{0}, a prawdopodobieństwem, że znajduje się w stanie \ket{1}.
+
+Ogólnie, wartość oczekiwana (czyli średni wynik pomiaru w bazie Z) jest dana wzorem:
+$$
+\langle \textbf{Z} \rangle = \bra{\psi} \textbf{Z} \ket{\psi}
+$$
+
+Niech:
+$$
+\ket{\psi} = \alpha\ket{0} + \beta\ket{1}
+$$
+wtedy:
+$$
+\bra{\psi} = \alpha^\bra{0} + \beta^\bra{1}
+$$
+
+Możemy obliczyć:
+$$
+\bra{\psi} \textbf{Z} \ket{\psi} = (\alpha^\bra{0} + \beta^\bra{1}) , \textbf{Z} , (\alpha\ket{0} + \beta\ket{1}) = |\alpha|^2 - |\beta|^2
+$$
+
+Wyrażenie $|\alpha|^2 - |\beta|^2$ można interpretować jako $Prob(0) - Prob(1)$
+
+Zatem dla kubitu w stanie \ket{0}:
+$$
+\langle \textbf{Z} \rangle = 1
+$$
+
+Dla kubitu w stanie \ket{1}:
+$$
+\langle \textbf{Z} \rangle = -1
+$$
+
+A dla kubitu w stanie superpozycji $\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$:
+$$
+\langle \textbf{Z} \rangle = 0
+$$
 
 
 

@@ -232,6 +232,7 @@ window.Quarto = {
   <li><a href="#ewolucja-kwantowa" id="toc-ewolucja-kwantowa" class="nav-link active" data-scroll-target="#ewolucja-kwantowa">Ewolucja kwantowa</a></li>
   <li><a href="#bramki-jednokubitowe" id="toc-bramki-jednokubitowe" class="nav-link" data-scroll-target="#bramki-jednokubitowe">Bramki jednokubitowe</a></li>
   <li><a href="#bramki-dwukubitowe" id="toc-bramki-dwukubitowe" class="nav-link" data-scroll-target="#bramki-dwukubitowe">Bramki dwukubitowe</a></li>
+  <li><a href="#wartość-oczekiwana-operatora-z-w-obwodzie-kwantowym" id="toc-wartość-oczekiwana-operatora-z-w-obwodzie-kwantowym" class="nav-link" data-scroll-target="#wartość-oczekiwana-operatora-z-w-obwodzie-kwantowym">Wartość oczekiwana operatora Z w obwodzie kwantowym</a></li>
   </ul>
 </nav>
     </div>
@@ -420,6 +421,32 @@ phase s , t 3.3.2 rozdzial
 <blockquote class="blockquote">
 <p>Rozpoczynajac od stanu <span class="math inline">\(\ket{0} \otimes \ket{0}\)</span> zadziałaj na pierwszy kubit bramka Hadamarda a na tak otrzymany stan zadziałaj CNOT. Jaki stan uzyskujemy?</p>
 </blockquote>
+</section>
+<section id="wartość-oczekiwana-operatora-z-w-obwodzie-kwantowym" class="level2">
+<h2 class="anchored" data-anchor-id="wartość-oczekiwana-operatora-z-w-obwodzie-kwantowym">Wartość oczekiwana operatora Z w obwodzie kwantowym</h2>
+<p>Bramka (operator) Z w bazie obliczeniowej</p>
+<p>Ten operator mierzy różnicę między prawdopodobieństwem, że kubit znajduje się w stanie , a prawdopodobieństwem, że znajduje się w stanie .</p>
+<p>Ogólnie, wartość oczekiwana (czyli średni wynik pomiaru w bazie Z) jest dana wzorem: <span class="math display">\[
+\langle \textbf{Z} \rangle = \bra{\psi} \textbf{Z} \ket{\psi}
+\]</span></p>
+<p>Niech: <span class="math display">\[
+\ket{\psi} = \alpha\ket{0} + \beta\ket{1}
+\]</span> wtedy: <span class="math display">\[
+\bra{\psi} = \alpha^\bra{0} + \beta^\bra{1}
+\]</span></p>
+<p>Możemy obliczyć: <span class="math display">\[
+\bra{\psi} \textbf{Z} \ket{\psi} = (\alpha^\bra{0} + \beta^\bra{1}) , \textbf{Z} , (\alpha\ket{0} + \beta\ket{1}) = |\alpha|^2 - |\beta|^2
+\]</span></p>
+<p>Wyrażenie <span class="math inline">\(|\alpha|^2 - |\beta|^2\)</span> można interpretować jako <span class="math inline">\(Prob(0) - Prob(1)\)</span></p>
+<p>Zatem dla kubitu w stanie : <span class="math display">\[
+\langle \textbf{Z} \rangle = 1
+\]</span></p>
+<p>Dla kubitu w stanie : <span class="math display">\[
+\langle \textbf{Z} \rangle = -1
+\]</span></p>
+<p>A dla kubitu w stanie superpozycji <span class="math inline">\(\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})\)</span>: <span class="math display">\[
+\langle \textbf{Z} \rangle = 0
+\]</span></p>
 
 
 </section>

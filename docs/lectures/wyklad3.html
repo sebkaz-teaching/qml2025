@@ -233,7 +233,6 @@ window.Quarto = {
   <li><a href="#wektory-i-przestrzenie-wektorowe" id="toc-wektory-i-przestrzenie-wektorowe" class="nav-link" data-scroll-target="#wektory-i-przestrzenie-wektorowe">Wektory i przestrzenie wektorowe</a></li>
   <li><a href="#formalizm-matematyczny-obliczeń-kwantowych" id="toc-formalizm-matematyczny-obliczeń-kwantowych" class="nav-link" data-scroll-target="#formalizm-matematyczny-obliczeń-kwantowych">Formalizm matematyczny obliczeń kwantowych</a></li>
   <li><a href="#pomiar-w-bazie-z" id="toc-pomiar-w-bazie-z" class="nav-link" data-scroll-target="#pomiar-w-bazie-z">Pomiar w bazie Z</a></li>
-  <li><a href="#kilka-ciekawostek-matematycznych" id="toc-kilka-ciekawostek-matematycznych" class="nav-link" data-scroll-target="#kilka-ciekawostek-matematycznych">Kilka ciekawostek matematycznych</a></li>
   </ul>
 </nav>
     </div>
@@ -264,33 +263,36 @@ window.Quarto = {
 \newcommand{\ket}[1]{\left \rvert #1 \right \rangle}
 \newcommand{\braket}[2]{\left \langle #1 \middle \rvert #2 \right \rangle}
 \]</span></p>
-<p>Mechanika Kwantowa opiera się na <em>algebrze liniowej</em>. W ogólności teoria ta posługuje się pojęciem nieskończenie wymiarowej przestrzeni liniowej. Na szczęście do opisu kubitów (2-dim) i układów kwantowych (<span class="math inline">\(2^{n}\)</span>-dim) wystarczy nam pojęcie skończenie wymiarowej przestrzeni wektorowej. Bardzo upraszcza nam to naukę o kwantowym uczeniu maszynowym, gdyż wiele problemów matematycznych (dla fizyków) tutaj nie występuje. Upraszcza to również ilość potrzebnych matematycznych pojęć.</p>
+<p>Mechanika Kwantowa opiera się na <em>algebrze liniowej</em>.</p>
+<p>W ogólności teoria ta posługuje się pojęciem nieskończenie wymiarowej przestrzeni liniowej. Na szczęście do opisu kubitów (2-dim) i układów kwantowych (<span class="math inline">\(2^{n}\)</span>-dim) wystarczy nam pojęcie skończenie wymiarowej przestrzeni wektorowej. Bardzo upraszcza nam to naukę o kwantowym uczeniu maszynowym, gdyż wiele problemów matematycznych (dla fizyków) tutaj nie występuje. Upraszcza to również ilość potrzebnych matematycznych pojęć.</p>
 <p>Będziemy posługiwali się notacją Diraca, jednego z twórców mechaniki kwantowej. W książce Ch. Bernhardta “Obliczenia kwantowe dla każdego” autor rezygnuje z liczb zespolonych, na rzecz liczb rzeczywistych. O ile podejście takie sprawdza się na poziomie opisu o tyle dla pełnego zrozumienia posługiwanie się liczbami zespolonymi jest niezbędne.</p>
 <section id="liczby-rzeczywiste-i-zespolone---przypomnienie" class="level2">
 <h2 class="anchored" data-anchor-id="liczby-rzeczywiste-i-zespolone---przypomnienie">Liczby rzeczywiste i zespolone - przypomnienie</h2>
 <p>Liczby to matematyczne, abstrakcyjne pojęcia wywodzące się z teorii mnogości (zbiorów). Przykładowo, liczbę 42 można zapisa w postaci dziesiętnej lub binarnej <span class="math inline">\(42=101010_2\)</span>. Możemy znaleźć 42 przedmioty i je przeliczyć, ale w naszym przypadku skupimy się na abstrakcyjnym pojęciu liczby, niezależnie od jej reprezentacji. Liczba 42 jest liczbą naturalną. Zbiór liczb naturalnych oznaczamy jako <span class="math inline">\(\mathbb{N}\)</span>. Identyczne cechy abstrakcji mają liczby całkowite <span class="math inline">\(\mathbb{Z}\)</span>, liczby wymierne <span class="math inline">\(\mathbb{Q}\)</span>, liczby rzeczywiste <span class="math inline">\(\mathbb{R}\)</span> oraz liczby zespolone <span class="math inline">\(\mathbb{C}\)</span>. Nie możemy zobaczyć ani dotknąć liczb, ale możemy wykonywać na nich operacje matematyczne. Liczb Warto zaznaczyc,że liczby zespolone nie są bardziej abstrakcyjne niż liczby rzeczywiste, czy naturalne.</p>
 <p>Liczba zespolona (we współrzędnych Kartezjańskich) składa się z (dwóch liczb rzeczywistych) części rzeczywistej i urojonej: <span class="math display">\[z=x + i y\]</span> gdzie <span class="math inline">\(i^2=-1\)</span>.</p>
-<p>Natomiast częśc rzeczywista <span class="math inline">\(R(z)=x\)</span> i częśc urojona <span class="math inline">\(I(z)=y\)</span>.</p>
+<p>Część rzeczywista to <span class="math inline">\(R(z)=x\)</span> i częśc urojona to <span class="math inline">\(I(z)=y\)</span>.</p>
 <p>Na przykład: <span class="math display">\[1+i\sqrt{3}\]</span> <span class="math inline">\(R(z)=1\)</span> i <span class="math inline">\(I(z)=\sqrt{3}\)</span>.</p>
 <p>Inaczej mówiąc, liczba zespolona jest sumą liczby rzeczywistej i urojonej.</p>
 <p>Liczy zespolone, można traktowac jako punkty na płaszczyźnie o współrzędnych <span class="math inline">\(x\)</span> i <span class="math inline">\(y\)</span>.</p>
 <p><img class="center" src="../img/im_liczba.png"></p>
-<p>Każdą liczbę zespoloną możemy zapisać w postaci polarnej (współrzędne biegunowe) <span class="math display">\[ z=r\, e^{i \phi} , \]</span> gdzie <span class="math inline">\(r=|z|\)</span> to moduł liczby zespolonej, a <span class="math inline">\(\phi\)</span> to jej argument czyli wyrażony w radianach kąt między osią rzeczywistą a półprostą poprowadzoną od środka ukł. wsp. i przechodzącą przez punkt <span class="math inline">\(z\)</span>. <span class="math display">\[ z = r\, e^{i \, \phi} = r\, (\cos{\phi} + i\, \sin{\phi})\]</span> gdzie: <span class="math display">\[r = |z| = \sqrt{x^2 + y^2}\]</span> <span class="math display">\[\phi = \arctan{\frac{y}{x}}. \]</span> Natomiast: <span class="math display">\[x = r \cos{\phi}\]</span> <span class="math display">\[y = r \sin{\phi}\]</span></p>
-<p>Dla naszego przykładu: <span class="math display">\[1+i\sqrt{3} = 2 e^{i \frac{\pi}{3}} . \]</span></p>
+<p>Każdą liczbę zespoloną możemy zapisać w postaci polarnej (współrzędne biegunowe)</p>
+<p><span class="math display">\[ z=r\, e^{i \phi} , \]</span> gdzie <span class="math inline">\(r=|z|\)</span> to <strong>moduł liczby zespolonej</strong>, a <span class="math inline">\(\phi\)</span> to jej <strong>argument</strong> czyli wyrażony w radianach kąt między osią rzeczywistą a półprostą poprowadzoną od środka ukł. wsp. i przechodzącą przez punkt <span class="math inline">\(z\)</span>.</p>
+<p><span class="math display">\[ z = r\, e^{i \, \phi} = r\, (\cos{\phi} + i\, \sin{\phi}) \]</span> gdzie: <span class="math display">\[ r = |z| = \sqrt{x^2 + y^2} \]</span> <span class="math display">\[ \phi = \arctan{\frac{y}{x}}. \]</span></p>
+<p>Natomiast: <span class="math display">\[ x = r \cos{\phi} \]</span> <span class="math display">\[ y = r \sin{\phi} \]</span></p>
+<p>Dla naszego przykładu: <span class="math display">\[ 1+i\sqrt{3} = 2 e^{i \frac{\pi}{3}} .\]</span></p>
 <blockquote class="blockquote">
 <p>Udowodnij samodzielnie, że powyższe równanie jest prawdziwe.</p>
 </blockquote>
 <p>Liczby zespolone można dodawa, mnożyc i dzieli zgodnie z zwykłymi regułami arytmetyki. Dodawanie liczb zespolonych jest łatwe dla liczb w postaci kartezjańskiej. Natomiast mnożenie liczb zespolonych upraszcza się dla postaci biegunowej (następuje zamiana mnożenia na dodawanie fazy).</p>
 <p><strong>Liczba sprzężona</strong> do liczby zespolonej powstaje poprzez zmianę znaku części urojonej</p>
-<p><span class="math inline">\(z=x + i\, y\,\,\,\,\)</span> to <span class="math inline">\(\,\,\,z^*=x - i y = r*e^{-i \phi}\)</span>.</p>
-<p><strong>Norma</strong> liczby zespolonej <span class="math inline">\(z=x + i y\,\,\,\,\)</span> to <span class="math inline">\(\,\,\,|z|=\sqrt{x^2 + y^2}=r\)</span>.</p>
+<p><span class="math display">\[ z=x + i\, y\,\,\,\,\]</span> to <span class="math display">\[\,\,\,z^*=x - i y = r  e^{-i \phi} .\]</span></p>
+<p><strong>Norma</strong> liczby zespolonej <span class="math display">\[ z=x + i y\,\,\,\,\]</span> to <span class="math display">\[\,\,\,|z|=\sqrt{x^2 + y^2}=r .\]</span></p>
 <p><strong>Kwadrat normy</strong> liczby zespolonej <span class="math inline">\(z=x + i y\,\,\,\,\)</span> to <span class="math inline">\(\,\,\, |z|^2=x^2 + y^2=r^2\)</span>. Warto zauważyc, że każdy kwadrat modułu daje w wyniku nieujemną liczbę rzeczywistą.</p>
 <p>Można go również zapisać jako <span class="math display">\[|z|^2=z z^* = z^* z\]</span></p>
 <p><strong>Czynniki fazowe</strong> to szczególna klasa liczb zespolonych <span class="math inline">\(z\)</span> dla której <span class="math inline">\(r=1\)</span>.</p>
-<p>Otrzymujemy wtedy: <span class="math display">\[
-z=e^{i \phi}=\cos{\phi} + i\, \sin{\phi}\]</span> <span class="math display">\[
-z z^* = 1
-\]</span></p>
+<p>Otrzymujemy wtedy:</p>
+<p><span class="math display">\[ z=e^{i \phi}=\cos{\phi} + i\, \sin{\phi} \]</span></p>
+<p><span class="math display">\[ z z^* = 1 \]</span></p>
 <blockquote class="blockquote">
 <p>Udowodnij w kartezjańskim i polarnym układzie oniesienia.</p>
 </blockquote>
@@ -391,11 +393,16 @@ z z^* = 1
 </section>
 <section id="kubit" class="level3">
 <h3 class="anchored" data-anchor-id="kubit">Kubit</h3>
+<p><img src="../img/Bloch_sphere.jpg" alt="kubit"></p>
 <p>Elementarnym obiektem w informatyce kwantowej jest <em>kubit</em>, który realizowany jest jako dwu wymiarowy układ kwantowy. Stan kwantowy kubitu opisuje <strong>wektor</strong> w przestrzeni liniowej <span class="math inline">\(\mathbb{C}^2\)</span>.</p>
 <p>W celu wykonywania obliczeń i opisu stanu kubitu wybierzemy tzw. bazę obliczeniową: <span class="math display">\[\ket{0} = \begin{bmatrix} 1 \\ 0  \end{bmatrix} , \ket{1} = \begin{bmatrix} 0 \\ 1  \end{bmatrix}\]</span></p>
 <p>To co wyróżnia kubit w porównaniu do klasycznego bitu dowolny stan <span class="math inline">\(\ket{\psi}\)</span> może być superpozycją stanów bazowych: <span class="math display">\[
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1} = \alpha \begin{bmatrix} 1 \\ 0\end{bmatrix} + \beta \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}
-\]</span> dla którego zachodzi warunek normalizacji: <span class="math display">\[
+\]</span> <span class="math display">\[
+\bra{\psi} = \alpha^{*} \bra{0} + \beta^{*} \bra{1} = \alpha^{*} [1 \,\, 0] + \beta^{*} [0 \,\, 1] =
+[\alpha^{*}  \, \, \beta^{*} ]
+\]</span></p>
+<p>dla którego zachodzi warunek normalizacji: <span class="math display">\[
 \braket{\psi}{\psi} = |\alpha|^2 + |\beta|^2 = 1
 \]</span> gdzie <span class="math inline">\(\alpha, \beta \in \mathbb{C}\)</span>.</p>
 <blockquote class="blockquote">
@@ -472,6 +479,8 @@ z z^* = 1
 <p>Prawdopodobieństwo określone jest jako kwadrat (modułu) amplitudy Dla stanu <span class="math inline">\(\ket{0}\)</span> <span class="math inline">\(P(0) = |\alpha|^2\)</span> oraz dla stanu <span class="math inline">\(\ket{1}\)</span> <span class="math inline">\(P(1)= |\beta|^2\)</span>.</p>
 </blockquote>
 <p>Istnieje możliwośc pomiaru kubitów w innych bazach. Jednak w większości przypadków ograniczymy się do pomiaru w bazie obliczeniowej.</p>
+<p><img src="../img/pomiarx.png" width="70%" height="auto"></p>
+<p><img src="../img/pomiarh.png" width="70%" height="auto"></p>
 <section id="przykład" class="level3">
 <h3 class="anchored" data-anchor-id="przykład">Przykład</h3>
 <p>Rozważmy stan <span class="math display">\[\ket{\psi} = \frac{\sqrt{3}}{2}\ket{0}+\frac{1}{2}\ket{1}\]</span></p>
@@ -492,20 +501,46 @@ z z^* = 1
 <blockquote class="blockquote">
 <p>Bardzo ważnym etapem jest wybór bazy w której dokonujemy pomiaru. np. dla wektora <span class="math inline">\(\ket{+}\)</span> pomiar w bazie standardowej pozwoli otrzymac wyniki stanu <span class="math inline">\(\ket{0}\)</span> i <span class="math inline">\(\ket{1}\)</span> z prawdopodobieństwami <span class="math inline">\(\frac{1}{2}\)</span>. Natomiast jeśli pomiar dokonywany byłby w bazie Hadamarda to zawsze otrzymamy stan <span class="math inline">\(\ket{+}\)</span> z prawdopodobieństwem 1.</p>
 </blockquote>
-</section>
-</section>
-<section id="kilka-ciekawostek-matematycznych" class="level2">
-<h2 class="anchored" data-anchor-id="kilka-ciekawostek-matematycznych">Kilka ciekawostek matematycznych</h2>
-<p>Stan kubitów, czyli dwuwymiarowych układów kwantowych, opisujemy wektorem <code>ket</code> <span class="math inline">\(\ket{a}\)</span>. Wektory te reprezentowane są jako <code>listy</code> zapisane w kolumnach. <span class="math display">\[ \ket{a} = \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} \]</span></p>
-<p>Oprócz wektorów <code>ket</code> wprowadziliśmy wektory <code>bra</code> powstające w wyniku operacji transpozycji i sprzęzenia zespolonego. Operacja ta jest bijekcją. <!-- // TODO sprawdzić i opisać to dokładniej. --></p>
-<p>Przez bijekcję rozumiemy odwzorowanie bądź funkcję, która każdemu elementowi dziedziny przypisuje tylko jeden element przeciwdziedziny oraz dodatkowo cały zbiór dziedziny jest odwzorowany na przeciwdziedzinę. Zauważ, że druga własność jest potrzebna do zdefiniowania funkcji odwrotnej. Aby mówić o funkcji (odwrotnej), wszystkie elementy dziedziny (przeciwdziedziny) muszą zostać odwzorowane. Dzięki tej własności możemy zdefiniować całą przestrzeń dualną, w której podstawowymi składnikami są wektory dualne. Ponadto, wszystkie elementy przestrzeni wektorów bra mają swoje różne odpowiedniki w przestrzeni ketów i odwrotnie. To pozwala również stwierdzić, że tak naprawdę obie przestrzenie są izomorficzne, czyli takie same. Jedyną różnicą jest forma zapisu elementów. Operacja ta podobna jest do wpowadzenia wektorów dualnych na poziomie zakrzywionych rozmaitości rózniczkowalnych (ang. manifolds). W drugim przypadku definiujemy wektory kontrawariantne i kowariantne.</p>
-<p>Wektory bra definiujemy jako listę wierszową. <span class="math display">\[ \bra{b} = \begin{bmatrix} a_0 \,\,\,  a_1 \end{bmatrix} \]</span></p>
-<p>Do definicji przestrzeni wektorowej dodaliśmy definicję iloczynu skalarny. Zauważ, iz nie mówimy w tym przypadku o działaniu. Działania definiowały nam własności przestrzeni wektorowej. Wynikiem dodawania wektorów jak i mnożenia ich przez liczbę był zawsze jakiś wektor. A więc działania nie wyprowadzały nas poza przestrzeń wektorową. W przypadku iloczynu skalarnego wybieramy wektor oraz drugi wektor dualny. Po złozeniu jednego i drugiego otrzymujemy liczbę (skalar). <span class="math display">\[ \braket{a}{b} \]</span></p>
-<p>Do jego wprowadenia wymagane było wprowadzenie przestrzeni dualnej.</p>
-<p>Korzystając z wektorów bra i ket możemy zdefiniować jeszcze jedną operacje.</p>
-<p><span class="math display">\[ \ket{a} \bra{b} \]</span> Tym razem to co otrzymujemy mozemy traktować jako operator.</p>
+<!-- 
+## Kilka ciekawostek matematycznych
+
+Stan kubitów, czyli dwuwymiarowych układów kwantowych, opisujemy wektorem  `ket` $\ket{a}$.
+Wektory te reprezentowane są jako `listy` zapisane w kolumnach. 
+$$ \ket{a} = \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} $$
+
+Oprócz wektorów `ket` wprowadziliśmy wektory `bra` powstające w wyniku operacji transpozycji i sprzęzenia 
+zespolonego. Operacja ta jest bijekcją. 
+<!-- // TODO sprawdzić i opisać to dokładniej. -->
+<!-- 
+Przez bijekcję rozumiemy odwzorowanie bądź funkcję, która każdemu elementowi dziedziny przypisuje tylko jeden element przeciwdziedziny oraz dodatkowo cały zbiór dziedziny jest odwzorowany na przeciwdziedzinę. 
+Zauważ, że druga własność jest potrzebna do zdefiniowania funkcji odwrotnej. 
+Aby mówić o funkcji (odwrotnej), wszystkie elementy dziedziny (przeciwdziedziny) muszą zostać odwzorowane. 
+Dzięki tej własności możemy zdefiniować całą przestrzeń dualną, w której podstawowymi składnikami są wektory dualne. Ponadto, wszystkie elementy przestrzeni wektorów bra mają swoje różne odpowiedniki w przestrzeni ketów i odwrotnie. To pozwala również stwierdzić, że tak naprawdę obie przestrzenie są izomorficzne, czyli takie same. Jedyną różnicą jest forma zapisu elementów.
+Operacja ta podobna jest do wpowadzenia wektorów dualnych na poziomie zakrzywionych rozmaitości rózniczkowalnych (ang. manifolds).
+W drugim przypadku definiujemy wektory kontrawariantne i kowariantne. 
+
+Wektory bra definiujemy jako listę wierszową.
+$$ \bra{b} = \begin{bmatrix} a_0 \,\,\,  a_1 \end{bmatrix} $$
+
+Do definicji przestrzeni wektorowej dodaliśmy definicję iloczynu skalarny.
+Zauważ, iz nie mówimy w tym przypadku o działaniu. 
+Działania definiowały nam własności przestrzeni wektorowej. 
+Wynikiem dodawania wektorów jak i mnożenia ich przez liczbę był zawsze jakiś wektor. 
+A więc działania nie wyprowadzały nas poza przestrzeń wektorową. 
+W przypadku iloczynu skalarnego wybieramy wektor oraz drugi wektor dualny. 
+Po złozeniu jednego i drugiego otrzymujemy liczbę (skalar).
+$$ \braket{a}{b} $$
+
+Do jego wprowadenia wymagane było wprowadzenie 
+przestrzeni dualnej. 
+
+Korzystając z wektorów bra i ket możemy zdefiniować jeszcze jedną operacje. 
+
+$$ \ket{a} \bra{b} $$
+Tym razem to co otrzymujemy mozemy traktować jako operator.  -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

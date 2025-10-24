@@ -17,9 +17,178 @@ PQC pełnią podobną rolę jak funkcje z parametrami w klasycznym ML — np. wa
 
 Warto zapamiętać, że nie szukamy tutaj pojedynczego wyniku pomiaru, ale statystycznej właściwości stanu kwantowego zależnej od parametrów.
 
+### RX
+
+RX to parametryzowana jedno-kubitowa bramka realizująca obroty w osi X na sferze blocha o kąt $\theta$.
+
+Unitarna realizacja: 
+
+$$
+RX(\theta) = \exp\left(-i \frac{\theta}{2} X\right) =
+\begin{bmatrix}
+\cos(\frac{\theta}{2}) & -i \sin(\frac{\theta}{2}) \\
+-i \sin(\frac{\theta}{2}) & \cos(\frac{\theta}{2})
+\end{bmatrix}
+$$
+
+Dla $\theta = \pi$, bramka ta realizuje się jako bramka X. 
+
+### RZ
+
+RZ to parametryzowana jedno-kubitowa bramka realizująca obroty w osi Z na sferze blocha o kąt $\theta$.
+
+Unitarna realizacja: 
+
+$$
+RZ(\theta) = \exp\left(-i \frac{\theta}{2} Z\right) =
+\begin{bmatrix}
+e^{-i\theta/2} & 0 \\
+0 & e^{i\theta/2}
+\end{bmatrix}
+$$
+
+### RY
+
+RY to parametryzowana jedno-kubitowa bramka realizująca obroty w osi Y na sferze blocha o kąt $\theta$.
+
+Unitarna realizacja: 
+
+$$
+RY(\theta) = \exp\left(-i \frac{\theta}{2} Y\right) =
+\begin{bmatrix}
+\cos(\frac{\theta}{2}) & - \sin(\frac{\theta}{2}) \\
+\sin(\frac{\theta}{2}) & \cos(\frac{\theta}{2})
+\end{bmatrix}
+$$
+
+🌀 Dowolny obrót kubitu 
+
+
+Operator obrotu dla pojedynczego kubitu można zapisać jako:
+
+$$
+R(\phi, \theta, \omega) = R_Z(\omega)  R_Y(\theta)  R_Z(\phi)
+$$
+
+W postaci macierzowej operator ten przyjmuje formę:
+
+$$
+R(\phi, \theta, \omega) =
+\begin{bmatrix}
+e^{-i(\phi+\omega)/2}\cos(\theta/2) & -e^{-i(\phi-\omega)/2}\sin(\theta/2) \\
+e^{i(\phi-\omega)/2}\sin(\theta/2) & e^{i(\phi+\omega)/2}\cos(\theta/2)
+\end{bmatrix}
+$$
+
+
+📋 Szczegóły
+
+- Liczba kubitów (wires): 1
+- Liczba parametrów: 3
+
+
+🧮 Przepis na gradient
+
+Pochodna funkcji $f$, która zależy od operatora $R(\phi, \theta, \omega)$, względem parametru $\phi$ jest dana wzorem:
+
+$$
+\frac{d}{d\phi} f(R(\phi, \theta, \omega)) =
+\frac{1}{2}\Big[f(R(\phi + \pi/2, \theta, \omega)) - f(R(\phi - \pi/2, \theta, \omega))\Big]
+$$
+
+gdzie $f$ jest wartością oczekiwaną (expectation value) zależną od operatora $R(\phi, \theta, \omega)$.
+
+Ten sam przepis na gradient można zastosować dla każdego z kątów:
+$\phi, \theta, \omega$.
+
+
+
+💡 Komentarz :
+Operator $R(\phi, \theta, \omega)$ opisuje dowolny obrót pojedynczego kubitu na sferze Blocha.
+Sekwencja trzech rotacji wokół osi Z, Y i ponownie Z pozwala uzyskać dowolny stan kwantowy z bazy obliczeniowej — dlatego ten operator jest fundamentem wielu obwodów kwantowych i bramek parametryzowanych (PQC).
+
+## Kodowanie danych 
+
+🧠 Klasyczne potoki przetwarzania cech (Classical Feature Pipelines)
+1.	Czyszczenie danych: obsługa brakujących wartości, normalizacja skali.
+2.	Kodowanie: konwersja kategorii lub tekstu na wektory liczbowe.
+3.	Skalowanie i łączenie: skalowanie cech, tworzenie wielomianowych kombinacji lub par interakcyjnych.
+
+
+### ⚛️ Kwantowe mapy cech (Quantum Feature Maps)
+1.	Basis Encoding: mapowanie binarnych cech bezpośrednio na stany bazowe kubitów w bazie obliczeniowej.
+2.	Amplitude Encoding: zakodowanie całego wektora danych w amplitudach n kubitów.
+3.	Angle Encoding: użycie bramek rotacji $R_X(x_i)$, $R_Y(x_i)$, $R_Z(x_i)$ do zakodowania każdej cechy w fazie kubitu.
+
+### ⚙️ Kodowanie w bazie obliczeniowej (Basis Embedding / Encoding)
+
+Odpowiednim sposobem kodowania danych binarnych jest tzw. „Basis Embedding” (kodowanie w bazie obliczeniowej).
+
+Klasa BasisEmbedding interpretuje ciąg binarny jako stan bazowy kubitów zgodnie z odwzorowaniem:
+$$
+b = (b_0, \dots, b_{N-1}) ;\to; \ket{b_0, \dots, b_{N-1}}
+$$
+
+Załóżmy, że nasze cechy (features) zapisane są jako stan
+$$
+\ket{111} = \ket{1} \otimes \ket{1} \otimes \ket{1}.
+$$
+
+Reprezentując stan jako drugi wektor bazowy (standard basis vector), a iloczyn tensorowy jako iloczyn Kroneckera, możemy łatwo potwierdzić wynik prostym obliczeniem:
+
+$$
+\ket{1} \otimes \ket{1} \otimes \ket{1} = [0, 0, 0, 0, 0, 0, 0, 1]^T
+$$
+
+
+### ⚛️ Kodowanie w amplitudach (Amplitude Embedding / Encoding)
+
+Jak sama nazwa wskazuje, tablica wartości może zostać użyta jako amplitudy stanu kwantowego, zgodnie z odwzorowaniem:
+$$
+\alpha = (\alpha_0, \dots, \alpha_{2^N-1}) \to \sum_{k=0}^{2^N-1} \alpha_k \ket{k}
+$$
+
+W ten sposób każda wartość w wektorze danych klasycznych odpowiada amplitudzie jednego ze stanów bazowych układu kwantowego.
+Aby stan był fizycznie poprawny, wektor amplitud musi być znormalizowany (tj. suma kwadratów modułów amplitud równa 1).
+
+
+### 🔄 Kodowanie w kątach (Angle Embedding / Encoding)
+
+Najprostszym sposobem kodowania danych rzeczywistych (wartości zmiennoprzecinkowych) jest tzw. „Angle Embedding” (kodowanie w kątach).
+
+Ten rodzaj kodowania przypisuje pojedynczej wartości rzeczywistej x \in \mathbb{R} stan kwantowy według odwzorowania:
+$$
+x \to R_k(x)\ket{0} = e^{-i x \sigma_k /2} \ket{0}
+$$
+gdzie $k \in \{x, y, z\}$ oznacza oś obrotu na sferze Blocha.
+
+Domyślnie w klasie AngleEmbedding oś obrotu ustawiona jest na k = x.
+Można również wybrać k = y, ale należy unikać k = z, ponieważ obrót wokół osi Z nie zmienia amplitud stanu, a jedynie fazę globalną.
+
+⸻
+
+### 🔸 Uwaga:
+Rotacje Pauliego są okresowe z okresem $2\pi$ (z dokładnością do fazy globalnej).
+
+Oznacza to, że dane wejściowe warto znormalizować do przedziału $[0, \pi)$, jeśli to możliwe, aby uniknąć wieloznaczności reprezentacji stanu.
+
+
+### 🔹 Reprezentacja kwantowa danych (Quantum Embedding)
+
+Reprezentacja kwantowa (quantum embedding) przekształca dane klasyczne w stany kwantowe w przestrzeni Hilberta za pomocą kwantowej mapy cech (feature map).
+
+Proces ten polega na wzięciu klasycznego punktu danych $x$ i przetłumaczeniu go na zestaw parametrów bramek w obwodzie kwantowym, tworząc stan:
+
+$$
+\ket{\psi(x)}
+$$
+
+Ten etap jest kluczowy przy projektowaniu algorytmów kwantowych, ponieważ sposób zakodowania danych bezpośrednio wpływa na moc obliczeniową i zdolność do wykrywania wzorców w danych.
+
+
 ## Kwantowe Algorytmy Wariacyjne 
 
-<img src="../img/VQA.png" alt="model kwantowy">
+<img src="../img/VQA.png" alt="model kwantowy" width="80%" height="auto">
 
 Variational Quantum Algorithms należą do klasy algorytmów hybrydowych, w których część obliczeń wykonuje komputer kwantowy, a część klasyczny procesor.
 Ich celem jest optymalizacja zestawu parametrów, które minimalizują (lub maksymalizują) pewną funkcję kosztu.

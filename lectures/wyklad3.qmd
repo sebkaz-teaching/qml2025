@@ -7,7 +7,8 @@ $$
 \newcommand{\braket}[2]{\left \langle #1 \middle \rvert #2 \right \rangle}
 $$
 
-Mechanika Kwantowa opiera się na _algebrze liniowej_. 
+Mechanika Kwantowa opiera się na _algebrze liniowej_.
+
 W ogólności teoria ta posługuje się pojęciem nieskończenie wymiarowej przestrzeni liniowej.
 Na szczęście do opisu kubitów (2-dim) i układów kwantowych ($2^{n}$-dim) wystarczy nam pojęcie skończenie wymiarowej przestrzeni wektorowej.
 Bardzo upraszcza nam to naukę o kwantowym uczeniu maszynowym, gdyż wiele problemów matematycznych (dla fizyków) tutaj nie występuje. 
@@ -31,10 +32,9 @@ Liczb
 Warto zaznaczyc,że liczby zespolone nie są bardziej abstrakcyjne niż liczby rzeczywiste, czy naturalne.
 
 Liczba zespolona (we współrzędnych Kartezjańskich)  składa się z (dwóch liczb rzeczywistych) części rzeczywistej i urojonej:
-$$z=x + i y$$
-gdzie $i^2=-1$. 
+$$z=x + i y$$ gdzie $i^2=-1$. 
 
-Natomiast częśc rzeczywista $R(z)=x$ i częśc urojona $I(z)=y$.
+Część rzeczywista to $R(z)=x$ i częśc urojona to $I(z)=y$.
 
 Na przykład:
 $$1+i\sqrt{3}$$
@@ -47,17 +47,21 @@ Liczy zespolone, można traktowac jako punkty na płaszczyźnie o współrzędny
 <img class="center" src="../img/im_liczba.png">
 
 Każdą liczbę zespoloną możemy zapisać w postaci polarnej (współrzędne biegunowe)
-$$ z=r\, e^{i \phi} , $$  gdzie $r=|z|$ to moduł liczby zespolonej, a $\phi$ to jej argument czyli wyrażony w radianach kąt między osią rzeczywistą a półprostą poprowadzoną od środka ukł. wsp. i przechodzącą przez punkt $z$.
-$$ z = r\, e^{i \, \phi} = r\, (\cos{\phi} + i\, \sin{\phi})$$
+
+$$ z=r\, e^{i \phi} , $$
+gdzie $r=|z|$ to **moduł liczby zespolonej**, a $\phi$ to jej **argument** czyli wyrażony w radianach kąt między osią rzeczywistą a półprostą poprowadzoną od środka ukł. wsp. i przechodzącą przez punkt $z$.
+
+$$ z = r\, e^{i \, \phi} = r\, (\cos{\phi} + i\, \sin{\phi}) $$
 gdzie:
-$$r = |z| = \sqrt{x^2 + y^2}$$
-$$\phi = \arctan{\frac{y}{x}}. $$
+$$ r = |z| = \sqrt{x^2 + y^2} $$
+$$ \phi = \arctan{\frac{y}{x}}. $$
+
 Natomiast:
-$$x = r \cos{\phi}$$
-$$y = r \sin{\phi}$$
+$$ x = r \cos{\phi} $$
+$$ y = r \sin{\phi} $$
 
 Dla naszego przykładu:
-$$1+i\sqrt{3} = 2 e^{i \frac{\pi}{3}} . $$
+$$ 1+i\sqrt{3} = 2 e^{i \frac{\pi}{3}} .$$
 
 > Udowodnij samodzielnie, że powyższe równanie jest prawdziwe.
 
@@ -68,9 +72,9 @@ Natomiast mnożenie liczb zespolonych upraszcza się dla postaci biegunowej (nas
 
 **Liczba sprzężona** do liczby zespolonej powstaje poprzez zmianę znaku części urojonej 
 
-$z=x + i\, y\,\,\,\,$ to $\,\,\,z^*=x - i y = r*e^{-i \phi}$.
+$$ z=x + i\, y\,\,\,\,$$ to $$\,\,\,z^*=x - i y = r  e^{-i \phi} .$$
 
-**Norma** liczby zespolonej $z=x + i y\,\,\,\,$ to $\,\,\,|z|=\sqrt{x^2 + y^2}=r$.
+**Norma** liczby zespolonej $$ z=x + i y\,\,\,\,$$ to $$\,\,\,|z|=\sqrt{x^2 + y^2}=r .$$
 
 **Kwadrat normy** liczby zespolonej $z=x + i y\,\,\,\,$ to $\,\,\, |z|^2=x^2 + y^2=r^2$. 
 Warto zauważyc, że każdy kwadrat modułu daje w wyniku nieujemną liczbę rzeczywistą.
@@ -80,11 +84,10 @@ Można go również zapisać jako $$|z|^2=z z^* = z^* z$$
 **Czynniki fazowe** to szczególna klasa liczb zespolonych $z$ dla której $r=1$. 
 
 Otrzymujemy wtedy: 
-$$
-z=e^{i \phi}=\cos{\phi} + i\, \sin{\phi}$$ 
-$$
-z z^* = 1 
-$$
+
+$$ z=e^{i \phi}=\cos{\phi} + i\, \sin{\phi} $$ 
+
+$$ z z^* = 1 $$
 
 > Udowodnij w kartezjańskim i polarnym układzie oniesienia.
  
@@ -237,7 +240,6 @@ Ta wiedza wystarczy do wyjaśnienia _notacji Diraca_.
 
 Iloczyn skalarny $\braket{\psi}{\phi}$ wektorów $\ket{\psi}$ i $\ket{\phi}$ czytamy jako _braket u v_.
 
-
 ### Stan 
 
 W fizyce klasycznej znajomość stanu układu oznacza, iż wiemy wszystko co jest potrzebne
@@ -254,6 +256,9 @@ Jeśli przynajmniej dwie liczby $x_i$ są niezerowe, to układ znajduje się w *
 
 ### Kubit
 
+<img src="../img/Bloch_sphere.jpg" alt="kubit" />
+
+
 Elementarnym obiektem w informatyce kwantowej jest _kubit_, który realizowany jest jako dwu wymiarowy układ kwantowy.
 Stan kwantowy kubitu opisuje **wektor** w przestrzeni liniowej $\mathbb{C}^2$.
 
@@ -264,6 +269,11 @@ To co wyróżnia kubit w porównaniu do klasycznego bitu dowolny stan $\ket{\psi
 $$
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1} = \alpha \begin{bmatrix} 1 \\ 0\end{bmatrix} + \beta \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}
 $$
+$$
+\bra{\psi} = \alpha^{*} \bra{0} + \beta^{*} \bra{1} = \alpha^{*} [1 \,\, 0] + \beta^{*} [0 \,\, 1] = 
+[\alpha^{*}  \, \, \beta^{*} ]
+$$
+
 dla którego zachodzi warunek normalizacji:
 $$
 \braket{\psi}{\psi} = |\alpha|^2 + |\beta|^2 = 1
@@ -397,6 +407,10 @@ Dla kubitu w superpozycji stanów bazowych jedyne co możemy określic to prawdo
 Istnieje możliwośc pomiaru kubitów w innych bazach. 
 Jednak w większości przypadków ograniczymy się do pomiaru w bazie obliczeniowej. 
 
+<img src="../img/pomiarx.png" width="70%" height="auto"/>
+
+<img src="../img/pomiarh.png" width="70%" height="auto"/>
+
 ### Przykład
 
 Rozważmy stan $$\ket{\psi} = \frac{\sqrt{3}}{2}\ket{0}+\frac{1}{2}\ket{1}$$
@@ -430,7 +444,7 @@ $$
 > Bardzo ważnym etapem jest wybór bazy w której dokonujemy pomiaru. 
 > np. dla wektora $\ket{+}$ pomiar w bazie standardowej pozwoli otrzymac wyniki stanu $\ket{0}$ i $\ket{1}$ z prawdopodobieństwami $\frac{1}{2}$. Natomiast jeśli pomiar dokonywany byłby w bazie Hadamarda to zawsze otrzymamy stan $\ket{+}$ z prawdopodobieństwem 1. 
 
-
+<!-- 
 ## Kilka ciekawostek matematycznych
 
 Stan kubitów, czyli dwuwymiarowych układów kwantowych, opisujemy wektorem  `ket` $\ket{a}$.
@@ -440,7 +454,7 @@ $$ \ket{a} = \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} $$
 Oprócz wektorów `ket` wprowadziliśmy wektory `bra` powstające w wyniku operacji transpozycji i sprzęzenia 
 zespolonego. Operacja ta jest bijekcją. 
 <!-- // TODO sprawdzić i opisać to dokładniej. -->
-
+<!-- 
 Przez bijekcję rozumiemy odwzorowanie bądź funkcję, która każdemu elementowi dziedziny przypisuje tylko jeden element przeciwdziedziny oraz dodatkowo cały zbiór dziedziny jest odwzorowany na przeciwdziedzinę. 
 Zauważ, że druga własność jest potrzebna do zdefiniowania funkcji odwrotnej. 
 Aby mówić o funkcji (odwrotnej), wszystkie elementy dziedziny (przeciwdziedziny) muszą zostać odwzorowane. 
@@ -466,6 +480,4 @@ przestrzeni dualnej.
 Korzystając z wektorów bra i ket możemy zdefiniować jeszcze jedną operacje. 
 
 $$ \ket{a} \bra{b} $$
-Tym razem to co otrzymujemy mozemy traktować jako operator. 
-
-
+Tym razem to co otrzymujemy mozemy traktować jako operator.  -->

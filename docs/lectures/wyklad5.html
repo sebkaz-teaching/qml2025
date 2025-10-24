@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -201,6 +230,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#pqc-parametrized-quantum-circuits" id="toc-pqc-parametrized-quantum-circuits" class="nav-link active" data-scroll-target="#pqc-parametrized-quantum-circuits">PQC – Parametrized Quantum Circuits</a></li>
+  <li><a href="#kodowanie-danych" id="toc-kodowanie-danych" class="nav-link" data-scroll-target="#kodowanie-danych">Kodowanie danych</a></li>
   <li><a href="#kwantowe-algorytmy-wariacyjne" id="toc-kwantowe-algorytmy-wariacyjne" class="nav-link" data-scroll-target="#kwantowe-algorytmy-wariacyjne">Kwantowe Algorytmy Wariacyjne</a></li>
   <li><a href="#quantum-support-vector-classification-qsvm" id="toc-quantum-support-vector-classification-qsvm" class="nav-link" data-scroll-target="#quantum-support-vector-classification-qsvm">Quantum Support Vector Classification (qSVM)</a></li>
   <li><a href="#quantum-neural-networks-qnn" id="toc-quantum-neural-networks-qnn" class="nav-link" data-scroll-target="#quantum-neural-networks-qnn">Quantum Neural Networks (QNN)</a></li>
@@ -236,10 +266,130 @@ ul.task-list li input[type="checkbox"] {
 <p>Parametryzowane obwody kwantowe (PQC) to podstawowy element współczesnych algorytmów hybrydowych. Ich działanie polega na tym, że stan kwantowy (czyli układ kubitów) jest modyfikowany za pomocą bramek kwantowych zależnych od zestawu parametrów klasycznych — np. kątów rotacji. Zmieniając te parametry, możemy dostosować stan wyjściowy obwodu do konkretnego zadania, np. minimalizacji energii lub klasyfikacji danych.</p>
 <p>PQC pełnią podobną rolę jak funkcje z parametrami w klasycznym ML — np. wagi w sieciach neuronowych.</p>
 <p>Warto zapamiętać, że nie szukamy tutaj pojedynczego wyniku pomiaru, ale statystycznej właściwości stanu kwantowego zależnej od parametrów.</p>
+<section id="rx" class="level3">
+<h3 class="anchored" data-anchor-id="rx">RX</h3>
+<p>RX to parametryzowana jedno-kubitowa bramka realizująca obroty w osi X na sferze blocha o kąt <span class="math inline">\(\theta\)</span>.</p>
+<p>Unitarna realizacja:</p>
+<p><span class="math display">\[
+RX(\theta) = \exp\left(-i \frac{\theta}{2} X\right) =
+\begin{bmatrix}
+\cos(\frac{\theta}{2}) &amp; -i \sin(\frac{\theta}{2}) \\
+-i \sin(\frac{\theta}{2}) &amp; \cos(\frac{\theta}{2})
+\end{bmatrix}
+\]</span></p>
+<p>Dla <span class="math inline">\(\theta = \pi\)</span>, bramka ta realizuje się jako bramka X.</p>
+</section>
+<section id="rz" class="level3">
+<h3 class="anchored" data-anchor-id="rz">RZ</h3>
+<p>RZ to parametryzowana jedno-kubitowa bramka realizująca obroty w osi Z na sferze blocha o kąt <span class="math inline">\(\theta\)</span>.</p>
+<p>Unitarna realizacja:</p>
+<p><span class="math display">\[
+RZ(\theta) = \exp\left(-i \frac{\theta}{2} Z\right) =
+\begin{bmatrix}
+e^{-i\theta/2} &amp; 0 \\
+0 &amp; e^{i\theta/2}
+\end{bmatrix}
+\]</span></p>
+</section>
+<section id="ry" class="level3">
+<h3 class="anchored" data-anchor-id="ry">RY</h3>
+<p>RY to parametryzowana jedno-kubitowa bramka realizująca obroty w osi Y na sferze blocha o kąt <span class="math inline">\(\theta\)</span>.</p>
+<p>Unitarna realizacja:</p>
+<p><span class="math display">\[
+RY(\theta) = \exp\left(-i \frac{\theta}{2} Y\right) =
+\begin{bmatrix}
+\cos(\frac{\theta}{2}) &amp; - \sin(\frac{\theta}{2}) \\
+\sin(\frac{\theta}{2}) &amp; \cos(\frac{\theta}{2})
+\end{bmatrix}
+\]</span></p>
+<p>🌀 Dowolny obrót kubitu</p>
+<p>Operator obrotu dla pojedynczego kubitu można zapisać jako:</p>
+<p><span class="math display">\[
+R(\phi, \theta, \omega) = R_Z(\omega)  R_Y(\theta)  R_Z(\phi)
+\]</span></p>
+<p>W postaci macierzowej operator ten przyjmuje formę:</p>
+<p><span class="math display">\[
+R(\phi, \theta, \omega) =
+\begin{bmatrix}
+e^{-i(\phi+\omega)/2}\cos(\theta/2) &amp; -e^{-i(\phi-\omega)/2}\sin(\theta/2) \\
+e^{i(\phi-\omega)/2}\sin(\theta/2) &amp; e^{i(\phi+\omega)/2}\cos(\theta/2)
+\end{bmatrix}
+\]</span></p>
+<p>📋 Szczegóły</p>
+<ul>
+<li>Liczba kubitów (wires): 1</li>
+<li>Liczba parametrów: 3</li>
+</ul>
+<p>🧮 Przepis na gradient</p>
+<p>Pochodna funkcji <span class="math inline">\(f\)</span>, która zależy od operatora <span class="math inline">\(R(\phi, \theta, \omega)\)</span>, względem parametru <span class="math inline">\(\phi\)</span> jest dana wzorem:</p>
+<p><span class="math display">\[
+\frac{d}{d\phi} f(R(\phi, \theta, \omega)) =
+\frac{1}{2}\Big[f(R(\phi + \pi/2, \theta, \omega)) - f(R(\phi - \pi/2, \theta, \omega))\Big]
+\]</span></p>
+<p>gdzie <span class="math inline">\(f\)</span> jest wartością oczekiwaną (expectation value) zależną od operatora <span class="math inline">\(R(\phi, \theta, \omega)\)</span>.</p>
+<p>Ten sam przepis na gradient można zastosować dla każdego z kątów: <span class="math inline">\(\phi, \theta, \omega\)</span>.</p>
+<p>💡 Komentarz : Operator <span class="math inline">\(R(\phi, \theta, \omega)\)</span> opisuje dowolny obrót pojedynczego kubitu na sferze Blocha. Sekwencja trzech rotacji wokół osi Z, Y i ponownie Z pozwala uzyskać dowolny stan kwantowy z bazy obliczeniowej — dlatego ten operator jest fundamentem wielu obwodów kwantowych i bramek parametryzowanych (PQC).</p>
+</section>
+</section>
+<section id="kodowanie-danych" class="level2">
+<h2 class="anchored" data-anchor-id="kodowanie-danych">Kodowanie danych</h2>
+<p>🧠 Klasyczne potoki przetwarzania cech (Classical Feature Pipelines) 1. Czyszczenie danych: obsługa brakujących wartości, normalizacja skali. 2. Kodowanie: konwersja kategorii lub tekstu na wektory liczbowe. 3. Skalowanie i łączenie: skalowanie cech, tworzenie wielomianowych kombinacji lub par interakcyjnych.</p>
+<section id="kwantowe-mapy-cech-quantum-feature-maps" class="level3">
+<h3 class="anchored" data-anchor-id="kwantowe-mapy-cech-quantum-feature-maps">⚛️ Kwantowe mapy cech (Quantum Feature Maps)</h3>
+<ol type="1">
+<li>Basis Encoding: mapowanie binarnych cech bezpośrednio na stany bazowe kubitów w bazie obliczeniowej.</li>
+<li>Amplitude Encoding: zakodowanie całego wektora danych w amplitudach n kubitów.</li>
+<li>Angle Encoding: użycie bramek rotacji <span class="math inline">\(R_X(x_i)\)</span>, <span class="math inline">\(R_Y(x_i)\)</span>, <span class="math inline">\(R_Z(x_i)\)</span> do zakodowania każdej cechy w fazie kubitu.</li>
+</ol>
+</section>
+<section id="kodowanie-w-bazie-obliczeniowej-basis-embedding-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="kodowanie-w-bazie-obliczeniowej-basis-embedding-encoding">⚙️ Kodowanie w bazie obliczeniowej (Basis Embedding / Encoding)</h3>
+<p>Odpowiednim sposobem kodowania danych binarnych jest tzw. „Basis Embedding” (kodowanie w bazie obliczeniowej).</p>
+<p>Klasa BasisEmbedding interpretuje ciąg binarny jako stan bazowy kubitów zgodnie z odwzorowaniem: <span class="math display">\[
+b = (b_0, \dots, b_{N-1}) ;\to; \ket{b_0, \dots, b_{N-1}}
+\]</span></p>
+<p>Załóżmy, że nasze cechy (features) zapisane są jako stan <span class="math display">\[
+\ket{111} = \ket{1} \otimes \ket{1} \otimes \ket{1}.
+\]</span></p>
+<p>Reprezentując stan jako drugi wektor bazowy (standard basis vector), a iloczyn tensorowy jako iloczyn Kroneckera, możemy łatwo potwierdzić wynik prostym obliczeniem:</p>
+<p><span class="math display">\[
+\ket{1} \otimes \ket{1} \otimes \ket{1} = [0, 0, 0, 0, 0, 0, 0, 1]^T
+\]</span></p>
+</section>
+<section id="kodowanie-w-amplitudach-amplitude-embedding-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="kodowanie-w-amplitudach-amplitude-embedding-encoding">⚛️ Kodowanie w amplitudach (Amplitude Embedding / Encoding)</h3>
+<p>Jak sama nazwa wskazuje, tablica wartości może zostać użyta jako amplitudy stanu kwantowego, zgodnie z odwzorowaniem: <span class="math display">\[
+\alpha = (\alpha_0, \dots, \alpha_{2^N-1}) \to \sum_{k=0}^{2^N-1} \alpha_k \ket{k}
+\]</span></p>
+<p>W ten sposób każda wartość w wektorze danych klasycznych odpowiada amplitudzie jednego ze stanów bazowych układu kwantowego. Aby stan był fizycznie poprawny, wektor amplitud musi być znormalizowany (tj. suma kwadratów modułów amplitud równa 1).</p>
+</section>
+<section id="kodowanie-w-kątach-angle-embedding-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="kodowanie-w-kątach-angle-embedding-encoding">🔄 Kodowanie w kątach (Angle Embedding / Encoding)</h3>
+<p>Najprostszym sposobem kodowania danych rzeczywistych (wartości zmiennoprzecinkowych) jest tzw. „Angle Embedding” (kodowanie w kątach).</p>
+<p>Ten rodzaj kodowania przypisuje pojedynczej wartości rzeczywistej x stan kwantowy według odwzorowania: <span class="math display">\[
+x \to R_k(x)\ket{0} = e^{-i x \sigma_k /2} \ket{0}
+\]</span> gdzie <span class="math inline">\(k \in \{x, y, z\}\)</span> oznacza oś obrotu na sferze Blocha.</p>
+<p>Domyślnie w klasie AngleEmbedding oś obrotu ustawiona jest na k = x. Można również wybrać k = y, ale należy unikać k = z, ponieważ obrót wokół osi Z nie zmienia amplitud stanu, a jedynie fazę globalną.</p>
+<p>⸻</p>
+</section>
+<section id="uwaga" class="level3">
+<h3 class="anchored" data-anchor-id="uwaga">🔸 Uwaga:</h3>
+<p>Rotacje Pauliego są okresowe z okresem <span class="math inline">\(2\pi\)</span> (z dokładnością do fazy globalnej).</p>
+<p>Oznacza to, że dane wejściowe warto znormalizować do przedziału <span class="math inline">\([0, \pi)\)</span>, jeśli to możliwe, aby uniknąć wieloznaczności reprezentacji stanu.</p>
+</section>
+<section id="reprezentacja-kwantowa-danych-quantum-embedding" class="level3">
+<h3 class="anchored" data-anchor-id="reprezentacja-kwantowa-danych-quantum-embedding">🔹 Reprezentacja kwantowa danych (Quantum Embedding)</h3>
+<p>Reprezentacja kwantowa (quantum embedding) przekształca dane klasyczne w stany kwantowe w przestrzeni Hilberta za pomocą kwantowej mapy cech (feature map).</p>
+<p>Proces ten polega na wzięciu klasycznego punktu danych <span class="math inline">\(x\)</span> i przetłumaczeniu go na zestaw parametrów bramek w obwodzie kwantowym, tworząc stan:</p>
+<p><span class="math display">\[
+\ket{\psi(x)}
+\]</span></p>
+<p>Ten etap jest kluczowy przy projektowaniu algorytmów kwantowych, ponieważ sposób zakodowania danych bezpośrednio wpływa na moc obliczeniową i zdolność do wykrywania wzorców w danych.</p>
+</section>
 </section>
 <section id="kwantowe-algorytmy-wariacyjne" class="level2">
 <h2 class="anchored" data-anchor-id="kwantowe-algorytmy-wariacyjne">Kwantowe Algorytmy Wariacyjne</h2>
-<p><img src="../img/VQA.png" alt="model kwantowy"></p>
+<p><img src="../img/VQA.png" alt="model kwantowy" width="80%" height="auto"></p>
 <p>Variational Quantum Algorithms należą do klasy algorytmów hybrydowych, w których część obliczeń wykonuje komputer kwantowy, a część klasyczny procesor. Ich celem jest optymalizacja zestawu parametrów, które minimalizują (lub maksymalizują) pewną funkcję kosztu. Proces polega na naprzemiennym uruchamianiu obwodu kwantowego z różnymi wartościami parametrów i wykorzystaniu klasycznego algorytmu (np. gradient descent) do poprawy tych parametrów.</p>
 <p>👉 Schemat działania:</p>
 <ol type="1">
