@@ -234,6 +234,8 @@ window.Quarto = {
   <li><a href="#kwantowe-algorytmy-wariacyjne" id="toc-kwantowe-algorytmy-wariacyjne" class="nav-link" data-scroll-target="#kwantowe-algorytmy-wariacyjne">Kwantowe Algorytmy Wariacyjne</a></li>
   <li><a href="#quantum-support-vector-classification-qsvm" id="toc-quantum-support-vector-classification-qsvm" class="nav-link" data-scroll-target="#quantum-support-vector-classification-qsvm">Quantum Support Vector Classification (qSVM)</a></li>
   <li><a href="#quantum-neural-networks-qnn" id="toc-quantum-neural-networks-qnn" class="nav-link" data-scroll-target="#quantum-neural-networks-qnn">Quantum Neural Networks (QNN)</a></li>
+  <li><a href="#ansatz-i-schematy-modelowe" id="toc-ansatz-i-schematy-modelowe" class="nav-link" data-scroll-target="#ansatz-i-schematy-modelowe">Ansatz i schematy modelowe</a></li>
+  <li><a href="#pomiar-i-interpretacja-wyników" id="toc-pomiar-i-interpretacja-wyników" class="nav-link" data-scroll-target="#pomiar-i-interpretacja-wyników">Pomiar i interpretacja wyników</a></li>
   </ul>
 </nav>
     </div>
@@ -302,7 +304,9 @@ RY(\theta) = \exp\left(-i \frac{\theta}{2} Y\right) =
 \sin(\frac{\theta}{2}) &amp; \cos(\frac{\theta}{2})
 \end{bmatrix}
 \]</span></p>
-<p>🌀 Dowolny obrót kubitu</p>
+</section>
+<section id="dowolny-obrót-kubitu" class="level3">
+<h3 class="anchored" data-anchor-id="dowolny-obrót-kubitu">🌀 Dowolny obrót kubitu</h3>
 <p>Operator obrotu dla pojedynczego kubitu można zapisać jako:</p>
 <p><span class="math display">\[
 R(\phi, \theta, \omega) = R_Z(\omega)  R_Y(\theta)  R_Z(\phi)
@@ -315,12 +319,15 @@ e^{-i(\phi+\omega)/2}\cos(\theta/2) &amp; -e^{-i(\phi-\omega)/2}\sin(\theta/2) \
 e^{i(\phi-\omega)/2}\sin(\theta/2) &amp; e^{i(\phi+\omega)/2}\cos(\theta/2)
 \end{bmatrix}
 \]</span></p>
-<p>📋 Szczegóły</p>
+<section id="szczegóły" class="level4">
+<h4 class="anchored" data-anchor-id="szczegóły">📋 Szczegóły</h4>
 <ul>
 <li>Liczba kubitów (wires): 1</li>
 <li>Liczba parametrów: 3</li>
 </ul>
-<p>🧮 Przepis na gradient</p>
+</section>
+<section id="przepis-na-gradient" class="level4">
+<h4 class="anchored" data-anchor-id="przepis-na-gradient">🧮 Przepis na gradient</h4>
 <p>Pochodna funkcji <span class="math inline">\(f\)</span>, która zależy od operatora <span class="math inline">\(R(\phi, \theta, \omega)\)</span>, względem parametru <span class="math inline">\(\phi\)</span> jest dana wzorem:</p>
 <p><span class="math display">\[
 \frac{d}{d\phi} f(R(\phi, \theta, \omega)) =
@@ -328,7 +335,17 @@ e^{i(\phi-\omega)/2}\sin(\theta/2) &amp; e^{i(\phi+\omega)/2}\cos(\theta/2)
 \]</span></p>
 <p>gdzie <span class="math inline">\(f\)</span> jest wartością oczekiwaną (expectation value) zależną od operatora <span class="math inline">\(R(\phi, \theta, \omega)\)</span>.</p>
 <p>Ten sam przepis na gradient można zastosować dla każdego z kątów: <span class="math inline">\(\phi, \theta, \omega\)</span>.</p>
-<p>💡 Komentarz : Operator <span class="math inline">\(R(\phi, \theta, \omega)\)</span> opisuje dowolny obrót pojedynczego kubitu na sferze Blocha. Sekwencja trzech rotacji wokół osi Z, Y i ponownie Z pozwala uzyskać dowolny stan kwantowy z bazy obliczeniowej — dlatego ten operator jest fundamentem wielu obwodów kwantowych i bramek parametryzowanych (PQC).</p>
+</section>
+<section id="komentarz" class="level4">
+<h4 class="anchored" data-anchor-id="komentarz">💡 Komentarz:</h4>
+<p>Operator <span class="math inline">\(R(\phi, \theta, \omega)\)</span> opisuje dowolny obrót pojedynczego kubitu na sferze Blocha. Sekwencja trzech rotacji wokół osi Z, Y i ponownie Z pozwala uzyskać dowolny stan kwantowy z bazy obliczeniowej — dlatego ten operator jest fundamentem wielu obwodów kwantowych i bramek parametryzowanych (PQC).</p>
+<p>Wiemy juz jak składać bramki w celu utworzenia dowolnego (i o dowolnej głębokości) obwodu. <span class="math display">\[ \ket{\psi'} = U_m(\theta_m)\dots U_2(\theta_2) U_1(\theta_1) \ket{\psi} \]</span></p>
+<p>Część indywidualnych bramek (ze zbioru <span class="math inline">\((U_i)_{i=1,\dots,m}\)</span>) moze być ustalona np. <span class="math inline">\(X\)</span>, <span class="math inline">\(CNOT\)</span>, czyli ich parametry są ściśle określone (np. <span class="math inline">\(\pi\)</span>).</p>
+<p>Jednak część bramek moze zalezeć od parametrów obrotów wyrazonych najczęściej jako radiany (w zakresi <span class="math inline">\(\theta \in [-\pi, \pi]\)</span>).</p>
+<p>Po przygotowaniu stanu <span class="math inline">\(\ket{\psi'}\)</span> mozemy zmierzyć jeden lub cały zestaw kubitów. Po pomiarze kubity zostają w stanie bazowym zgodnie z wykorzystanym operatorem. Najczęściej wybieramy bazę obliczeniową pozwalającą uzyskać rezultat jako listę bitów.</p>
+<p>Tak zdefiniowany i działający obwód kwantowy mozna wykorzystać do wielu rzeczy. Dla nas najwazniejszym aspektem jest mozliwość trenowania parametrów obwodu.</p>
+<p><img src="../img/proces.png" alt="model kwantowy" width="80%" height="auto"></p>
+</section>
 </section>
 </section>
 <section id="kodowanie-danych" class="level2">
@@ -386,6 +403,13 @@ x \to R_k(x)\ket{0} = e^{-i x \sigma_k /2} \ket{0}
 \]</span></p>
 <p>Ten etap jest kluczowy przy projektowaniu algorytmów kwantowych, ponieważ sposób zakodowania danych bezpośrednio wpływa na moc obliczeniową i zdolność do wykrywania wzorców w danych.</p>
 </section>
+<section id="schemat-kodowania" class="level3">
+<h3 class="anchored" data-anchor-id="schemat-kodowania">Schemat kodowania</h3>
+<p>Rozwazmy N wierszy 8 zmiennych <span class="math inline">\(X_1\dots X_8\)</span> o wartościach rzeczywistych.</p>
+<p>Potrzebujemy określić <span class="math inline">\(X_i^{max}\)</span> oraz <span class="math inline">\(X_i^{min}\)</span>.</p>
+<p><span class="math inline">\(\theta^j_i = \frac{X^j_i - X_i^{min}}{X_i^{max}-X_i^{min}} \pi\)</span></p>
+<p>Korzystając z bramki <span class="math inline">\(R_y\)</span> mozemy zakodować kazdy kubit z osobnym kątem. Mozna takze wybrać dwie bramki z dwoma kątami dla jednego kubitu (<span class="math inline">\(R_y\)</span> i <span class="math inline">\(R_z\)</span>)</p>
+</section>
 </section>
 <section id="kwantowe-algorytmy-wariacyjne" class="level2">
 <h2 class="anchored" data-anchor-id="kwantowe-algorytmy-wariacyjne">Kwantowe Algorytmy Wariacyjne</h2>
@@ -417,6 +441,7 @@ x \to R_k(x)\ket{0} = e^{-i x \sigma_k /2} \ket{0}
 <section id="quantum-neural-networks-qnn" class="level2">
 <h2 class="anchored" data-anchor-id="quantum-neural-networks-qnn">Quantum Neural Networks (QNN)</h2>
 <p>Kwantowe sieci neuronowe to próba przeniesienia idei klasycznych sieci (warstw, wag i funkcji aktywacji) na grunt obwodów kwantowych. Zamiast klasycznych neuronów, wykorzystuje się bramki kwantowe sterowane parametrami, które pełnią funkcję transformacji danych. Proces trenowania QNN przypomina uczenie klasyczne — minimalizujemy funkcję błędu poprzez modyfikację parametrów obwodu.</p>
+<p><img src="../img/algo.png" width="80%" height="auto"></p>
 <p>👉 Główne cechy QNN:</p>
 <ul>
 <li>Wagi sieci odpowiadają parametrom rotacji w bramkach kwantowych.</li>
@@ -424,6 +449,18 @@ x \to R_k(x)\ket{0} = e^{-i x \sigma_k /2} \ket{0}
 <li>Dzięki superpozycji, jedna warstwa może reprezentować bardzo złożone zależności danych.</li>
 </ul>
 <p>W praktyce QNN są obecnie w fazie badań, ale mogą stanowić podstawę przyszłych modeli kwantowych o zdolności uczenia porównywalnej z sieciami klasycznymi.</p>
+</section>
+<section id="ansatz-i-schematy-modelowe" class="level2">
+<h2 class="anchored" data-anchor-id="ansatz-i-schematy-modelowe">Ansatz i schematy modelowe</h2>
+<p>Parametryzowany kwantowy obwód wariacyjny reprezentowany przez operator <span class="math inline">\(W_\theta\)</span> zależny od wektora parametrów <span class="math inline">\(\theta\)</span>, który działa na wektor stanu przygotowany przez obwód kodujący dane <span class="math inline">\(W_\theta \ket{\phi}\)</span>, gdzie <span class="math inline">\(\ket{\phi}\)</span> przygotowaliśmy za pomocą kodowania danych. Ze względu na bardzo dużą ilość kombinacji bramek, które można łączyć równolegle i szeregowo trudno jest wskazać jeden konkretny obwód pozwalający realizować wszystkie problemy analityczne (nie ma darmowych obiadów). Wybór odbywa się najczęściej poprzez ustalenie różnych schematów i ich trenowania. Porównać można to do klasycznych sieci neuronowych, gdzie ilość warstw ukrytych, liczba neuronów w każdej warstwie czy funkcje aktywacji są tzw. hiper-parametrami, które ustala się przez doświadczenie. Wybrany schemat obwodów kwantowych określa się często mianem ansatzu.</p>
+</section>
+<section id="pomiar-i-interpretacja-wyników" class="level2">
+<h2 class="anchored" data-anchor-id="pomiar-i-interpretacja-wyników">Pomiar i interpretacja wyników</h2>
+<p>Na tym etapie najczęściej estymuje się zbiór wartości oczekiwanych przyjmujący wartości od -1 do 1.<br>
+W zależności od realizowanego procesu można wykonać pomiar jednego lub większej ilości kubitów. Można również generować wynik w postaci amplitud, prawdopodobieństw czy też wyniku w postaci binarnej. Etap ten często nazywany jest postprocesingiem danych.</p>
+<p><img src="../img/Rys3.png" width="80%" height="auto"></p>
+<p>Inny sposób pomiaru</p>
+<p><img src="../img/rys6.png" width="80%" height="auto"></p>
 
 
 </section>

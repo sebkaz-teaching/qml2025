@@ -61,7 +61,7 @@ RY(\theta) = \exp\left(-i \frac{\theta}{2} Y\right) =
 \end{bmatrix}
 $$
 
-🌀 Dowolny obrót kubitu 
+### 🌀 Dowolny obrót kubitu 
 
 
 Operator obrotu dla pojedynczego kubitu można zapisać jako:
@@ -81,13 +81,13 @@ e^{i(\phi-\omega)/2}\sin(\theta/2) & e^{i(\phi+\omega)/2}\cos(\theta/2)
 $$
 
 
-📋 Szczegóły
+#### 📋 Szczegóły
 
 - Liczba kubitów (wires): 1
 - Liczba parametrów: 3
 
 
-🧮 Przepis na gradient
+#### 🧮 Przepis na gradient
 
 Pochodna funkcji $f$, która zależy od operatora $R(\phi, \theta, \omega)$, względem parametru $\phi$ jest dana wzorem:
 
@@ -103,9 +103,28 @@ $\phi, \theta, \omega$.
 
 
 
-💡 Komentarz :
+#### 💡 Komentarz:
 Operator $R(\phi, \theta, \omega)$ opisuje dowolny obrót pojedynczego kubitu na sferze Blocha.
 Sekwencja trzech rotacji wokół osi Z, Y i ponownie Z pozwala uzyskać dowolny stan kwantowy z bazy obliczeniowej — dlatego ten operator jest fundamentem wielu obwodów kwantowych i bramek parametryzowanych (PQC).
+
+Wiemy juz jak składać bramki w celu utworzenia dowolnego (i o dowolnej głębokości) obwodu. 
+$$ \ket{\psi'} = U_m(\theta_m)\dots U_2(\theta_2) U_1(\theta_1) \ket{\psi} $$
+
+Część indywidualnych bramek (ze zbioru $(U_i)_{i=1,\dots,m}$) moze być ustalona np. $X$, $CNOT$, czyli ich parametry są ściśle określone (np. $\pi$). 
+
+Jednak część bramek moze zalezeć od parametrów obrotów wyrazonych najczęściej jako radiany (w zakresi $\theta \in [-\pi, \pi]$). 
+
+Po przygotowaniu stanu $\ket{\psi'}$ mozemy zmierzyć jeden lub cały zestaw kubitów. 
+Po pomiarze kubity zostają w stanie bazowym zgodnie z wykorzystanym operatorem. 
+Najczęściej wybieramy bazę obliczeniową pozwalającą uzyskać rezultat jako listę bitów. 
+
+Tak zdefiniowany i działający obwód kwantowy mozna wykorzystać do wielu rzeczy. 
+Dla nas najwazniejszym aspektem jest mozliwość trenowania parametrów obwodu. 
+
+
+<img src="../img/proces.png" alt="model kwantowy" width="80%" height="auto" />
+
+
 
 ## Kodowanie danych 
 
@@ -185,6 +204,17 @@ $$
 
 Ten etap jest kluczowy przy projektowaniu algorytmów kwantowych, ponieważ sposób zakodowania danych bezpośrednio wpływa na moc obliczeniową i zdolność do wykrywania wzorców w danych.
 
+### Schemat kodowania 
+
+Rozwazmy N wierszy 8 zmiennych $X_1\dots X_8$ o wartościach rzeczywistych.
+
+Potrzebujemy określić $X_i^{max}$ oraz $X_i^{min}$.
+
+$\theta^j_i = \frac{X^j_i - X_i^{min}}{X_i^{max}-X_i^{min}} \pi$
+
+Korzystając z bramki $R_y$ mozemy zakodować kazdy kubit z osobnym kątem. 
+Mozna takze wybrać dwie bramki z dwoma kątami dla jednego kubitu ($R_y$ i $R_z$)
+
 
 ## Kwantowe Algorytmy Wariacyjne 
 
@@ -232,6 +262,7 @@ Kwantowe sieci neuronowe to próba przeniesienia idei klasycznych sieci (warstw,
 Zamiast klasycznych neuronów, wykorzystuje się bramki kwantowe sterowane parametrami, które pełnią funkcję transformacji danych.
 Proces trenowania QNN przypomina uczenie klasyczne — minimalizujemy funkcję błędu poprzez modyfikację parametrów obwodu.
 
+<img src="../img/algo.png" width="80%" height="auto"/>
 
 👉 Główne cechy QNN:
 
@@ -240,3 +271,26 @@ Proces trenowania QNN przypomina uczenie klasyczne — minimalizujemy funkcję b
 - Dzięki superpozycji, jedna warstwa może reprezentować bardzo złożone zależności danych.
 
 W praktyce QNN są obecnie w fazie badań, ale mogą stanowić podstawę przyszłych modeli kwantowych o zdolności uczenia porównywalnej z sieciami klasycznymi.
+
+## Ansatz i schematy modelowe 
+
+Parametryzowany kwantowy obwód wariacyjny reprezentowany przez operator $W_\theta$ zależny od wektora parametrów $\theta$, który działa na wektor stanu przygotowany przez obwód kodujący dane $W_\theta \ket{\phi}$, gdzie $\ket{\phi}$ przygotowaliśmy za pomocą kodowania danych. 
+Ze względu na bardzo dużą ilość kombinacji bramek, które można łączyć równolegle i szeregowo trudno jest wskazać jeden konkretny obwód pozwalający realizować wszystkie problemy analityczne (nie ma darmowych obiadów). 
+Wybór odbywa się najczęściej poprzez ustalenie różnych schematów i ich trenowania. 
+Porównać można to do klasycznych sieci neuronowych, gdzie ilość warstw ukrytych, liczba neuronów w każdej warstwie czy funkcje aktywacji są tzw. hiper-parametrami, które ustala się przez doświadczenie. 
+Wybrany schemat obwodów kwantowych określa się często mianem ansatzu. 
+
+## Pomiar i interpretacja wyników 
+
+Na tym etapie najczęściej estymuje się zbiór wartości oczekiwanych przyjmujący wartości od -1 do 1.  
+W zależności od realizowanego procesu można wykonać pomiar jednego lub większej ilości kubitów.
+Można również generować wynik w postaci amplitud, prawdopodobieństw czy też wyniku w postaci binarnej. 
+Etap ten często nazywany jest postprocesingiem danych. 
+
+
+<img src="../img/Rys3.png" width="80%" height="auto"/>
+
+Inny sposób pomiaru 
+
+
+<img src="../img/rys6.png" width="80%" height="auto"/>
