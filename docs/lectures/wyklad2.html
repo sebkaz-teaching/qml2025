@@ -72,10 +72,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-969ddfa49e00a70eb3423444dbc81f6c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-274dc1d14b15d766dfc72bb6e59290d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9203b120c5aa9529b4c48b4a2d61fa05.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -175,7 +174,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/w1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/wyklad2.html">Klasyczne bramki logiczne - Algebra Boola</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/wyklad1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/wyklad2.html">Klasyczne bramki logiczne - Algebra Boola</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -208,7 +207,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lectures/w1.html" class="sidebar-item-text sidebar-link">
+  <a href="../lectures/wyklad1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wprowadzenie do obliczeń kwantowych</span></a>
   </div>
 </li>
@@ -228,6 +227,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../lectures/wyklad4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kwantowe bramki logiczne w prostych algorytmach i obwodach kwantowych</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/wyklad5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorytmy kwantowego uczenia maszynowego</span></a>
   </div>
 </li>
       </ul>
@@ -272,7 +277,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/w1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/wyklad2.html">Klasyczne bramki logiczne - Algebra Boola</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/wyklad1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/wyklad2.html">Klasyczne bramki logiczne - Algebra Boola</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Klasyczne bramki logiczne - Algebra Boola</h1>
 </div>
@@ -528,7 +533,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Dlaczego nie powinno się używać szyfru więcej niż jeden raz? Podpowiedź: Zakodowana wiadomość przestaje być losowa.</p>
 </blockquote>
-<div id="29548deb" class="cell" data-execution_count="1">
+<div id="a029a967" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_to_bits(text):</span>
@@ -558,18 +563,18 @@ window.Quarto = {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Czy poprawnie odszyfrowano? </span><span class="sc">{</span><span class="st">'TAK'</span> <span class="cf">if</span> decrypted <span class="op">==</span> plaintext <span class="cf">else</span> <span class="st">'NIE'</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oryginalny tekst:     Quantum ML
-Klucz (8-bit):        114 (01110010)
+Klucz (8-bit):        9 (00001001)
 
 Tekst binarnie:       01010001 01110101 01100001 01101110 01110100 01110101 01101101 00100000 01001101 01001100
-Zaszyfrowany binarnie:00100011 00000111 00010011 00011100 00000110 00000111 00011111 01010010 00111111 00111110
+Zaszyfrowany binarnie:01011000 01111100 01101000 01100111 01111101 01111100 01100100 00101001 01000100 01000101
 
-Zaszyfrowany tekst:   #R?&gt;
+Zaszyfrowany tekst:   X|hg}|d)DE
 Odszyfrowany tekst:   Quantum ML
 
 Czy poprawnie odszyfrowano? TAK</code></pre>
 </div>
 </div>
-<div id="fb32e923" class="cell" data-execution_count="2">
+<div id="befa7fb2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ciphertext <span class="op">=</span> xor_encrypt_decrypt(<span class="st">"Quantum ML"</span>, <span class="dv">77</span>)  <span class="co"># zaszyfruj znanym kluczem</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Szyfrogram:"</span>, ciphertext)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>

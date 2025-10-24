@@ -12,10 +12,12 @@ website:
       - index.qmd
       - section : "Wykłady"
         contents:
-          - lectures/w1.qmd
+          - lectures/wyklad1.qmd
           - lectures/wyklad2.qmd
           - lectures/wyklad3.qmd
           - lectures/wyklad4.qmd
+          - lectures/wyklad5.qmd
+
       - section: "Ćwiczenia"
         contents:
           - cwiczenia/cw1.ipynb
@@ -43,6 +45,6 @@ format:
     toc-title: "**Sections**"
     self-contained-math: true
     code-overflow: wrap
-    highlight-style: github-dark
+    highlight-style: dark
     code-block-background: true
     link-external-newwindow: true

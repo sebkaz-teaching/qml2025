@@ -37,10 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-969ddfa49e00a70eb3423444dbc81f6c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-274dc1d14b15d766dfc72bb6e59290d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9203b120c5aa9529b4c48b4a2d61fa05.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Algorytmy kwantowego uczenia maszynowego</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/wyklad1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/wyklad5.html">Algorytmy kwantowego uczenia maszynowego</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lectures/w1.html" class="sidebar-item-text sidebar-link">
+  <a href="../lectures/wyklad1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wprowadzenie do obliczeń kwantowych</span></a>
   </div>
 </li>
@@ -164,6 +163,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../lectures/wyklad4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kwantowe bramki logiczne w prostych algorytmach i obwodach kwantowych</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/wyklad5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Algorytmy kwantowego uczenia maszynowego</span></a>
   </div>
 </li>
       </ul>
@@ -195,20 +200,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title"><strong>Sections</strong></h2>
    
   <ul class="collapse">
-  <li><a href="#pqc" id="toc-pqc" class="nav-link active" data-scroll-target="#pqc">PQC</a></li>
+  <li><a href="#pqc-parametrized-quantum-circuits" id="toc-pqc-parametrized-quantum-circuits" class="nav-link active" data-scroll-target="#pqc-parametrized-quantum-circuits">PQC – Parametrized Quantum Circuits</a></li>
   <li><a href="#kwantowe-algorytmy-wariacyjne" id="toc-kwantowe-algorytmy-wariacyjne" class="nav-link" data-scroll-target="#kwantowe-algorytmy-wariacyjne">Kwantowe Algorytmy Wariacyjne</a></li>
-  <li><a href="#quantum-neural-networks" id="toc-quantum-neural-networks" class="nav-link" data-scroll-target="#quantum-neural-networks">Quantum Neural Networks</a></li>
-  <li><a href="#quantum-support-vector-classification" id="toc-quantum-support-vector-classification" class="nav-link" data-scroll-target="#quantum-support-vector-classification">Quantum Support Vector Classification</a></li>
-  <li><a href="#variational-quantum-eigensolver" id="toc-variational-quantum-eigensolver" class="nav-link" data-scroll-target="#variational-quantum-eigensolver">Variational Quantum Eigensolver</a></li>
-  <li><a href="#qubo" id="toc-qubo" class="nav-link" data-scroll-target="#qubo">QUBO</a></li>
-  <li><a href="#quantum-approximation-optimization-algorithm" id="toc-quantum-approximation-optimization-algorithm" class="nav-link" data-scroll-target="#quantum-approximation-optimization-algorithm">Quantum Approximation Optimization Algorithm</a></li>
+  <li><a href="#quantum-support-vector-classification-qsvm" id="toc-quantum-support-vector-classification-qsvm" class="nav-link" data-scroll-target="#quantum-support-vector-classification-qsvm">Quantum Support Vector Classification (qSVM)</a></li>
+  <li><a href="#quantum-neural-networks-qnn" id="toc-quantum-neural-networks-qnn" class="nav-link" data-scroll-target="#quantum-neural-networks-qnn">Quantum Neural Networks (QNN)</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/wyklad1.html">Wykłady</a></li><li class="breadcrumb-item"><a href="../lectures/wyklad5.html">Algorytmy kwantowego uczenia maszynowego</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Algorytmy kwantowego uczenia maszynowego</h1>
 </div>
@@ -227,28 +229,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Dziedziną łączącą klasyczne uczenie maszynowe i obliczenia kwantowe nazywamy kwantowym uczeniem maszynowym. QML powstało aby szybciej i sprawniej rozwiązywać problemu uczenia maszynowego. Do tego celu chcemy wykorzystać procesory kwantowe oraz własności algorytmów kwantowych i ich przewagi nad klasycznymi odpowiednikami.</p>
-<section id="pqc" class="level2">
-<h2 class="anchored" data-anchor-id="pqc">PQC</h2>
+<p>Dziedziną łączącą klasyczne uczenie maszynowe i obliczenia kwantowe nazywamy kwantowym uczeniem maszynowym (ang. Quantum Machine Learning).</p>
+<p>QML powstało aby szybciej i sprawniej rozwiązywać problemu uczenia maszynowego. Do tego celu chcemy wykorzystać procesory kwantowe oraz własności algorytmów kwantowych i ich przewagę nad klasycznymi odpowiednikami.</p>
+<section id="pqc-parametrized-quantum-circuits" class="level2">
+<h2 class="anchored" data-anchor-id="pqc-parametrized-quantum-circuits">PQC – Parametrized Quantum Circuits</h2>
+<p>Parametryzowane obwody kwantowe (PQC) to podstawowy element współczesnych algorytmów hybrydowych. Ich działanie polega na tym, że stan kwantowy (czyli układ kubitów) jest modyfikowany za pomocą bramek kwantowych zależnych od zestawu parametrów klasycznych — np. kątów rotacji. Zmieniając te parametry, możemy dostosować stan wyjściowy obwodu do konkretnego zadania, np. minimalizacji energii lub klasyfikacji danych.</p>
+<p>PQC pełnią podobną rolę jak funkcje z parametrami w klasycznym ML — np. wagi w sieciach neuronowych.</p>
+<p>Warto zapamiętać, że nie szukamy tutaj pojedynczego wyniku pomiaru, ale statystycznej właściwości stanu kwantowego zależnej od parametrów.</p>
 </section>
 <section id="kwantowe-algorytmy-wariacyjne" class="level2">
 <h2 class="anchored" data-anchor-id="kwantowe-algorytmy-wariacyjne">Kwantowe Algorytmy Wariacyjne</h2>
-<p>Variational Quantum Algorithms (VQA) czyli kwantowe algorytmy wariacyjne nalezą do klasy algorytmów hybrydowych. Oznacza to, ze do ich realizacji wykorzystamy zarówno procesor kwantowy jak i klasyczne algorytmy optymalizacyjne.</p>
+<p><img src="../img/VQA.png" alt="model kwantowy"></p>
+<p>Variational Quantum Algorithms należą do klasy algorytmów hybrydowych, w których część obliczeń wykonuje komputer kwantowy, a część klasyczny procesor. Ich celem jest optymalizacja zestawu parametrów, które minimalizują (lub maksymalizują) pewną funkcję kosztu. Proces polega na naprzemiennym uruchamianiu obwodu kwantowego z różnymi wartościami parametrów i wykorzystaniu klasycznego algorytmu (np. gradient descent) do poprawy tych parametrów.</p>
+<p>👉 Schemat działania:</p>
+<ol type="1">
+<li>Zdefiniuj obwód kwantowy zależny od parametrów (PQC).</li>
+<li>Zmierz jego wynik i policz wartość funkcji kosztu.</li>
+<li>Klasyczny optymalizator aktualizuje parametry.</li>
+<li>Powtarzaj, aż osiągniesz minimum.</li>
+</ol>
+<p>Ten model jest fundamentem takich algorytmów jak VQE czy QAOA.</p>
+<p>VQE to jeden z najważniejszych przykładów algorytmu wariacyjnego. Służy do znajdowania najniższej energii (wartości własnej) dla danego operatora Hamiltona — kluczowego w chemii kwantowej i fizyce cząstek.</p>
+<p>👉 VQE łączy dwa światy: - Część kwantowa: przygotowuje stan kwantowy za pomocą obwodu parametryzowanego. - Część klasyczna: minimalizuje średnią wartość energii poprzez optymalizację parametrów.</p>
+<p>W praktyce pozwala to badać układy molekularne czy materiały bez potrzeby użycia pełnego, kosztownego symulatora kwantowego.</p>
 </section>
-<section id="quantum-neural-networks" class="level2">
-<h2 class="anchored" data-anchor-id="quantum-neural-networks">Quantum Neural Networks</h2>
+<section id="quantum-support-vector-classification-qsvm" class="level2">
+<h2 class="anchored" data-anchor-id="quantum-support-vector-classification-qsvm">Quantum Support Vector Classification (qSVM)</h2>
+<p>Klasyczny algorytm SVM (Support Vector Machine) znajduje hiperpłaszczyznę najlepiej rozdzielającą dane dwóch klas. W wersji kwantowej dane są najpierw kodowane w stanach kwantowych (np. przez amplitude encoding), a następnie mierzona jest odległość lub podobieństwo między nimi w przestrzeni Hilberta.</p>
+<p>👉 W kwantowym SVM:</p>
+<ul>
+<li>dane wejściowe → przekształcane są w stany kwantowe,</li>
+<li>jądro (kernel) → jest obliczane poprzez pomiary kwantowe,</li>
+<li>klasyfikacja → odbywa się klasycznie, ale korzysta z „kwantowej przestrzeni cech”.</li>
+</ul>
+<p>Kwantowe jądra mogą umożliwiać separację danych nieliniowo rozdzielnych znacznie efektywniej niż klasyczne jądra.</p>
 </section>
-<section id="quantum-support-vector-classification" class="level2">
-<h2 class="anchored" data-anchor-id="quantum-support-vector-classification">Quantum Support Vector Classification</h2>
-</section>
-<section id="variational-quantum-eigensolver" class="level2">
-<h2 class="anchored" data-anchor-id="variational-quantum-eigensolver">Variational Quantum Eigensolver</h2>
-</section>
-<section id="qubo" class="level2">
-<h2 class="anchored" data-anchor-id="qubo">QUBO</h2>
-</section>
-<section id="quantum-approximation-optimization-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="quantum-approximation-optimization-algorithm">Quantum Approximation Optimization Algorithm</h2>
+<section id="quantum-neural-networks-qnn" class="level2">
+<h2 class="anchored" data-anchor-id="quantum-neural-networks-qnn">Quantum Neural Networks (QNN)</h2>
+<p>Kwantowe sieci neuronowe to próba przeniesienia idei klasycznych sieci (warstw, wag i funkcji aktywacji) na grunt obwodów kwantowych. Zamiast klasycznych neuronów, wykorzystuje się bramki kwantowe sterowane parametrami, które pełnią funkcję transformacji danych. Proces trenowania QNN przypomina uczenie klasyczne — minimalizujemy funkcję błędu poprzez modyfikację parametrów obwodu.</p>
+<p>👉 Główne cechy QNN:</p>
+<ul>
+<li>Wagi sieci odpowiadają parametrom rotacji w bramkach kwantowych.</li>
+<li>Funkcja aktywacji realizowana jest przez pomiar i ponowne przygotowanie stanu.</li>
+<li>Dzięki superpozycji, jedna warstwa może reprezentować bardzo złożone zależności danych.</li>
+</ul>
+<p>W praktyce QNN są obecnie w fazie badań, ale mogą stanowić podstawę przyszłych modeli kwantowych o zdolności uczenia porównywalnej z sieciami klasycznymi.</p>
 
 
 </section>
