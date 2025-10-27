@@ -137,3 +137,4 @@ dmypy.json
 .DS_Store
 
 **/*.quarto_ipynb
+.DS_Store
