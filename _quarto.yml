@@ -18,7 +18,7 @@ website:
           - lectures/wyklad4.qmd
           - lectures/wyklad5.qmd
 
-      - section: "Ćwiczenia"
+      - section: "Ćwiczenia Dzienne"
         contents:
           - cwiczenia/cw1.ipynb
           # - cwiczenia/cw2.ipynb
@@ -27,6 +27,9 @@ website:
           # - cwiczenia/cw5.ipynb
           # - cwiczenia/ml.ipynb
           # - cwiczenia/titanic.ipynb
+      - section: "Ćwiczenia Zaoczne"
+        contents:
+        - cwiczenia/cw1z.qmd
   navbar:
     left:
           - href: sylabus.qmd
