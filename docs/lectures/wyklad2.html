@@ -266,7 +266,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../cwiczenia/cw1z.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ćwiczenia Sobota-Niedziela</span></a>
+ <span class="menu-text">Laboratorium 1</span></a>
   </div>
 </li>
       </ul>
@@ -550,7 +550,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Dlaczego nie powinno się używać szyfru więcej niż jeden raz? Podpowiedź: Zakodowana wiadomość przestaje być losowa.</p>
 </blockquote>
-<div id="b77e91e8" class="cell" data-execution_count="1">
+<div id="1ecc47da" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_to_bits(text):</span>
@@ -580,18 +580,18 @@ window.Quarto = {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Czy poprawnie odszyfrowano? </span><span class="sc">{</span><span class="st">'TAK'</span> <span class="cf">if</span> decrypted <span class="op">==</span> plaintext <span class="cf">else</span> <span class="st">'NIE'</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oryginalny tekst:     Quantum ML
-Klucz (8-bit):        54 (00110110)
+Klucz (8-bit):        215 (11010111)
 
 Tekst binarnie:       01010001 01110101 01100001 01101110 01110100 01110101 01101101 00100000 01001101 01001100
-Zaszyfrowany binarnie:01100111 01000011 01010111 01011000 01000010 01000011 01011011 00010110 01111011 01111010
+Zaszyfrowany binarnie:10000110 10100010 10110110 10111001 10100011 10100010 10111010 11110111 10011010 10011011
 
-Zaszyfrowany tekst:   gCWXBC[{z
+Zaszyfrowany tekst:   ¢¶¹£¢º÷
 Odszyfrowany tekst:   Quantum ML
 
 Czy poprawnie odszyfrowano? TAK</code></pre>
 </div>
 </div>
-<div id="27b328d7" class="cell" data-execution_count="2">
+<div id="7e787047" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ciphertext <span class="op">=</span> xor_encrypt_decrypt(<span class="st">"Quantum ML"</span>, <span class="dv">77</span>)  <span class="co"># zaszyfruj znanym kluczem</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Szyfrogram:"</span>, ciphertext)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>

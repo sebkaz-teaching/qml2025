@@ -5,11 +5,11 @@ Na zajęciach wykorzystamy środowisko z językiem python3.11.
 Środowisko to możesz zainstalować na swoim komputerze i uzupełnić o wymagane biblioteki (torch, pennylane). 
 Mozesz również wykorzystać środowisko na serwerach SGH. 
 
-1. przejdź pod adres \url{https://sv-pb-jupiter.sgh.waw.pl/j1##} w miejsce ## wstaw przypisany w zadaniu indywidualny numer środowiska.
+1. przejdź pod adres https://sv-pb-jupiter.sgh.waw.pl/j1## w miejsce ## wstaw przypisany w zadaniu indywidualny numer środowiska.
 2. Hasło: `root1##` gdzie za `##` wprowadź numer swojego środowiska.
 3. Uruchom nowy notatnik. Wpisz w komórkę `print("hello world")` i sprawdź czy wszystko działa. 
 
-pobierz plik [`zad1.ipynb`](../cwiczenia/zad1.ipynb) i zrealizuj ćwiczenia.
+pobierz plik [`zad1.ipynb`](https://github.com/sebkaz-teaching/cwiczenia/blob/main/QML/zad1.ipynb) i zrealizuj ćwiczenia.
 
 ## klasyczne i kwantowe sieci neuronowe 
 
