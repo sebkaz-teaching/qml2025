@@ -16,9 +16,9 @@ pobierz plik [`zad1.ipynb`](https://github.com/sebkaz-teaching/cwiczenia/blob/ma
 ## Wygeneruj klasyczną sieć neuronową dla funckji `sin(x)`
 
 # import potrzebnych bibliotek 
+
 ```python
 import torch
-import pandas as pd 
 import matplotlib.pyplot as plt
 from IPython.display import clear_output
 
@@ -27,25 +27,22 @@ torch.manual_seed(1234)
 
 Wygenruj dane:
 
-- korzystając z metody torch.linespace() wygenruj 500  punktów danych  dla zakresu (0,10) w tablicy `x`
-- Ze względu, iz potrzebujemy 500 wierszy przypadków (a nie 500 zmiennych) jednowymiarowej tablicy zastosuj metodę view(-1,1)
-- jako wynik `si` wygeneruj wartości funckji sin(x). Do zmiennej `y` zastosuj drobną zmianę dodając wartości losowe. 
-- Analogicznie jak dla danych `x` pamiętaj o zmianie widoku : `view(-1,1)`
+- korzystając z metody `torch.linspace()` wygenruj 500  punktów danych  dla zakresu (0,10) w tablicy `x`
+- Ze względu, iż potrzebujemy 500 wierszy przypadków (a nie 500 zmiennych) jednowymiarowej tablicy zastosuj metodę `view(-1,1)`
+- jako wynik `si` wygeneruj wartości funckji `torch.sin(x)`.
+- Analogicznie jak dla danych `x` pamiętaj o zmianie widoku: `view(-1,1)`
+
+Do zmiennej `si` dodamy wartości losowe generując target.
+
+- $si + 0.1*(\text{torch.rand}(500).\text{view}(-1,1)-0.5)$
 
 
 Ponizszy wykres wygeneruje Ci graficzną reprezentację danych
 
 ```python
-###### 
-#
-#  twoj kod 
 x = ...
 si = ...
 y = ...
-
-x_train = x.requires_grad_(True)
-#####
-
 
 plt.figure(figsize=(8,4))
 plt.plot(x, torch.sin(x).view(-1,1), color="tab:grey", alpha=0.6, label="sin(x)")
@@ -127,7 +124,7 @@ def train(X, Y, model, optimiser, epochs, lossfn, callback = None):
 ```
 Uruchom funkcję `train()` z odpowiednimi parametrami. 
 
-- dane: `x_train`, `y`
+- dane: `x`, `y`
 - model sieci: `model`
 - optymalizator: `optimiser`
 - ilość epok: `500` (mozesz tez przetestowac najpierw 10 a potem np. 1000)
