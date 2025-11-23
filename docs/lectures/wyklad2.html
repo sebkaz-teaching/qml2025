@@ -556,7 +556,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Dlaczego nie powinno się używać szyfru więcej niż jeden raz? Podpowiedź: Zakodowana wiadomość przestaje być losowa.</p>
 </blockquote>
-<div id="31b1e03c" class="cell" data-execution_count="1">
+<div id="a7e3359f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_to_bits(text):</span>
@@ -586,18 +586,18 @@ window.Quarto = {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Czy poprawnie odszyfrowano? </span><span class="sc">{</span><span class="st">'TAK'</span> <span class="cf">if</span> decrypted <span class="op">==</span> plaintext <span class="cf">else</span> <span class="st">'NIE'</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oryginalny tekst:     Quantum ML
-Klucz (8-bit):        24 (00011000)
+Klucz (8-bit):        234 (11101010)
 
 Tekst binarnie:       01010001 01110101 01100001 01101110 01110100 01110101 01101101 00100000 01001101 01001100
-Zaszyfrowany binarnie:01001001 01101101 01111001 01110110 01101100 01101101 01110101 00111000 01010101 01010100
+Zaszyfrowany binarnie:10111011 10011111 10001011 10000100 10011110 10011111 10000111 11001010 10100111 10100110
 
-Zaszyfrowany tekst:   Imyvlmu8UT
+Zaszyfrowany tekst:   »Ê§¦
 Odszyfrowany tekst:   Quantum ML
 
 Czy poprawnie odszyfrowano? TAK</code></pre>
 </div>
 </div>
-<div id="c551eed4" class="cell" data-execution_count="2">
+<div id="07bce35d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ciphertext <span class="op">=</span> xor_encrypt_decrypt(<span class="st">"Quantum ML"</span>, <span class="dv">77</span>)  <span class="co"># zaszyfruj znanym kluczem</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Szyfrogram:"</span>, ciphertext)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
