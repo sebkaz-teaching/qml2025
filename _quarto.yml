@@ -24,9 +24,7 @@ website:
           - cwiczenia/cw2.ipynb
           - cwiczenia/cw3.ipynb
           - cwiczenia/cw4.ipynb
-          # - cwiczenia/cw5.ipynb
-          # - cwiczenia/ml.ipynb
-          # - cwiczenia/titanic.ipynb
+          
       - section: "Ćwiczenia Zaoczne"
         contents:
         - cwiczenia/cw1z.qmd
