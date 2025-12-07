@@ -24,6 +24,7 @@ website:
           - cwiczenia/cw2.ipynb
           - cwiczenia/cw3.ipynb
           - cwiczenia/cw4.ipynb
+          - cwiczenia/cw5.ipynb
           
       - section: "Ćwiczenia Zaoczne"
         contents:
