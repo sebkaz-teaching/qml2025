@@ -30,6 +30,7 @@ website:
         contents:
         - cwiczenia/cw1z.qmd
         - cwiczenia/cw2z.ipynb
+        - cwiczenia/cw3z.ipynb
         
   navbar:
     left:
